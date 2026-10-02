@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1002h">
+<link rel="stylesheet" href="style.css?v=1002i">
 <script defer src="/js/analytics.js"></script>
 <style>
   .ct-head{ padding:84px 0 40px }
@@ -148,6 +148,16 @@
       <input type="hidden" name="_template" value="table">
 
       <div class="f">
+        <label>どちらについてのご相談ですか <em>必須</em></label>
+        <div class="chips">
+          <label><input type="radio" name="service" value="それナル（1ページ19,800円〜の小さい仕事）" checked><span>それナル</span></label>
+          <label><input type="radio" name="service" value="木下スタジオ（ブランド・体験設計などの仕事）"><span>木下スタジオ</span></label>
+          <label><input type="radio" name="service" value="まだ分からない"><span>まだ分からない</span></label>
+        </div>
+        <p class="hint">迷ったら「まだ分からない」で構いません。内容を見てこちらから案内します。</p>
+      </div>
+
+      <div class="f">
         <label for="name">お名前 <em>必須</em></label>
         <input id="name" name="name" type="text" required autocomplete="name" placeholder="木下 貴博">
       </div>
@@ -193,7 +203,6 @@
         <p class="hint">いまのサイトのURL、刷りたい日にち、資料のファイルなど、分かる範囲で構いません。</p>
       </div>
 
-      <input type="hidden" name="_subject" value="【kinoshitastudio.com】相談が届きました">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
       <div class="ct-send">
@@ -277,6 +286,7 @@
     var fd=new FormData(f);
     var topics=fd.getAll('topic').join('、');
     var body={
+      service: fd.get('service') || '（未選択）',
       name: fd.get('name') || '',
       company: fd.get('company') || '',
       email: fd.get('email') || '',
