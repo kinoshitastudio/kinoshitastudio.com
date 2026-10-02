@@ -37,7 +37,8 @@ img{ max-width:100%; display:block }
 .site-head .wrap{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:68px; gap:12px }
 .head-l{ font-size:11px; line-height:1.5; color:var(--ink-sub) }
 .head-l b{ display:block; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.14em; color:var(--ink) }
-.head-c{ font-family:'Inter',sans-serif; font-weight:800; font-size:20px; letter-spacing:-.01em; text-decoration:none; white-space:nowrap }
+/* 左上の名乗り＝「それナル」。和文なので書体は本文と同じものを使う */
+.head-c{ font-family:var(--jp); font-weight:900; font-size:22px; letter-spacing:-.045em; text-decoration:none; white-space:nowrap; color:var(--ink) }
 .head-c span{ color:var(--accent) }
 .head-r{ justify-self:end }
 @media (max-width:720px){
@@ -207,7 +208,9 @@ a.say:hover{ color:var(--accent) }
 .svc-hero .grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center }
 @media (max-width:860px){ .svc-hero .grid{ grid-template-columns:1fr } }
 .svc-hero .kicker{ font-family:'Inter',var(--jp); font-weight:700; font-size:13px; letter-spacing:.06em; margin:0 0 14px; color:var(--accent) }
-.svc-hero h1{ font-family:var(--jp); font-weight:900; font-size:clamp(36px,6vw,76px); line-height:1.12; letter-spacing:-.05em; margin:0 0 22px }
+.svc-hero h1{ font-family:var(--jp); font-weight:900; font-size:clamp(36px,6vw,76px); line-height:1.2; letter-spacing:-.05em; margin:0 0 22px }
+/* 🔴 em の既定は斜体。数字を強めたいだけなので、斜体は消して色で効かせる */
+.svc-hero h1 em{ font-style:normal; color:var(--accent) }
 .svc-hero p{ color:var(--ink-sub); margin:0 0 28px; max-width:34em }
 .svc-hero .cta{ display:flex; flex-wrap:wrap; gap:10px }
 
@@ -335,6 +338,16 @@ section.dark .sec-sub{ color:var(--dark-sub) }
   font-size:clamp(26px,3.2vw,34px); letter-spacing:-.035em;
   color:var(--ink); margin:0 0 10px; line-height:1.1;
 }
+/* 事例ページの画面写真。横幅いっぱいに置いて、下に一行そえる */
+.case-shot{ margin:0 }
+.case-shot img{
+  display:block; width:100%; height:auto; border-radius:14px; background:#eee;
+  box-shadow:0 18px 50px rgba(0,0,0,.14);
+}
+.case-shot figcaption{ margin-top:14px; font-size:13px; line-height:1.9; color:var(--ink-sub) }
+/* スマホの画面は縦長なので、原寸で並べると画面を埋めてしまう。幅を抑える */
+.case-shot.sp img{ max-width:300px; margin:0 auto }
+.case-shot.sp figcaption{ text-align:center }
 .p-link{ margin:24px 0 0; font-size:14px }
 .p-link a{ font-family:var(--jp); font-weight:800; color:var(--accent); text-decoration:none }
 .p-link a:hover{ text-decoration:underline }
