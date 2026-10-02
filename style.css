@@ -204,6 +204,29 @@ section.dark .sec-sub{ color:var(--dark-sub) }
 /* ── 問題 → 結論 → 木下スタジオなら → ゴール ──
    ページの頭で、読む人が自分の話だと分かるようにする。
    02（結論）だけ青＝ここが答え。他は地の色。 */
+
+/* 事例を1本だけ ── 数字だけが主役。黒地に青の数字 */
+.case-hero{ background:#0b0b0b; color:#fff; padding:76px 0 }
+.case-hero .tag{ display:block; color:rgba(255,255,255,.55); margin-bottom:20px }
+.case-hero h2{
+  font-family:var(--jp); font-weight:900;
+  font-size:clamp(30px,5.6vw,66px); line-height:1.22; letter-spacing:-.05em;
+  margin:0 0 22px;
+}
+.case-hero h2 em{
+  font-style:normal; font-family:'Inter',sans-serif; font-weight:900;
+  font-size:1.5em; letter-spacing:-.06em; color:var(--accent);
+  line-height:0.9; display:inline-block; vertical-align:-.06em;
+}
+.case-hero p{ margin:0 0 30px; color:rgba(255,255,255,.7); font-size:14px; line-height:2; max-width:56ch }
+.case-hero a{
+  display:inline-flex; align-items:center; gap:.6rem;
+  font-family:'Inter',sans-serif; font-weight:700; font-size:12px; letter-spacing:.14em;
+  padding:14px 24px; background:var(--accent); color:#fff; border-radius:999px;
+  text-decoration:none; transition:background .25s,color .25s;
+}
+.case-hero a:hover{ background:#fff; color:var(--accent) }
+
 .frame-sec{ padding:56px 0 8px }
 .frame{
   display:grid; grid-template-columns:repeat(4,1fr); gap:0;
