@@ -316,23 +316,23 @@ section.dark .sec-sub{ color:var(--dark-sub) }
   font-family:var(--jp); font-weight:900; color:#fff; margin:0 0 22px;
   font-size:clamp(29px,4vw,58px); line-height:1.22; letter-spacing:-.05em;
 }
-/* 答えの帯。左から右へ1字ずつ大きくなり、白い縁も字に連れて厚くなる。
-   ⭐ 縁の厚みは padding を em で取っているので、字が大きくなれば勝手に広がる */
+/* 答えの帯。左から右へ1字ずつ大きくなる。
+   🔴 白地は【帯ぜんぶで1枚】にする。字ごとに背景を持たせると、
+      字の高さがそのまま縁の高さになって、上端がギザギザになる */
 .face .a{
   --fa:clamp(11px,1.1vw,14px);
-  margin:0; padding:0; background:none; align-self:flex-start;
-  display:flex; flex-wrap:wrap; align-items:flex-end;
+  margin:0; align-self:flex-start;
+  background:#fff; color:var(--accent); padding:.6em .8em;
+  display:flex; flex-wrap:wrap; align-items:baseline;
   font-family:var(--jp); font-weight:800; letter-spacing:-.02em;
+  line-height:1.5;
 }
 .face .a span{
-  background:#fff; color:var(--accent);
-  font-size:calc(var(--fa) * (1 + var(--i,0) * 1.15));
-  padding:.44em .03em .4em; line-height:1.1;
+  background:none;
+  font-size:calc(var(--fa) * (1 + var(--i,0) * 0.8));
 }
-.face .a span:first-child{ padding-left:.5em }
-.face .a span:last-child{ padding-right:.5em }
 /* 字に分ける前（JSが動かないとき）も、白地に青で読める形のまま */
-.face .a:not(.split){ display:inline-block; background:#fff; color:var(--accent);
+.face .a:not(.split){ display:inline-block;
   font-size:clamp(13px,1.3vw,17px); line-height:1.75; padding:.5em .85em }
 .face figure{ margin:0; position:relative; min-height:clamp(280px,34vw,440px) }
 .face img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30% }
