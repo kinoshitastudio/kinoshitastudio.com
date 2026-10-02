@@ -675,3 +675,13 @@ body.menu-open .menu-foot{ opacity:1 }
 .price-flash b .tax{ font-size:.26em; margin-left:.4em; color:var(--ink-sub) }
 .frame .tax, .flow .tax{ font-size:.72em }
 section.dark .tax, .on-dark .tax{ color:var(--dark-sub) }
+
+/* 3つ並べて比べる表。列が1つ増えるので見出し列を細くする */
+.cmp.tri th{ width:19% }
+.cmp.tri td{ width:27% }
+@media (max-width:760px){
+  .cmp.tri th,.cmp.tri td{ padding:12px 7px; font-size:12px }
+  .cmp.tri tr:first-child td{ font-size:13px }
+  .cmp.tri th{ width:22% }
+  .cmp.tri td small{ font-size:10px }
+}
