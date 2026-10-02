@@ -51,6 +51,7 @@
 </header>
 
 <nav class="menu" id="menu" aria-hidden="true">
+  <button class="menu-close" id="menuClose" aria-label="メニューを閉じる"></button>
   <div class="menu-in">
     <a href="./"><span class="n">00</span>それ、なんとかなる？</a>
     <a href="web.html"><span class="n">01</span>ホームページ・ロゴ</a>
@@ -59,6 +60,7 @@
     <a href="consul.html"><span class="n">04</span>体験設計</a>
     <a href="meeting.html"><span class="n">05</span>会議の進め方</a>
     <a href="works.html"><span class="n">06</span>作ったもの</a>
+    <a href="price.html"><span class="n">07</span>料金表</a>
     <div class="menu-foot">
       <a class="m-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
       <a class="m-mail" href="contact.html">フォームで相談する</a>
@@ -263,6 +265,8 @@
     m.setAttribute('aria-hidden', !open);
   }
   b.addEventListener('click', function(){ set(!document.body.classList.contains('menu-open')); });
+  var c=document.getElementById('menuClose');
+  if(c) c.addEventListener('click', function(){ set(false); });
   m.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
   addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
 })();

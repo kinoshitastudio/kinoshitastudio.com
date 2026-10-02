@@ -46,6 +46,7 @@
 </header>
 
 <nav class="menu" id="menu" aria-hidden="true">
+  <button class="menu-close" id="menuClose" aria-label="メニューを閉じる"></button>
   <div class="menu-in">
     <a href="./"><span class="n">00</span>それ、なんとかなる？</a>
     <a href="web.html"><span class="n">01</span>ホームページ・ロゴ</a>
@@ -54,6 +55,7 @@
     <a href="consul.html"><span class="n">04</span>体験設計</a>
     <a href="meeting.html"><span class="n">05</span>会議の進め方</a>
     <a href="works.html"><span class="n">06</span>作ったもの</a>
+    <a href="price.html"><span class="n">07</span>料金表</a>
     <div class="menu-foot">
       <a class="m-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
       <a class="m-mail" href="contact.html">フォームで相談する</a>
@@ -166,12 +168,15 @@
     <div class="wrap">
       <h2 class="sec-title">料金のめやす</h2>
       <p class="sec-sub">サイズと枚数で変わります。まずは見積りを出します（無料）。</p>
+      <!-- 🔴 この表は price.html の「チラシ・ポスター・名刺」と【同じ内容】にすること -->
       <table class="price">
-        <tr><th>チラシ（片面）</th><td><span class="tbd">40,000円〜</span><small>両面は<span class="tbd">60,000円〜</span></small></td></tr>
-        <tr><th>ポスター</th><td><span class="tbd">100,000円〜</span><small>B2・B1</small></td></tr>
-        <tr><th>名刺</th><td><span class="tbd">30,000円〜</span><small></small></td></tr>
-        <tr><th>特急（<b class="tbd">3日</b>以内）</th><td><span class="tbd">＋＋30%</span><small></small></td></tr>
+        <tr><th>チラシ 片面（A4）</th><td><span class="tbd">19,800円〜</span><small>印刷所にそのまま出せるデータでお渡し</small></td></tr>
+        <tr><th>チラシ 両面</th><td><span class="tbd">29,800円〜</span><small></small></td></tr>
+        <tr><th>ポスター（B2・B1）</th><td><span class="tbd">39,800円〜</span><small>大きい紙でも作り方は同じです</small></td></tr>
+        <tr><th>名刺</th><td><span class="tbd">14,800円〜</span><small>両面。ロゴと一緒なら安くなります</small></td></tr>
+        <tr><th>急ぐとき（3日以内）</th><td><span class="tbd">＋30%</span><small>最短1日。文章と写真がそろっている場合</small></td></tr>
       </table>
+      <p class="p-link"><a href="price.html">ぜんぶの料金と「含まれないもの」を見る →</a></p>
     </div>
   </section>
 
@@ -231,6 +236,8 @@
     m.setAttribute('aria-hidden', !open);
   }
   b.addEventListener('click', function(){ set(!document.body.classList.contains('menu-open')); });
+  var c=document.getElementById('menuClose');
+  if(c) c.addEventListener('click', function(){ set(false); });
   m.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
   addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
 })();

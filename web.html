@@ -46,6 +46,7 @@
 </header>
 
 <nav class="menu" id="menu" aria-hidden="true">
+  <button class="menu-close" id="menuClose" aria-label="メニューを閉じる"></button>
   <div class="menu-in">
     <a href="./"><span class="n">00</span>それ、なんとかなる？</a>
     <a href="web.html"><span class="n">01</span>ホームページ・ロゴ</a>
@@ -54,6 +55,7 @@
     <a href="consul.html"><span class="n">04</span>体験設計</a>
     <a href="meeting.html"><span class="n">05</span>会議の進め方</a>
     <a href="works.html"><span class="n">06</span>作ったもの</a>
+    <a href="price.html"><span class="n">07</span>料金表</a>
     <div class="menu-foot">
       <a class="m-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
       <a class="m-mail" href="contact.html">フォームで相談する</a>
@@ -164,13 +166,17 @@
     <div class="wrap">
       <h2 class="sec-title">料金のめやす</h2>
       <p class="sec-sub">内容で変わります。まずは見積りを出します（無料）。</p>
+      <!-- 🔴 この表は price.html の「ホームページ・ロゴ」と【同じ内容】にすること。
+           片方だけ直すと、同じ会社なのに2つの値段が出ている状態になる -->
       <table class="price">
-        <tr><th>ホームページ</th><td><span class="tbd">80,000円〜</span><small>ページ数・機能で変わります</small></td></tr>
-        <tr><th>1枚のページ（LP）</th><td><span class="tbd">100,000円〜</span><small></small></td></tr>
-        <tr><th>ロゴ</th><td><span class="tbd">150,000円〜</span><small>名刺のデザイン込み</small></td></tr>
-        <tr><th>バナー・SNS素材</th><td><span class="tbd">10,000円〜</span><small>1サイズあたり</small></td></tr>
-        <tr><th>公開後の更新</th><td><span class="tbd">10,000円／月</span><small></small></td></tr>
+        <tr><th>ホームページ 1ページ</th><td><span class="tbd">19,800円</span><small>文章・写真はお持ちいただく。修正なし。スマホ対応込み</small></td></tr>
+        <tr><th>ホームページ 1ページ（相談しながら）</th><td><span class="tbd">49,800円</span><small>打ち合わせ1回・修正2回まで。文章の整理も手伝います</small></td></tr>
+        <tr><th>小さなホームページ（5ページまで）</th><td><span class="tbd">98,000円〜</span><small>会社案内・お店の紹介など。問い合わせフォーム込み</small></td></tr>
+        <tr><th>ロゴ</th><td><span class="tbd">49,800円〜</span><small>3案お出しして1つに。名刺のデザイン込み</small></td></tr>
+        <tr><th>バナー・SNSの画像</th><td><span class="tbd">5,000円〜</span><small>1枚あたり</small></td></tr>
+        <tr><th>公開したあとの更新</th><td><span class="tbd">5,000円／月</span><small>月1回まで。使わなかった月は請求しません</small></td></tr>
       </table>
+      <p class="p-link"><a href="price.html">ぜんぶの料金と「含まれないもの」を見る →</a></p>
     </div>
   </section>
 
@@ -229,6 +235,8 @@
     m.setAttribute('aria-hidden', !open);
   }
   b.addEventListener('click', function(){ set(!document.body.classList.contains('menu-open')); });
+  var c=document.getElementById('menuClose');
+  if(c) c.addEventListener('click', function(){ set(false); });
   m.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
   addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
 })();
