@@ -54,6 +54,7 @@ img{ max-width:100%; display:block }
 .btn:hover{ transform:translateY(-1px) }
 .btn-line{ background:#06c755; color:#fff }
 .btn-ink{ background:var(--ink); color:#fff }
+.btn-accent{ background:var(--accent); color:#fff }
 .btn-ghost{ border:1.5px solid currentColor }
 .btn-sm{ min-height:38px; padding:0 16px; font-size:13px }
 
@@ -179,6 +180,10 @@ br.sp-br{ display:none }
   .stage-notes{ grid-template-columns:1fr; margin-top:18px }
   .stage-notes li{ padding:16px 0 0 }
 }
+/* 舞台を見終わったところで、サービスの説明へ送る */
+.stage-cta{ margin:34px 0 0; display:flex; justify-content:center }
+.stage-cta .btn{ min-height:56px; padding:0 32px; font-size:15px; font-weight:800; font-family:var(--jp) }
+@media (max-width:560px){ .stage-cta .btn{ width:100%; padding:0 18px } }
 a.say:hover{ color:var(--accent) }
 
 /* 大きな字（参考の「得」）＝青いベタ */
