@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本チラシ2（求人・グリーン）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#0a7a44;
+    --green-d:#065a31;
+    --light:#92d14f;
+    --cream:#f6f8f1;
+    --ink:#12241a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP',sans-serif }
+
+  .a4{
+    width:1240px; height:1754px; position:relative; overflow:hidden;
+    background:var(--cream); color:var(--ink); margin:0 auto 40px;
+  }
+
+  /* 上の緑の面 */
+  .top{
+    position:absolute; left:0; top:0; width:100%; height:1540px;
+    background:linear-gradient(150deg, var(--green) 40%, var(--green-d));
+    overflow:hidden;
+  }
+  /* ライトグリーンの大きな円。右上から差し込む */
+  .top::after{
+    content:''; position:absolute; right:-180px; top:-300px;
+    width:820px; height:820px; border-radius:50%;
+    background:var(--light); opacity:.92;
+  }
+  /* 円の上に乗る見出しを読ませるため、左下へ向けて緑を戻す */
+  .top::before{
+    content:''; position:absolute; inset:0; z-index:1;
+    background:linear-gradient(115deg, var(--green) 44%, transparent 72%);
+  }
+  /* 左下にもう一枚。中央の余白が「ただの空き」にならないようにする */
+  .wedge{
+    position:absolute; left:-260px; bottom:-300px; z-index:1;
+    width:1000px; height:1000px; border-radius:50%;
+    background:var(--green-d); opacity:.55;
+  }
+  .wedge2{
+    position:absolute; right:-120px; bottom:120px; z-index:1;
+    width:440px; height:440px; border-radius:50%;
+    border:2px solid rgba(146,209,79,.45);
+  }
+
+  .inner{ position:absolute; inset:0; z-index:3; padding:84px 90px 0 }
+
+  .eyebrow{ font-size:19px; font-weight:700; letter-spacing:.16em; color:#fff }
+  .eyebrow + .bar{ width:150px; height:5px; background:var(--light); margin:22px 0 56px }
+
+  h1{
+    font-weight:900; font-size:116px; line-height:1.18; letter-spacing:-.045em;
+    color:#fff; font-feature-settings:'palt';
+  }
+  /* ライトグリーンの帯で一言。文字は濃い緑で抜く */
+  .chip{
+    display:inline-block; margin-top:46px; background:var(--light); color:var(--ink);
+    font-weight:900; font-size:38px; letter-spacing:-.02em; padding:16px 30px 20px;
+  }
+  .note{ margin-top:36px; font-size:25px; line-height:2.05; color:rgba(255,255,255,.9); font-weight:500 }
+
+  /* 下＝条件を3つだけ */
+  .cond{
+    position:absolute; left:90px; right:90px; top:1182px; z-index:3;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+  }
+  .cond div{ padding-right:40px }
+  .cond div + div{ padding-left:40px; border-left:1px solid rgba(255,255,255,.26) }
+  .cond dt{
+    font-size:17px; font-weight:800; letter-spacing:.18em; color:var(--light);
+    padding-bottom:16px; border-bottom:3px solid var(--light); margin-bottom:22px;
+  }
+  .cond .v{ font-family:'Inter',sans-serif; font-weight:900; font-size:74px; letter-spacing:-.04em; line-height:1; color:#fff }
+  .cond .v em{ font-style:normal; font-family:'Noto Sans JP',sans-serif; font-size:28px; font-weight:800; margin-left:8px; color:var(--light) }
+  .cond .s{ margin-top:18px; font-size:17px; color:rgba(255,255,255,.78); font-weight:500 }
+
+  /* 足もと */
+  .foot{
+    position:absolute; left:0; right:0; bottom:0; height:214px; z-index:3;
+    background:var(--cream); color:var(--ink); padding:44px 90px 0;
+  }
+  .foot .line{ font-size:25px; font-weight:800; letter-spacing:.01em }
+  .foot .tel{
+    font-family:'Inter',sans-serif; font-weight:900; font-size:66px; letter-spacing:-.03em;
+    color:var(--green); margin-top:14px; line-height:1;
+  }
+  .foot .addr{ position:absolute; right:90px; bottom:56px; text-align:right;
+    font-size:16px; line-height:1.9; color:#5c6b60 }
+  .self{ position:absolute; left:90px; top:1126px; z-index:4;
+    font-size:13px; letter-spacing:.14em; color:rgba(255,255,255,.42) }
+</style>
+</head>
+<body>
+
+<div class="a4" id="sheet">
+  <div class="top">
+    <div class="wedge"></div>
+    <div class="wedge2"></div>
+    <div class="inner">
+      <p class="eyebrow">湖東鉄工所　2026年度 社員募集</p>
+      <div class="bar"></div>
+      <h1>ここで、<br>長く働きませんか。</h1>
+      <p class="chip">未経験から、平均7年。</p>
+      <p class="note">図面も、機械も、入ってから覚えた人ばかりです。<br>
+         教える人が、となりにいます。</p>
+    </div>
+  </div>
+
+  <p class="self">自主制作 / Kinoshita Studio</p>
+
+  <div class="cond">
+    <div>
+      <dt>時 給</dt>
+      <p class="v">1,150<em>円〜</em></p>
+      <p class="s">経験と資格で加算します</p>
+    </div>
+    <div>
+      <dt>勤務時間</dt>
+      <p class="v">8:30<em>-17:30</em></p>
+      <p class="s">残業は月10時間ほど</p>
+    </div>
+    <div>
+      <dt>休 み</dt>
+      <p class="v">121<em>日/年</em></p>
+      <p class="s">土日祝・夏季・年末年始</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p class="line">見学だけでも大丈夫です。まずはお電話ください。</p>
+    <p class="tel">077-000-0000</p>
+    <p class="addr">湖東鉄工所　採用係<br>滋賀県東近江市 五個荘1-2-3</p>
+  </div>
+</div>
+
+</body>
+</html>

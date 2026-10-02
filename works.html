@@ -28,7 +28,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"困りごと窓口","item":"https://kinoshitastudio.com/"},{"@type":"ListItem","position":2,"name":"作ったもの","item":"https://kinoshitastudio.com/works.html"}]}
 </script>
-<link rel="stylesheet" href="style.css?v=1003c">
+<link rel="stylesheet" href="style.css?v=1003d">
 <script defer src="/js/analytics.js"></script>
 <style>
   /* ── 作ったもの一覧 ── 色は 青・黒・白・LINEの緑 の4つだけ ── */
@@ -42,8 +42,8 @@
   .wk-filter{ display:flex; gap:8px; flex-wrap:wrap; padding:26px 0 0;
     border-top:3px solid var(--ink); margin-top:26px }
   .wk-filter button{
-    font-family:'Inter',sans-serif; font-weight:600; font-size:11px; letter-spacing:.14em;
-    text-transform:uppercase; padding:9px 15px; border:1px solid var(--ink);
+    font-family:var(--jp); font-weight:700; font-size:13px; letter-spacing:.02em;
+    padding:10px 17px; border:1px solid var(--ink);
     background:transparent; color:var(--ink); border-radius:999px; cursor:pointer;
     transition:background .2s,color .2s;
   }
@@ -132,11 +132,11 @@
 
     <div class="wk-filter" id="filter">
       <button class="on" data-f="all">すべて</button>
-      <button data-f="web">Website</button>
-      <button data-f="poster">Poster</button>
-      <button data-f="flyer">Flyer</button>
-      <button data-f="logo">Logo</button>
-      <button data-f="type">Typography</button>
+      <button data-f="web">ホームページ</button>
+      <button data-f="logo">ロゴ・看板</button>
+      <button data-f="flyer">チラシ・会社案内</button>
+      <button data-f="poster">ポスター</button>
+      <button data-f="type">文字をつくる</button>
     </div>
   </div>
 
@@ -183,39 +183,40 @@
 
 <script>
 const WORKS = [
-  // Website
+  // ホームページ（業種が分かるものから）
   ['work-yataimura','飲食・エンタメ｜屋台村','web'],
+  ['work-industry','工業｜金属加工','web'],
   ['work-welfare','福祉業｜就労継続支援','web'],
   ['work-rincars','自動車製造業','web'],
-  ['work-industry','工業｜金属加工','web'],
-  ['work-manjuya','飲食業','web'],
-  ['work-photo','写真撮影業','web'],
-  ['work-bicycle','自転車業','web'],
   ['work-reform','リフォーム業','web'],
+  ['work-manjuya','飲食業','web'],
   ['work-restaurant','飲食業','web'],
   ['work-french','飲食業','web'],
-  // Poster
-  ['img-poster-mshalo','MS.HALO','poster'],
-  ['img-poster-scratch','スクラッチ','poster'],
-  ['img-poster-amberhour','アンバーアワー','poster'],
-  ['img-poster-hajimarinoiro','ハジマリノイロ','poster'],
-  ['img-poster-minamo','みなも兄弟','poster'],
-  ['img-poster-minamo-2','みなも兄弟','poster'],
-  ['img-poster-advinder','ADVINDER（自主制作）','poster'],
-  ['img-poster-advinder-2','ADVINDER（自主制作）','poster'],
-  // Flyer
-  ['img-flyer-strawberry','ストロベリーマツリ','flyer'],
-  ['img-flyer-awapack','会社案内','flyer'],
-  ['img-flyer-sound','Sound and Interaction','flyer'],
-  ['img-flyer-poster','ブランドポスター','flyer'],
-  ['img-flyer-kinoshita','Zine／ブランドブック','flyer'],
-  // Logo
-  ['jutaku-home-mockups','住宅・不動産｜ロゴ展開','logo'],
-  ['jutaku-home-logo','住宅・不動産｜ロゴ','logo'],
+  ['work-bicycle','自転車業','web'],
+  ['work-photo','写真撮影業','web'],
+  // ロゴ・看板（会社の顔）
+  ['jutaku-home-mockups','住宅・不動産｜看板・のぼり','logo'],
   ['jutaku-home-signs','住宅・不動産｜サイン計画','logo'],
-  ['advinder-logo','ADVINDER｜ロゴ（自主制作）','logo'],
-  ['advinder-logo-poster','ADVINDER｜展開（自主制作）','logo'],
-  // Typography
+  ['jutaku-home-logo','住宅・不動産｜ロゴ','logo'],
+  ['advinder-logo','クリニック｜ロゴ（自主制作）','logo'],
+  ['advinder-logo-poster','クリニック｜展開（自主制作）','logo'],
+  // チラシ・会社案内
+  ['img-flyer-awapack','製造業｜会社案内','flyer'],
+  ['img-flyer-poster','ブランドポスター','flyer'],
+  ['img-flyer-strawberry','イベント告知','flyer'],
+  ['img-flyer-sound','展示の告知','flyer'],
+  ['img-flyer-kinoshita','Zine／ブランドブック','flyer'],
+  // ポスター
+  ['img-poster-advinder','クリニック（自主制作）','poster'],
+  ['img-poster-advinder-2','クリニック（自主制作）','poster'],
+  ['img-poster-hajimarinoiro','映画','poster'],
+  ['img-poster-mshalo','映画','poster'],
+  ['img-poster-amberhour','映画','poster'],
+  ['img-poster-scratch','映画','poster'],
+  ['img-poster-minamo','音楽','poster'],
+  ['img-poster-minamo-2','音楽','poster'],
+  // 文字をつくる
+  ['logo-ha-lettering','レタリング｜刃','type'],
   ['rescueme','切り貼り｜RESCUE ME','type'],
   ['rescueme2','切り貼り｜RESCUE ME','type'],
   ['rescueme3','切り貼り｜RESCUE ME','type'],
@@ -223,9 +224,8 @@ const WORKS = [
   ['orenihakankeinai2','切り貼り｜俺には関係ない','type'],
   ['koegakikoeteru','切り貼り｜声が聞こえてる','type'],
   ['koegakikoeteru2','切り貼り｜声が聞こえてる','type'],
-  ['logo-ha-lettering','レタリング｜刃','type'],
 ];
-const CAT={web:'Website',poster:'Poster',flyer:'Flyer',logo:'Logo',type:'Typography'};
+const CAT={web:'ホームページ',poster:'ポスター',flyer:'チラシ・会社案内',logo:'ロゴ・看板',type:'文字をつくる'};
 const grid=document.getElementById('grid');
 grid.innerHTML = WORKS.map(([f,t,c])=>
   `<figure class="wk" data-c="${c}">

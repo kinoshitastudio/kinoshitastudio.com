@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本チラシをつくる（この1枚から書き出す・公開には使わない）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0d1f3c;        /* 濃紺。参考より少し深く取る */
+    --navy-2:#13294f;
+    --paper:#fff;
+    --gold:#e8c84a;
+    --rule:rgba(255,255,255,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP',sans-serif }
+
+  /* A4 縦 210×297mm ＝ 比 0.707。画面用に 1240×1754 */
+  .a4{
+    width:1240px; height:1754px; position:relative; overflow:hidden;
+    background:var(--navy); color:#fff; margin:0 auto 40px;
+  }
+
+  /* ── 写真の面。🔴 ここを <img> に差し替える。いまは紺の面で代用 ── */
+  .photo{
+    position:absolute; left:0; top:0; width:58%; height:1480px;
+    background:
+      radial-gradient(120% 90% at 30% 25%, rgba(255,255,255,.10), transparent 60%),
+      linear-gradient(160deg, var(--navy-2), var(--navy) 70%);
+  }
+  .photo img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block }
+  /* 写真が無いときだけ出る目印 */
+  .photo:empty::after{
+    content:'写真が入ります\A（Midjourney・左寄せ構図）';
+    white-space:pre; position:absolute; left:48px; bottom:48px;
+    font-size:15px; line-height:1.9; letter-spacing:.08em; color:rgba(255,255,255,.4);
+  }
+  /* 写真と紺地の境目を溶かす。切り抜きに見せない */
+  .photo::before{
+    content:''; position:absolute; inset:0; z-index:2; pointer-events:none;
+    background:linear-gradient(90deg, transparent 60%, var(--navy));
+  }
+
+  /* ── 上の名乗り ── */
+  .eyebrow{
+    position:absolute; left:64px; top:56px; z-index:3;
+    font-size:17px; line-height:1.9; letter-spacing:.06em; font-weight:500;
+    color:rgba(255,255,255,.88);
+  }
+  .eyebrow b{ display:block; font-weight:700; font-size:19px; letter-spacing:.04em }
+
+  /* ── 右の縦組み。🔴 1列ずつ独立した要素にする（縦組みでは nowrap が効かない） ── */
+  .vtype{ position:absolute; left:860px; width:316px; top:88px; z-index:3; display:flex; justify-content:flex-end; gap:20px }
+  .vtype div{
+    writing-mode:vertical-rl; font-family:'Noto Serif JP',serif; font-weight:600;
+    font-feature-settings:'palt'; line-height:1;
+  }
+  .vtype .lead{ font-size:96px; letter-spacing:.06em }
+  .vtype .sub{ font-size:30px; letter-spacing:.14em; color:rgba(255,255,255,.82);
+    font-weight:500; margin-top:6px }
+
+  /* ── 日時まわり。4行だけ。参考のスケジュール欄は入れない ── */
+  .meta{
+    position:absolute; right:64px; top:880px; z-index:3; width:430px;
+    border-top:1px solid var(--rule); padding-top:26px;
+  }
+  .meta .day{
+    font-family:'Inter',sans-serif; font-weight:800; font-size:40px; letter-spacing:-.01em;
+    margin-bottom:22px;
+  }
+  .meta .day em{ font-style:normal; font-family:'Noto Sans JP',sans-serif; font-size:26px; font-weight:700; margin-left:10px }
+  .meta dl{ display:grid; grid-template-columns:auto 1fr; gap:14px 20px; align-items:baseline }
+  .meta dt{ font-size:15px; letter-spacing:.2em; color:rgba(255,255,255,.62); font-weight:500 }
+  .meta dd{ font-size:20px; font-weight:700; letter-spacing:.02em }
+  .meta dd small{ font-size:14px; font-weight:400; color:rgba(255,255,255,.7); margin-left:6px }
+
+  /* ── 下の英字。面を締める ── */
+  .big-date{
+    position:absolute; left:0; right:0; bottom:214px; z-index:3; padding:0 60px;
+    font-family:'Inter',sans-serif; font-weight:900; font-size:74px; line-height:1;
+    letter-spacing:-.035em; white-space:nowrap;
+  }
+
+  /* ── 白帯＝申し込み ── */
+  .foot{
+    position:absolute; left:0; right:0; bottom:0; height:190px; z-index:4;
+    background:var(--paper); color:var(--navy);
+    display:grid; grid-template-columns:auto 1px 1fr auto; align-items:center;
+    gap:40px; padding:0 60px;
+  }
+  .foot .apply{ font-family:'Noto Serif JP',serif; font-weight:700; font-size:30px; line-height:1.4 }
+  .foot .apply span{ display:block; font-family:'Noto Sans JP',sans-serif; font-weight:500;
+    font-size:13px; letter-spacing:.1em; color:#5a6475; margin-top:8px }
+  .foot .bar{ width:1px; height:104px; background:rgba(13,31,60,.18) }
+  .foot .who{ font-size:15px; line-height:2 }
+  .foot .who b{ font-size:17px }
+  .foot .free{
+    width:118px; height:118px; border-radius:50%; background:var(--gold); color:var(--navy);
+    display:grid; place-items:center; text-align:center; font-weight:900; font-size:21px;
+    line-height:1.35; letter-spacing:.02em; font-family:'Noto Sans JP',sans-serif;
+  }
+  /* 自主制作であることを隠さない */
+  .self{
+    position:absolute; left:60px; bottom:196px; z-index:5;
+    font-size:11px; letter-spacing:.14em; color:rgba(255,255,255,.45);
+  }
+</style>
+</head>
+<body>
+
+<div class="a4" id="sheet">
+  <!-- 🔴 写真が出来たら、この div の中に <img src="..."> を入れる -->
+  <div class="photo"><img src="/tmp/portrait.jpg" alt=""></div>
+
+  <p class="eyebrow">びわこ経営サポート協議会<b>はたらく人の定着セミナー 2026</b></p>
+
+  <div class="vtype">
+    <div class="lead">人が、辞めない会社へ。</div>
+    <div class="sub">定着率を上げる、現場のつくり方</div>
+  </div>
+
+  <div class="meta">
+    <p class="day">2026.11.20<em>金</em></p>
+    <dl>
+      <dt>時 間</dt><dd>14:00 〜 16:00</dd>
+      <dt>会 場</dt><dd>オンライン<small>Zoom</small></dd>
+      <dt>定 員</dt><dd>40名<small>先着順</small></dd>
+      <dt>対 象</dt><dd>経営者・採用のご担当者</dd>
+    </dl>
+  </div>
+
+  <p class="big-date">2026.11.20 ONLINE SEMINAR</p>
+  <p class="self">自主制作 / Kinoshita Studio</p>
+
+  <div class="foot">
+    <p class="apply">お申込は<br>こちらから<span>締切 11月18日（水）正午</span></p>
+    <div class="bar"></div>
+    <p class="who"><b>主催：びわこ経営サポート協議会</b><br>
+      お問い合わせ 077-000-0000（平日 9:00〜18:00）／ teichaku@biwako-keiei.example.jp</p>
+    <div class="free">参加<br>無料</div>
+  </div>
+</div>
+
+</body>
+</html>
