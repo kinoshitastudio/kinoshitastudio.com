@@ -665,3 +665,13 @@ body.menu-open .menu-foot{ opacity:1 }
 .menu-foot .m-line:hover,.menu-foot .m-mail:hover{ color:#fff; opacity:.84 }
 .menu-foot p{ width:100%; margin:6px 0 0; color:rgba(255,255,255,.45); font-size:12px;
   font-family:'Inter',sans-serif; letter-spacing:.08em }
+
+/* 金額に添える（税抜）。本体より小さく、折り返さない */
+.tax{
+  font-family:var(--jp); font-size:.6em; font-weight:500; letter-spacing:.02em;
+  color:var(--ink-sub); margin-left:.3em; white-space:nowrap;
+}
+.price td .tax, .cmp td .tax{ font-size:12px; display:inline }
+.price-flash b .tax{ font-size:.26em; margin-left:.4em; color:var(--ink-sub) }
+.frame .tax, .flow .tax{ font-size:.72em }
+section.dark .tax, .on-dark .tax{ color:var(--dark-sub) }
