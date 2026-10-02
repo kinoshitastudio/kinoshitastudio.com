@@ -38,9 +38,30 @@
   <div class="wrap">
     <div class="head-l">会社の困りごと窓口<b>SHIGA, JAPAN</b></div>
     <a class="head-c" href="./">Kinoshita Studio<span>.</span></a>
-    <div class="head-r"><a class="btn btn-line btn-sm" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談</a></div>
+    <div class="head-r"><a class="btn btn-line btn-sm" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談</a>
+      <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span>
+      </button></div>
   </div>
 </header>
+
+<nav class="menu" id="menu" aria-hidden="true">
+  <div class="menu-in">
+    <a href="./"><span class="n">00</span>それ、なんとかなる？</a>
+    <a href="web.html"><span class="n">01</span>ホームページ・ロゴ</a>
+    <a href="flyer.html"><span class="n">02</span>チラシ・ポスター</a>
+    <a href="docs.html"><span class="n">03</span>社内資料</a>
+    <a href="consul.html"><span class="n">04</span>体験設計</a>
+    <a href="meeting.html"><span class="n">05</span>会議の進め方</a>
+    <a href="works.html"><span class="n">06</span>作ったもの</a>
+    <div class="menu-foot">
+      <a class="m-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
+      <a class="m-mail" href="contact.html">フォームで相談する</a>
+      <p>080-4019-6535 ／ 滋賀県</p>
+    </div>
+  </div>
+</nav>
+
 
 <main>
   <div class="svc-hero">
@@ -73,6 +94,16 @@
       </ol>
     </div>
   </section>
+  <section class="face">
+    <div class="face-grid">
+      <div class="face-in">
+        <p class="q">「どこから直せばいいか分からない」</p>
+        <p class="a">そのままで大丈夫です。見るところは決まっています。</p>
+      </div>
+      <figure><img src="img/p/p-web.webp" alt="" aria-hidden="true" loading="lazy"></figure>
+    </div>
+  </section>
+
 
 
   <section>
@@ -173,7 +204,7 @@
       <p>「何を頼めばいいか分からない」でも大丈夫です。返事は<span class="tbd">24時間以内</span>。</p>
       <div class="cta">
         <a class="btn btn-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
-        <a class="btn btn-ghost" href="mailto:hello@kinoshitastudio.com?subject=ホームページの相談">メールで相談する</a>
+        <a class="btn btn-ghost" href="contact.html">フォームで相談する</a>
       </div>
       <div class="sub">電話 <a href="tel:08040196535">080-4019-6535</a>　／　作品は <a href="https://kinoshita.studio/" target="_blank" rel="noopener">kinoshita.studio</a></div>
     </div>
@@ -187,5 +218,20 @@
   </div>
   <div class="wrap"><span>© Kinoshita Studio　滋賀県</span><a href="https://kinoshita.studio/privacy.html">個人情報の取り扱い</a></div>
 </footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'), m=document.getElementById('menu');
+  if(!b||!m) return;
+  function set(open){
+    document.body.classList.toggle('menu-open', open);
+    b.setAttribute('aria-expanded', open);
+    m.setAttribute('aria-hidden', !open);
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('menu-open')); });
+  m.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+})();
+</script>
 </body>
 </html>

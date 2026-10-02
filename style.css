@@ -227,6 +227,35 @@ section.dark .sec-sub{ color:var(--dark-sub) }
 }
 .case-hero a:hover{ background:#fff; color:var(--accent) }
 
+
+/* 困りごとの顔 ── 写真と言葉を【左右に分ける】。顔の上に字を乗せない */
+.face{ background:#0b0b0b; color:#fff; overflow:hidden }
+.face .face-grid{
+  max-width:1120px; margin:0 auto; display:grid;
+  grid-template-columns:1fr 1fr; align-items:stretch; gap:0;
+}
+.face-in{
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(40px,5vw,72px) clamp(24px,3.4vw,48px);
+}
+.face .q{
+  font-family:var(--jp); font-weight:900; color:#fff; margin:0 0 18px;
+  font-size:clamp(23px,2.9vw,40px); line-height:1.32; letter-spacing:-.04em;
+}
+.face .a{
+  margin:0; color:var(--accent); font-family:var(--jp); font-weight:700;
+  font-size:clamp(13px,1.3vw,17px); line-height:1.75; letter-spacing:-.02em;
+  background:#fff; display:inline-block; padding:.5em .85em; align-self:flex-start;
+}
+.face figure{ margin:0; position:relative; min-height:clamp(280px,34vw,440px) }
+.face img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30% }
+@media (max-width:760px){
+  .face .face-grid{ grid-template-columns:1fr }
+  .face figure{ order:-1; min-height:260px }
+  .face-in{ padding:32px 20px 40px }
+}
+
+
 .frame-sec{ padding:56px 0 8px }
 .frame{
   display:grid; grid-template-columns:repeat(4,1fr); gap:0;
@@ -382,3 +411,76 @@ section.dark .flow b{ color:#fff }
 
 /* 注（※） */
 .note{ display:block; font-family:var(--jp); font-weight:500; font-size:max(11px,.36em); line-height:1.7; letter-spacing:0; color:var(--ink-sub); margin-top:.6em; white-space:normal; max-width:24em }
+
+/* 🔴 iOSの自動ズームを止める ── viewportの maximum-scale では止まらない。
+   　 iOSが寄るのは【文字を打つ欄の字が16px未満のとき】だけなので、16pxにする。
+   　 つまみ・色・チェック・ファイルは寄らないので触らない（見た目を変えないため）。
+   　 @media の中だけなので PC には1画素も効かない。 */
+@media (max-width:760px), (pointer:coarse) and (max-width:1024px){
+  input:not([type=range]):not([type=color]):not([type=checkbox]):not([type=radio]):not([type=file]):not([type=button]),
+  select, textarea{ font-size:16px !important; }
+}
+
+/* ── ハンバーガー ── 線2本だけ。開くと×になる ── */
+.burger{
+  width:44px; height:44px; border:0; background:transparent; cursor:pointer;
+  display:none; position:relative; margin-left:10px; padding:0; z-index:60;
+}
+.burger span{
+  position:absolute; left:11px; width:22px; height:2px; background:var(--ink);
+  transition:transform .32s cubic-bezier(.2,.8,.2,1), opacity .2s;
+}
+.burger span:nth-child(1){ top:18px } .burger span:nth-child(2){ top:25px }
+body.menu-open .burger span{ background:#fff }
+body.menu-open .burger span:nth-child(1){ transform:translateY(3.5px) rotate(45deg) }
+body.menu-open .burger span:nth-child(2){ transform:translateY(-3.5px) rotate(-45deg) }
+@media (max-width:860px){ .burger{ display:block } .head-r .btn{ display:none } }
+
+/* ── 開いた面 ── 黒ベタに特大の和字。番号はInterで小さく ── */
+.menu{
+  position:fixed; inset:0; z-index:50; background:#0b0b0b;
+  opacity:0; pointer-events:none; transition:opacity .34s ease;
+  overflow-y:auto; -webkit-overflow-scrolling:touch;
+}
+body.menu-open{ overflow:hidden }
+body.menu-open .menu{ opacity:1; pointer-events:auto }
+.menu-in{ min-height:100%; display:flex; flex-direction:column; justify-content:center;
+  padding:92px clamp(20px,6vw,56px) 44px; max-width:860px; margin:0 auto }
+.menu a{
+  display:flex; align-items:baseline; gap:clamp(12px,2.4vw,22px);
+  font-family:var(--jp); font-weight:900; color:#fff; text-decoration:none;
+  font-size:clamp(28px,7.6vw,60px); line-height:1.18; letter-spacing:-.05em;
+  padding:clamp(8px,1.4vw,14px) 0;
+  opacity:0; transform:translateY(14px);
+  transition:color .2s, transform .5s cubic-bezier(.2,.8,.2,1), opacity .5s;
+}
+body.menu-open .menu a{ opacity:1; transform:none }
+body.menu-open .menu a:nth-child(1){ transition-delay:.06s }
+body.menu-open .menu a:nth-child(2){ transition-delay:.10s }
+body.menu-open .menu a:nth-child(3){ transition-delay:.14s }
+body.menu-open .menu a:nth-child(4){ transition-delay:.18s }
+body.menu-open .menu a:nth-child(5){ transition-delay:.22s }
+body.menu-open .menu a:nth-child(6){ transition-delay:.26s }
+body.menu-open .menu a:nth-child(7){ transition-delay:.30s }
+.menu a:hover{ color:var(--accent) }
+.menu .n{
+  font-family:'Inter',sans-serif; font-weight:600; font-size:clamp(10px,1.5vw,13px);
+  letter-spacing:.2em; color:rgba(255,255,255,.4); flex:none;
+}
+.menu-foot{
+  margin-top:clamp(28px,5vw,52px); padding-top:clamp(20px,3vw,30px);
+  border-top:1px solid rgba(255,255,255,.18);
+  display:flex; flex-wrap:wrap; gap:12px; align-items:center;
+  opacity:0; transition:opacity .5s .36s;
+}
+body.menu-open .menu-foot{ opacity:1 }
+.menu-foot a{
+  font-family:'Inter',sans-serif; font-weight:700; font-size:12px; letter-spacing:.1em;
+  padding:13px 22px; border-radius:999px; text-decoration:none; opacity:1; transform:none;
+  display:inline-flex;
+}
+.menu-foot .m-line{ background:#06C755; color:#fff }
+.menu-foot .m-mail{ background:var(--accent); color:#fff }
+.menu-foot .m-line:hover,.menu-foot .m-mail:hover{ color:#fff; opacity:.84 }
+.menu-foot p{ width:100%; margin:6px 0 0; color:rgba(255,255,255,.45); font-size:12px;
+  font-family:'Inter',sans-serif; letter-spacing:.08em }

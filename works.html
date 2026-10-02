@@ -96,6 +96,24 @@
   </div>
 </header>
 
+<nav class="menu" id="menu" aria-hidden="true">
+  <div class="menu-in">
+    <a href="./"><span class="n">00</span>それ、なんとかなる？</a>
+    <a href="web.html"><span class="n">01</span>ホームページ・ロゴ</a>
+    <a href="flyer.html"><span class="n">02</span>チラシ・ポスター</a>
+    <a href="docs.html"><span class="n">03</span>社内資料</a>
+    <a href="consul.html"><span class="n">04</span>体験設計</a>
+    <a href="meeting.html"><span class="n">05</span>会議の進め方</a>
+    <a href="works.html"><span class="n">06</span>作ったもの</a>
+    <div class="menu-foot">
+      <a class="m-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
+      <a class="m-mail" href="contact.html">フォームで相談する</a>
+      <p>080-4019-6535 ／ 滋賀県</p>
+    </div>
+  </div>
+</nav>
+
+
 <main>
   <div class="wrap wk-head">
     <p class="tag">Works / 作ったもの</p>
@@ -208,6 +226,21 @@ document.getElementById('filter').addEventListener('click',e=>{
   document.querySelectorAll('.wk').forEach(w=>
     w.classList.toggle('is-hide', f!=='all' && w.dataset.c!==f));
 });
+</script>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'), m=document.getElementById('menu');
+  if(!b||!m) return;
+  function set(open){
+    document.body.classList.toggle('menu-open', open);
+    b.setAttribute('aria-expanded', open);
+    m.setAttribute('aria-hidden', !open);
+  }
+  b.addEventListener('click', function(){ set(!document.body.classList.contains('menu-open')); });
+  m.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
+  addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+})();
 </script>
 </body>
 </html>
