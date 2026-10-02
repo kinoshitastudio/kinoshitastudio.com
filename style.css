@@ -40,7 +40,9 @@ img{ max-width:100%; display:block }
 /* 左上の名乗り＝「それナル」。和文なので書体は本文と同じものを使う */
 .head-c{ font-family:var(--jp); font-weight:900; font-size:58px; line-height:1; letter-spacing:-.05em; text-decoration:none; white-space:nowrap; color:var(--ink) }
 .head-c span{ color:var(--accent) }
-.head-r{ justify-self:end }
+/* 🔴 三本線とボタンを【1行に固定】する。名乗りを大きくすると中央列が広がって
+   右列が狭くなり、折り返して三本線がボタンの下に落ちる */
+.head-r{ justify-self:end; display:flex; align-items:center; gap:10px; flex-wrap:nowrap; white-space:nowrap }
 @media (max-width:720px){
   .site-head .wrap{ grid-template-columns:1fr auto; height:58px }
   .head-l{ display:none }
@@ -95,6 +97,10 @@ img{ max-width:100%; display:block }
   font-family:var(--jp); font-weight:500; font-size:clamp(11px,1.2vw,14px);
   color:var(--ink-sub); line-height:1.6;
 }
+/* 表紙の高さを増やさずに入口を1つ足す。舞台は aspect-ratio で位置が決まっているので、
+   ここに行を増やすと下の舞台と重なる */
+.price-flash .cond-link{ font-weight:800; color:var(--accent); text-decoration:none; white-space:nowrap }
+.price-flash .cond-link:hover{ text-decoration:underline }
 /* 🔴 これが無いと「1ページ／修正なし」が金額の横に回り込み、
    「し」1文字だけが次の行に落ちる */
 @media (max-width:560px){
@@ -377,6 +383,20 @@ section.dark .sec-sub{ color:var(--dark-sub) }
 /* スマホの画面は縦長なので、原寸で並べると画面を埋めてしまう。幅を抑える */
 .case-shot.sp img{ max-width:300px; margin:0 auto }
 .case-shot.sp figcaption{ text-align:center }
+/* 2つを並べて比べる表。左の列（それナル）に薄い青地を敷いて、どちらの話か迷わせない */
+.cmp{ width:100%; border-collapse:collapse; margin-top:6px }
+.cmp th,.cmp td{ padding:18px 16px; border-bottom:1px solid var(--line-soft); text-align:left; vertical-align:top; font-size:15px; line-height:1.8 }
+.cmp th{ width:22%; font-family:var(--jp); font-weight:800; color:var(--ink-sub); font-size:13px }
+.cmp td{ width:39% }
+.cmp td.a{ background:rgba(31,60,255,.06) }
+.cmp tr:first-child td{ font-family:var(--jp); font-weight:900; font-size:18px; letter-spacing:-.02em; border-bottom:2px solid var(--ink) }
+.cmp tr:first-child td.a{ color:var(--accent) }
+.cmp td small{ display:block; font-family:'Inter',var(--jp); font-weight:600; font-size:11px; letter-spacing:.06em; color:var(--ink-sub); margin-top:5px }
+@media (max-width:620px){
+  .cmp th,.cmp td{ padding:13px 9px; font-size:13px }
+  .cmp tr:first-child td{ font-size:14px }
+  .cmp th{ width:26% }
+}
 .p-link{ margin:24px 0 0; font-size:14px }
 .p-link a{ font-family:var(--jp); font-weight:800; color:var(--accent); text-decoration:none }
 .p-link a:hover{ text-decoration:underline }
@@ -517,7 +537,7 @@ section.dark .flow b{ color:#fff }
 /* ── ハンバーガー ── 線2本だけ。開くと×になる ── */
 .burger{
   width:44px; height:44px; border:0; background:transparent; cursor:pointer;
-  display:block; position:relative; margin-left:14px; padding:0; z-index:60;
+  display:block; position:relative; margin:0; padding:0; z-index:60; flex:0 0 44px;
 }
 .burger span{
   position:absolute; left:11px; width:22px; height:2px; background:var(--ink);
