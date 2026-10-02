@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>OG画像をつくる（この1枚から書き出す・公開には使わない）</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{ --ink:#0b0b0b; --sub:#5f5f5f; --accent:#1f3cff; --bg:#fff }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#ddd; padding:30px; font-family:'Noto Sans JP',sans-serif }
+
+  /* 1200×630 ＝ OG画像の標準 */
+  .og{
+    width:1200px; height:630px; background:var(--bg); color:var(--ink);
+    position:relative; overflow:hidden; margin:0 0 30px;
+    display:flex; flex-direction:column; justify-content:center;
+    padding:0 92px;
+    /* サイトと同じドットの地 */
+    background-image:radial-gradient(rgba(0,0,0,.09) 1px, transparent 1px);
+    background-size:16px 16px;
+  }
+  .og .tag{
+    font-family:'Inter',sans-serif; font-weight:600; font-size:19px;
+    letter-spacing:.2em; text-transform:uppercase; color:var(--sub);
+    margin-bottom:26px;
+  }
+  .og h1{
+    font-family:'Noto Sans JP',sans-serif; font-weight:900;
+    font-size:84px; line-height:1.14; letter-spacing:-.05em;
+    font-feature-settings:'palt';
+  }
+  .og h1 span{ color:var(--accent) }
+  .og .sub{
+    margin-top:30px; font-size:23px; line-height:1.75; color:var(--sub);
+    font-feature-settings:'palt'; max-width:900px;
+  }
+  /* 下の帯＝名乗り。太い罫で締める */
+  .og .foot{
+    position:absolute; left:92px; right:92px; bottom:56px;
+    border-top:3px solid var(--ink); padding-top:20px;
+    display:flex; align-items:baseline; justify-content:space-between;
+    font-family:'Inter',sans-serif; letter-spacing:.14em; font-size:17px; font-weight:700;
+  }
+  .og .foot em{ font-style:normal; font-weight:600; color:var(--sub); font-size:15px }
+  /* 右上の面＝青。字を図像として置く */
+  .og .mark{
+    position:absolute; right:-30px; top:-40px;
+    font-family:'Noto Sans JP',sans-serif; font-weight:900;
+    font-size:330px; line-height:1; color:var(--accent); opacity:.1;
+    letter-spacing:-.08em; pointer-events:none;
+  }
+</style>
+</head>
+<body>
+
+<div class="og" id="og-index">
+  <span class="mark">滋</span>
+  <span class="tag">Shiga, Japan / Design</span>
+  <h1>それ、なんとか<span>なる？</span></h1>
+  <p class="sub">ホームページ・ロゴ・チラシ・ポスター、体験の設計から社内資料まで。<br>滋賀の会社の困りごと窓口。</p>
+  <div class="foot"><b>KINOSHITA STUDIO</b><em>TAKAHIRO KINOSHITA / DESIGNER</em></div>
+</div>
+
+<div class="og" id="og-web">
+  <span class="mark">web</span>
+  <span class="tag">01 / Website &amp; Logo</span>
+  <h1>ホームページ、<br><span>古いまま？</span></h1>
+  <p class="sub">見た目だけでなく、問い合わせが来る形に組み直します。ロゴやバナーもまとめてどうぞ。</p>
+  <div class="foot"><b>KINOSHITA STUDIO</b><em>SHIGA, JAPAN</em></div>
+</div>
+
+<div class="og" id="og-flyer">
+  <span class="mark">速</span>
+  <span class="tag">02 / Flyer &amp; Poster</span>
+  <h1>チラシ・ポスター、<br><span>最短3日。</span></h1>
+  <p class="sub">1枚から。写真の手配も、印刷所への入稿データづくりも、まとめて引き受けます。</p>
+  <div class="foot"><b>KINOSHITA STUDIO</b><em>SHIGA, JAPAN</em></div>
+</div>
+
+<div class="og" id="og-docs">
+  <span class="mark">資</span>
+  <span class="tag">03 / Documents</span>
+  <h1>社内資料、<br><span>1時間から。</span></h1>
+  <p class="sub">パワポも、報告書も、提案書も。中身はそのままに、読み手が迷わない形へ。</p>
+  <div class="foot"><b>KINOSHITA STUDIO</b><em>SHIGA, JAPAN</em></div>
+</div>
+
+<div class="og" id="og-consul">
+  <span class="mark">体</span>
+  <span class="tag">04 / Experience Design</span>
+  <h1>形の前に、<br><span>体験を設計。</span></h1>
+  <p class="sub">チームの進め方も、プロダクトの直し方も。まず「誰が・どう感じるか」から。</p>
+  <div class="foot"><b>KINOSHITA STUDIO</b><em>SHIGA, JAPAN</em></div>
+</div>
+
+</body>
+</html>

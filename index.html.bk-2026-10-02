@@ -3,40 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>滋賀の会社の困りごと窓口｜ホームページ・チラシ・ロゴ｜木下スタジオ</title>
-<meta name="description" content="ホームページが古い、チラシをすぐ作りたい、資料が読みにくい——滋賀の会社のそんな困りごとを、デザイナー木下貴博がひとりで早く片づけます。相談はLINE・メールから。">
+<title>それ、なんとかなる？｜滋賀の会社の困りごと窓口 Kinoshita Studio</title>
+<meta name="description" content="ホームページ・ロゴ・チラシ・ポスター、会議や体験の設計、ちょっとした社内資料まで。滋賀の会社の困りごとを、木下がひとりで早く片づけます。">
 <!-- 🔴 公開前は検索に出さない。中身が決まったらこの行を消す -->
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://kinoshitastudio.com/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="木下スタジオ">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="滋賀の会社の困りごと窓口｜ホームページ・チラシ・ロゴ｜木下スタジオ">
-<meta property="og:description" content="ホームページが古い、チラシをすぐ作りたい、資料が読みにくい——滋賀の会社のそんな困りごとを、デザイナー木下貴博がひとりで早く片づけます。相談はLINE・メールから。">
-<meta property="og:url" content="https://kinoshitastudio.com/">
-<meta property="og:image" content="https://kinoshitastudio.com/img/og-index.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="滋賀の会社の困りごと窓口｜ホームページ・チラシ・ロゴ｜木下スタジオ">
-<meta name="twitter:description" content="ホームページが古い、チラシをすぐ作りたい、資料が読みにくい——滋賀の会社のそんな困りごとを、デザイナー木下貴博がひとりで早く片づけます。相談はLINE・メールから。">
-<meta name="twitter:image" content="https://kinoshitastudio.com/img/og-index.webp">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://kinoshitastudio.com/#studio",
-"name":"木下スタジオ","alternateName":"Kinoshita Studio","url":"https://kinoshitastudio.com/",
-"image":"https://kinoshitastudio.com/img/og-index.webp","telephone":"+81-80-4019-6535","email":"hello@kinoshitastudio.com",
-"founder":{"@type":"Person","name":"木下 貴博","jobTitle":"アートディレクター／デザイナー"},
-"address":{"@type":"PostalAddress","addressRegion":"滋賀県","addressCountry":"JP"},
-"areaServed":[{"@type":"City","name":"大津市"},{"@type":"City","name":"草津市"},{"@type":"City","name":"守山市"},{"@type":"City","name":"栗東市"},{"@type":"City","name":"野洲市"},{"@type":"City","name":"近江八幡市"},{"@type":"City","name":"東近江市"},{"@type":"City","name":"彦根市"},{"@type":"City","name":"米原市"},{"@type":"City","name":"長浜市"},{"@type":"City","name":"甲賀市"},{"@type":"City","name":"湖南市"},{"@type":"City","name":"高島市"},{"@type":"AdministrativeArea","name":"滋賀県"},{"@type":"AdministrativeArea","name":"京都府"},{"@type":"AdministrativeArea","name":"大阪府"},{"@type":"Country","name":"日本"}],
-"priceRange":"￥￥",
-"knowsAbout":["ホームページ制作","ロゴデザイン","チラシ・ポスターデザイン","資料デザイン","UX デザイン","アートディレクション"],
-"sameAs":["https://kinoshita.studio/"]}
-</script>
 <link rel="stylesheet" href="style.css">
-  <script defer src="/js/analytics.js"></script>
 </head>
 <body>
 
@@ -170,30 +144,17 @@
   <!-- ═══ 下のタイル＝4つの窓口 ═══ -->
   <div class="wrap">
     <div class="tiles" id="tiles">
-      <!-- ⭐ 写真は使わない。黒と青の地に【大きな字】だけ。色は黒→青→黒→青→黒で交互 -->
-      <a class="tile ink"   href="web.html"><b>HP</b><span class="tag">Website · Logo</span><span class="lb">ホームページ<br>・ロゴ<i class="arrow"></i></span></a>
-      <a class="tile solid" href="flyer.html"><b class="jp">紙</b><span class="tag">Flyer · Poster</span><span class="lb">チラシ<br>・ポスター<i class="arrow"></i></span></a>
-      <a class="tile ink"   href="consul.html"><b>UX</b><span class="tag">Experience Design</span><span class="lb">体験設計<br>コンサル<i class="arrow"></i></span></a>
+      <a class="tile" href="web.html"><img src="img/yataimura-pc.webp" alt=""><span class="tag">Website · Logo</span><span class="lb">ホームページ<br>・ロゴ<i class="arrow"></i></span></a>
+      <a class="tile" href="flyer.html"><img src="img/poster-hajimari.webp" alt=""><span class="tag">Flyer · Poster</span><span class="lb">チラシ<br>・ポスター<i class="arrow"></i></span></a>
+      <a class="tile ink" href="consul.html"><b>UX</b><span class="tag">Experience Design</span><span class="lb">体験設計<br>コンサル<i class="arrow"></i></span></a>
       <a class="tile solid" href="docs.html"><b>1h</b><span class="tag">Documents</span><span class="lb">社内資料<br>1時間から<i class="arrow"></i></span></a>
-      <a class="tile ink"   href="meeting.html"><b class="jp">会議</b><span class="tag">Meeting</span><span class="lb">会議の<br>進め方<i class="arrow"></i></span></a>
     </div>
   </div>
-  <section class="frame-sec">
-    <div class="wrap">
-      <ol class="frame">
-        <li><span class="tag">01 / Problem</span><b>問題</b><p>ホームページも、チラシも、社内の資料も、頼む先がばらばら。そのたび会社のことを一から説明し直している。</p></li>
-        <li><span class="tag">02 / Answer</span><b>結論</b><p>窓口をひとつにすれば、説明は1回で済む。</p></li>
-        <li><span class="tag">03 / Why Us</span><b>木下スタジオなら</b><p>聞く人と作る人が同じです。間に誰も入らないので、話が薄まりません。</p></li>
-        <li><span class="tag">04 / Goal</span><b>ゴール</b><p>「あれ、お願いできますか」の一言で動く相手ができる。</p></li>
-      </ol>
-    </div>
-  </section>
-
 
   <section class="contact" id="contact">
     <div class="wrap">
       <h2>まずは、困っていることを<br>そのまま送ってください。</h2>
-      <p>「何を頼めばいいか分からない」でも大丈夫です。返事は<span class="tbd">24時間以内</span>。</p>
+      <p>「何を頼めばいいか分からない」でも大丈夫です。返事は<span class="tbd">◯時間以内</span>。</p>
       <div class="cta">
         <a class="btn btn-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
         <a class="btn btn-ghost" href="mailto:hello@kinoshitastudio.com">メールで相談する</a>
@@ -204,10 +165,6 @@
 </main>
 
 <footer class="site-foot">
-  <div class="wrap area">
-    <h2>対応エリア</h2>
-    <p><b>打ち合わせは基本オンラインです。</b>移動の時間をそのまま制作に回せるので、その方が速く仕上がります。滋賀県内（大津・草津・守山・栗東・野洲・近江八幡・東近江・彦根・米原・長浜・甲賀・湖南・高島、日野町・竜王町・愛荘町・多賀町）と京都・大阪・名古屋は、実物を見ないと決まらないときだけお伺いします。それ以外の地域も同じように進められます。</p>
-  </div>
   <div class="wrap"><span>© Kinoshita Studio　滋賀県</span><a href="https://kinoshita.studio/privacy.html">個人情報の取り扱い</a></div>
 </footer>
 </body>

@@ -1,0 +1,5 @@
+# 木下スタジオ ── 公開したら Disallow の行を消す
+User-agent: *
+Disallow: /
+
+Sitemap: https://kinoshitastudio.com/sitemap.xml

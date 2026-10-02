@@ -1,0 +1,17 @@
+<!-- ───────────────────────────────────────────────
+     Google アナリティクス（GA4）
+     🔴 G-XXXXXXXXXX を、木下の測定IDに置き換えてから使う
+     ⭐ kinoshita.studio と kinoshitastudio.com を【同じ測定ID】にすると、
+        本店 → LP の行き来が1つの画面で追える。
+        別IDにすると、本店から来た人が「よその サイトから来た人」になって切れる。
+     ─────────────────────────────────────────────── -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    // 🔴 2つのドメインを1つのサイトとして数える（クロスドメイン計測）
+    linker: { domains: ['kinoshita.studio', 'kinoshitastudio.com'] }
+  });
+</script>

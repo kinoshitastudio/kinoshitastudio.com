@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>チラシ・ポスター｜Kinoshita Studio</title>
+<meta name="description" content="滋賀のチラシ・ポスター・看板・名刺。急ぎの告知物も、入稿データまで最短で。">
+<!-- 🔴 公開前は検索に出さない。中身が決まったらこの行を消す -->
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="head-l">会社の困りごと窓口<b>SHIGA, JAPAN</b></div>
+    <a class="head-c" href="./">Kinoshita Studio<span>.</span></a>
+    <div class="head-r"><a class="btn btn-line btn-sm" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談</a></div>
+  </div>
+</header>
+
+<main>
+  <div class="svc-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="./">それ、なんとかなる？</a>　›　チラシ・ポスター・看板</div>
+      <div class="grid">
+        <div>
+          <p class="kicker">チラシ・ポスター・看板</p>
+          <h1>告知物、<br>来週までに要る？</h1>
+          <p>イベント・お店・求人の告知を、遠くから読める形で。データと文章がそろっていれば、最短1日で入稿データまで作ります。</p>
+          <div class="cta">
+            <a class="btn btn-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
+            <a class="btn btn-ghost" href="#price">料金を見る</a>
+          </div>
+        </div>
+        <div class="visual"><div class="hero-float">
+          <div class="it-c"><img class="float shadow" style="--r:-6deg;--d:7s" src="img/poster-mshalo.webp" alt="ポスターの制作例"></div>
+          <div class="it-d"><img class="float shadow" style="--r:5deg;--d:6s;--dl:-2s" src="img/poster-hajimari.webp" alt="映画ポスターの制作例"></div>
+          <div class="it-e big">速</div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2 class="sec-title">こんなこと、ありませんか。</h2>
+      <p class="sec-sub">ひとつでも当てはまれば、相談してください。</p>
+      <ul class="worries">
+        <li><span class="q">イベントまで、もう時間がない</span><i class="arrow"></i><span class="a">最短1日で、入稿データまで作ります。※データと文章がそろっている場合。そろっていないときは、日程を相談して決めます。</span></li>
+        <li><span class="q">印刷の出し方が分からない</span><i class="arrow"></i><span class="a">印刷所にそのまま渡せる形で納品します。<span class="tbd">印刷の手配もまとめて頼めます。</span></span></li>
+        <li><span class="q">毎回デザインがばらばら</span><i class="arrow"></i><span class="a">会社の型を作るので、次から速く、安くなります。</span></li>
+        <li><span class="q">貼っても目立たない</span><i class="arrow"></i><span class="a">遠くから読める文字の大きさと色から組み立てます。</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <h2 class="sec-title">できること</h2>
+      <p class="sec-sub">紙もの全般。サイズはそろえて作れます。</p>
+      <ul class="can">
+        <li><b>チラシ</b>A4・B5、片面・両面。折り込みや配布用に。</li>
+        <li><b>ポスター</b>B2・B1。店頭・駅・イベント会場に。</li>
+        <li><b>看板・のぼり</b>遠くから読めることを最優先に。</li>
+        <li><b>名刺・ショップカード</b>ロゴがなくても、ここから作れます。</li>
+        <li><b>メニュー・店内POP</b>お店の中で迷わせない表示。</li>
+        <li><b>入稿データ</b>印刷所の決まりに合わせた形で渡します。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="sec-title">作ったもの</h2>
+      <p class="sec-sub">ほかの作品は <a href="https://kinoshita.studio/" target="_blank" rel="noopener">kinoshita.studio</a> にまとめています。</p>
+      <div class="works">
+        <figure><a href="https://kinoshita.studio/flyer-poster.html" target="_blank" rel="noopener"><img src="img/poster-hajimari.webp" alt="映画のポスター" loading="lazy"></a><figcaption>映画のポスター</figcaption></figure>
+        <figure><a href="https://kinoshita.studio/flyer-poster.html" target="_blank" rel="noopener"><img src="img/poster-advinder.webp" alt="クリニックのポスター" loading="lazy"></a><figcaption>クリニックのポスター</figcaption></figure>
+        <figure><a href="https://kinoshita.studio/case-flyer-strawberry.html" target="_blank" rel="noopener"><img src="img/flyer-strawberry.webp" alt="イベントのフライヤー" loading="lazy"></a><figcaption>イベントのフライヤー</figcaption></figure>
+        <figure><a href="https://kinoshita.studio/flyer-poster.html" target="_blank" rel="noopener"><img src="img/poster-mshalo.webp" alt="ポスター" loading="lazy"></a><figcaption>ポスター</figcaption></figure>
+        <figure><a href="https://kinoshita.studio/flyer-poster.html" target="_blank" rel="noopener"><img src="img/poster-amber.webp" alt="ポスター" loading="lazy"></a><figcaption>ポスター</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <h2 class="sec-title">進め方</h2>
+      <p class="sec-sub">窓口も作るのも木下ひとり。伝言ゲームがないぶん、速く進みます。</p>
+      <ol class="flow">
+        <li><b>相談</b>日にち・枚数・置く場所を教えてください。</li>
+        <li><b>ラフ</b>方向を2案ほど出して選んでもらいます。</li>
+        <li><b>仕上げ</b>文字と写真を入れて、直しを反映。</li>
+        <li><b>入稿・納品</b>印刷所に出せるデータで渡します。</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="wrap">
+      <h2 class="sec-title">料金のめやす</h2>
+      <p class="sec-sub">サイズと枚数で変わります。まずは見積りを出します（無料）。</p>
+      <table class="price">
+        <tr><th>チラシ（片面）</th><td><span class="tbd">◯円〜</span><small>両面は<span class="tbd">◯円〜</span></small></td></tr>
+        <tr><th>ポスター</th><td><span class="tbd">◯円〜</span><small>B2・B1</small></td></tr>
+        <tr><th>名刺</th><td><span class="tbd">◯円〜</span><small></small></td></tr>
+        <tr><th>特急（<span class="tbd">◯日</span>以内）</th><td><span class="tbd">＋◯円</span><small></small></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap faq">
+      <h2 class="sec-title">よくある質問</h2>
+      <p class="sec-sub">ほかに気になることは、LINEでそのまま聞いてください。</p>
+      <details><summary>本当に1日でできますか？</summary><p>データ（写真・ロゴ）と文章がそろっていれば、最短1日で入稿データまで作ります。そろっていないときは、約束せずに日程を相談して決めます。</p></details>
+      <details><summary>原稿がまとまっていなくても大丈夫？</summary><p>大丈夫です。決まっていることだけ送ってもらえれば、文章も整えます。</p></details>
+      <details><summary>印刷までお願いできますか？</summary><p><span class="tbd">印刷所の手配もまとめて頼めます（印刷代は別）。</span></p></details>
+      <details><summary>過去のチラシを作り直せますか？</summary><p>できます。今のデータや写真を送ってください。</p></details>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="sec-title">ほかの窓口</h2>
+      <p class="sec-sub">まとめて頼むこともできます。</p>
+      <div class="tiles" style="padding-top:0">
+        <a class="tile" href="web.html"><img src="img/yataimura-pc.webp" alt=""><span class="tag">Website · Logo</span><span class="lb">ホームページ<br>・ロゴ<i class="arrow"></i></span></a>
+        <a class="tile ink" href="consul.html"><b>UX</b><span class="tag">Experience Design</span><span class="lb">体験設計<br>コンサル<i class="arrow"></i></span></a>
+        <a class="tile solid" href="docs.html"><b>1h</b><span class="tag">Documents</span><span class="lb">社内資料<br>1時間から<i class="arrow"></i></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>日にちと置く場所だけ、<br>まず送ってください。</h2>
+      <p>「何を頼めばいいか分からない」でも大丈夫です。返事は<span class="tbd">◯時間以内</span>。</p>
+      <div class="cta">
+        <a class="btn btn-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
+        <a class="btn btn-ghost" href="mailto:hello@kinoshitastudio.com?subject=チラシ・ポスターの相談">メールで相談する</a>
+      </div>
+      <div class="sub">電話 <a href="tel:08040196535">080-4019-6535</a>　／　作品は <a href="https://kinoshita.studio/" target="_blank" rel="noopener">kinoshita.studio</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap"><span>© Kinoshita Studio　滋賀県</span><a href="https://kinoshita.studio/privacy.html">個人情報の取り扱い</a></div>
+</footer>
+</body>
+</html>
