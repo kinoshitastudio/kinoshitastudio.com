@@ -67,34 +67,36 @@ img{ max-width:100%; display:block }
 
 /* 見出し直後の値段 ── 横1行のまま、金額だけ思い切り大きく。
    🔴 下の舞台は aspect-ratio で高さが決まっているので、ここの高さを増やしすぎると重なる */
+/* 🔴 字下げ（縦罫・padding）は入れない。見出し・リード文と【左端が揃わなくなる】 */
 .price-flash{
-  margin:clamp(14px,2vw,20px) 0 0;
-  border-left:5px solid var(--accent); padding-left:clamp(12px,1.4vw,18px);
-}
-.price-flash p{ margin:0 }
-/* 上段＝何が安いのか。小さく、1行で */
-.price-flash .pf-label{
-  font-family:var(--jp); font-weight:900; font-size:clamp(13px,1.5vw,17px);
-  letter-spacing:-.01em; display:flex; align-items:center; gap:.6em;
-  white-space:nowrap;
+  margin:clamp(14px,2vw,22px) 0 0; display:flex; flex-wrap:wrap;
+  align-items:baseline; gap:clamp(8px,1.2vw,14px);
 }
 .price-flash .now{
-  font-weight:700; font-size:.88em; color:#fff; background:var(--accent);
-  padding:.3em .7em; letter-spacing:.02em;
+  font-family:var(--jp); font-weight:700; font-size:clamp(12px,1.4vw,16px);
+  color:#fff; background:var(--accent); padding:.34em .74em; letter-spacing:.02em;
 }
-/* 🔴 金額は【見出し h1 と同じ書体・同じ詰め】。字数を減らしたぶんだけ大きくできる */
-.price-flash .pf-main{ margin-top:.06em }
 .price-flash b{
-  font-family:var(--jp); font-weight:900; letter-spacing:-.05em;
-  font-size:clamp(44px,13.4vw,98px); line-height:1.02; color:var(--accent);
-  white-space:nowrap; font-feature-settings:'palt';
+  font-family:var(--jp); font-weight:900; letter-spacing:-.045em;
+  font-size:clamp(28px,5vw,62px); line-height:1.02; color:var(--ink);
+  font-feature-settings:'palt';
 }
-.price-flash b em{ font-style:normal; font-size:.46em; letter-spacing:-.02em; color:var(--ink) }
+.price-flash b em{
+  font-style:normal; font-family:'Inter',sans-serif; font-weight:900;
+  font-size:1.3em; letter-spacing:-.06em; color:var(--accent);
+}
 .price-flash .cond{
-  font-family:var(--jp); font-weight:700; font-size:clamp(12px,1.25vw,15px);
-  color:var(--ink-sub); margin-top:.5em; letter-spacing:.01em;
+  font-family:var(--jp); font-weight:500; font-size:clamp(11px,1.2vw,14px);
+  color:var(--ink-sub); line-height:1.6;
 }
-@media (max-width:640px){ .cover-head h1{ font-size:8.4vw; letter-spacing:-.055em } }
+/* 🔴 これが無いと「1ページ／修正なし」が金額の横に回り込み、
+   「し」1文字だけが次の行に落ちる */
+@media (max-width:560px){
+  .price-flash{ gap:5px 9px }
+  .price-flash b{ font-size:7.4vw }
+  .price-flash .cond{ width:100% }
+}
+@media (max-width:640px){ .cover-head h1{ font-size:9vw; letter-spacing:-.058em } }
 
 /* ═══ 浮遊する舞台 ═══
    ⭐ 物の位置は「設計図のpx」で書く：PC＝幅1200の舞台／スマホ＝幅390の舞台
