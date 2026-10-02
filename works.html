@@ -88,15 +88,17 @@
 </head>
 <body>
 
-<header class="head">
-  <div class="wrap head-in">
-    <div class="head-l"><span>会社の困りごと窓口</span><b>SHIGA, JAPAN</b></div>
-    <a class="head-c" href="index.html">それ<span>ナル</span></a>
+<!-- 🔴 ここだけ .head / .head-in という別の名前を使っていて、その定義はどこにも無かった。
+     ほかの10枚と同じ .site-head に揃える -->
+<header class="site-head">
+  <div class="wrap">
+    <div class="head-l">会社の困りごと窓口<b>SHIGA, JAPAN</b></div>
+    <a class="head-c" href="./">それ<span>ナル</span></a>
     <div class="head-r">
       <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false">
         <span></span><span></span>
       </button>
-      <a class="line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談</a></div>
+      <a class="btn btn-line btn-sm" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談</a></div>
   </div>
 </header>
 
