@@ -64,6 +64,30 @@ img{ max-width:100%; display:block }
 .cover-head h1 span{ color:var(--accent) }
 .cover-head .lead{ font-weight:700; font-size:clamp(14px,1.6vw,18px); margin:0 0 14px }
 .cover-head hr{ border:0; border-top:2px solid var(--line); margin:22px 0 0 }
+
+/* 見出し直後の値段 ── 「今なら」は小さく、金額だけ大きく */
+.price-flash{ margin:clamp(16px,2.4vw,26px) 0 0; display:flex; flex-wrap:wrap;
+  align-items:baseline; gap:clamp(8px,1.4vw,16px) }
+.price-flash .now{
+  font-family:var(--jp); font-weight:700; font-size:clamp(12px,1.3vw,15px);
+  color:#fff; background:var(--accent); padding:.34em .72em; letter-spacing:.02em;
+}
+.price-flash b{
+  font-family:var(--jp); font-weight:900; letter-spacing:-.04em;
+  font-size:clamp(23px,3.6vw,46px); line-height:1.15; color:var(--ink);
+}
+.price-flash b em{
+  font-style:normal; font-family:'Inter',sans-serif; font-weight:900;
+  font-size:1.22em; letter-spacing:-.05em; color:var(--accent);
+}
+.price-flash .cond{
+  font-family:var(--jp); font-weight:500; font-size:clamp(11px,1.15vw,13px);
+  color:var(--ink-sub); line-height:1.6;
+}
+@media (max-width:560px){
+  .price-flash{ gap:6px 10px }
+  .price-flash .cond{ width:100% }
+}
 @media (max-width:640px){ .cover-head h1{ font-size:9.4vw; letter-spacing:-.06em } }
 
 /* ═══ 浮遊する舞台 ═══
