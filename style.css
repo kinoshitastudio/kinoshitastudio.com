@@ -38,8 +38,16 @@ img{ max-width:100%; display:block }
 .head-l{ font-size:11px; line-height:1.5; color:var(--ink-sub) }
 .head-l b{ display:block; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.14em; color:var(--ink) }
 /* 左上の名乗り＝「それナル」。和文なので書体は本文と同じものを使う */
-.head-c{ font-family:var(--jp); font-weight:900; font-size:58px; line-height:1; letter-spacing:-.05em; text-decoration:none; white-space:nowrap; color:var(--ink) }
+.head-c{ font-family:var(--jp); font-weight:900; font-size:58px; line-height:1; letter-spacing:-.05em; text-decoration:none; white-space:nowrap; color:var(--ink);
+  display:inline-flex; align-items:flex-start; gap:0 }
 .head-c span{ color:var(--accent) }
+/* 木下スタジオの印。右肩に小さく添えて「これは木下スタジオのサービス」と示す。
+   🔴 元の線幅3は viewBox 500 に対するもの。この大きさでは消えるので太く描き直す */
+.ks-mark{ width:.62em; height:.62em; flex:none; margin:.02em 0 0 -.1em; overflow:visible }
+.ks-mark g line{ stroke:var(--ink-sub); stroke-width:22 }
+.ks-mark circle{ fill:var(--ink-sub) }
+.head-c:hover .ks-mark line{ stroke:var(--accent) }
+.head-c:hover .ks-mark circle{ fill:var(--accent) }
 /* 🔴 三本線とボタンを【1行に固定】する。名乗りを大きくすると中央列が広がって
    右列が狭くなり、折り返して三本線がボタンの下に落ちる */
 .head-r{ justify-self:end; display:flex; align-items:center; gap:10px; flex-wrap:nowrap; white-space:nowrap }
