@@ -110,7 +110,7 @@ img{ max-width:100%; display:block }
    　 ＝画面の幅が変わっても、コラージュがそのまま拡大縮小される */
 .stage{ position:relative; width:100%; max-width:var(--wrap); margin:0 auto; container-type:inline-size; --W:1200 }
 .stage.white{ --H:1180; aspect-ratio:1200/1180 }
-.stage.dark{ --H:1180; aspect-ratio:1200/1180 }
+.stage.dark{ --H:1240; aspect-ratio:1200/1240 }
 /* 白い面＝方眼の点（参考の地の点と同じ役） */
 .dots{ background-image:radial-gradient(#d6d6d6 1px,transparent 1.2px); background-size:22px 22px }
 .band-dark{ background:var(--dark); color:#fff; padding:56px 0 }
@@ -149,6 +149,30 @@ br.sp-br{ display:none }
 .say .arrow{ margin-left:.25em; font-size:.82em }
 .say small{ display:block; font-weight:500; font-size:max(11px,.4em); line-height:1.75; letter-spacing:0; margin-top:.7em; max-width:22em; color:var(--ink-sub); white-space:normal }
 .on-dark .say small{ color:var(--dark-sub) }
+/* 🔴🔴 舞台は【見出しと絵】で見せる場所。見出しを大きくすると説明文がそのぶん下へ伸び、
+   下に置いた札に必ずかぶる（07で94px・10で131px かぶっていた）。
+   広い画面では出さない。同じ文は各サービスのページにある */
+/* 🔴🔴 舞台の説明文は【見出しの中に入れない】。
+   見出しを大きくするとそのぶん下へ伸びて、下に置いた札に必ずかぶるため。
+   見出しから切り離し、ほかの物と同じ --x / --y で空いている所に自分で置く */
+.stage-notes{
+  list-style:none; margin:26px 0 0; padding:0; display:grid;
+  grid-template-columns:repeat(3,1fr); gap:0;
+  border-top:1px solid rgba(0,0,0,.14);
+}
+.stage-notes li{ padding:20px 34px 0 0; font-size:14px; line-height:1.95; color:var(--ink-sub) }
+.stage-notes li:last-child{ padding-right:0 }
+.stage-notes b{
+  display:block; font-family:'Inter',sans-serif; font-weight:700; font-size:11px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink); margin-bottom:9px;
+}
+.band-dark .stage-notes{ border-top-color:rgba(255,255,255,.22) }
+.band-dark .stage-notes li{ color:var(--dark-sub) }
+.band-dark .stage-notes b{ color:#fff }
+@media (max-width:760px){
+  .stage-notes{ grid-template-columns:1fr; margin-top:18px }
+  .stage-notes li{ padding:16px 0 0 }
+}
 a.say:hover{ color:var(--accent) }
 
 /* 大きな字（参考の「得」）＝青いベタ */
@@ -493,7 +517,7 @@ section.dark .flow b{ color:#fff }
 /* ── ハンバーガー ── 線2本だけ。開くと×になる ── */
 .burger{
   width:44px; height:44px; border:0; background:transparent; cursor:pointer;
-  display:none; position:relative; margin-left:10px; padding:0; z-index:60;
+  display:block; position:relative; margin-left:14px; padding:0; z-index:60;
 }
 .burger span{
   position:absolute; left:11px; width:22px; height:2px; background:var(--ink);
@@ -503,7 +527,8 @@ section.dark .flow b{ color:#fff }
 body.menu-open .burger span{ background:#fff }
 body.menu-open .burger span:nth-child(1){ transform:translateY(3.5px) rotate(45deg) }
 body.menu-open .burger span:nth-child(2){ transform:translateY(-3.5px) rotate(-45deg) }
-@media (max-width:860px){ .burger{ display:block } .head-r .btn{ display:none } }
+/* 三本線は【どの画面でも】出す。広い画面だけ出口が無い、を作らない */
+@media (max-width:860px){ .head-r .btn{ display:none } }
 
 /* ── 開いた面 ── 黒ベタに特大の和字。番号はInterで小さく ── */
 .menu{
