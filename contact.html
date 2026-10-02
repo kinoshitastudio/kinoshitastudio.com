@@ -134,10 +134,14 @@
       </a>
     </div>
 
-    <form class="ct" id="ctForm" action="https://formspree.io/f/xkgnbqrp" method="POST">
+    <!-- 🔴 送信先。この英数字は hello@kinoshitastudio.com の別名で、
+         メールアドレスを直接書かないための【隠し名】。迷惑メール収集よけ -->
+    <form class="ct" id="ctForm" action="https://formsubmit.co/ff0bfd90ad4a90126bfe447048544d35" method="POST">
       <h2>フォームで送る</h2>
-      <p class="lead" style="color:#c9480f">（準備中です。いまは上の LINE か電話をお使いください）</p>
       <p class="lead">書いて整理したい方はこちらから。項目は少なくしてあります。</p>
+      <input type="hidden" name="_subject" value="【kinoshitastudio.com】相談が届きました">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
 
       <div class="f">
         <label for="name">お名前 <em>必須</em></label>
@@ -228,10 +232,9 @@
 <script>
 // 送信はページを離れずに行う（別ページへ飛ぶと戻ってこない）
 (function(){
-  // 🔴 送信先。Formspree で新しいフォームを作って、ここの xxxxxxxx を差し替える。
-  //    差し替えるまでは送信ボタンを押しても送らず、LINE / 電話に案内する。
-  var FORM_ENDPOINT = 'https://formspree.io/f/xxxxxxxx';
-  var READY = FORM_ENDPOINT.indexOf('xxxxxxxx') < 0;
+  // 送信先＝hello@kinoshitastudio.com（FormSubmit の隠し名。有効化済み 2026-10-02）
+  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/ff0bfd90ad4a90126bfe447048544d35';
+  var READY = true;
 
   var f=document.getElementById('ctForm');
   if(!f) return;
@@ -255,7 +258,9 @@
       topic: topics || '（選択なし）',
       when: fd.get('when') || '急いでいない',
       message: fd.get('message') || '',
-      _subject: '【kinoshitastudio.com】相談が届きました'
+      _subject: '【kinoshitastudio.com】相談が届きました',
+      _captcha: 'false',
+      _template: 'table'
     };
     btn.disabled=true; btn.textContent='送信中…';
     st.textContent='送信しています。少しお待ちください。'; st.style.color='';
@@ -263,8 +268,12 @@
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify(body)
-    }).then(function(res){
-      if(res.ok){
+    // 🔴🔴 res.ok だけで判断してはいけない。送信先はエラーのときも HTTP 200 を返し、
+    //      中身の success が "false" になる。中を読まないと【送れていないのに
+    //      「送信しました」と出る】＝相手は返事を待ち続ける
+    }).then(function(res){ return res.json().catch(function(){ return {}; }); })
+      .then(function(j){
+      if(String(j.success) === 'true'){
         f.querySelectorAll('.f, h2, .lead').forEach(function(el){ el.style.display='none'; });
         btn.style.display='none';
         st.innerHTML='<b style="font-size:17px;color:var(--ink)">送信しました。</b><br>'+

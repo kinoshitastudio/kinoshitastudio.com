@@ -111,7 +111,7 @@ img{ max-width:100%; display:block }
 @media (max-width:720px){
   .stage{ --W:390 }
   .stage.white{ --H:1360; aspect-ratio:390/1360 }
-  .stage.dark{ --H:1420; aspect-ratio:390/1420 }
+  .stage.dark{ --H:1500; aspect-ratio:390/1500 }
 }
 .it,.say,.deco,.tiny{ position:absolute; left:calc(var(--x) * 100% / var(--W)); top:calc(var(--y) * 100% / var(--H)) }
 .it{ width:calc(var(--w) * 100% / var(--W)); text-decoration:none; color:inherit; display:block }
