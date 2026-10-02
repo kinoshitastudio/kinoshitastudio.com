@@ -134,8 +134,9 @@
       </a>
     </div>
 
-    <form class="ct" action="https://formspree.io/f/XXXXXXXX" method="POST">
+    <form class="ct" id="ctForm" action="https://formspree.io/f/xkgnbqrp" method="POST">
       <h2>フォームで送る</h2>
+      <p class="lead" style="color:#c9480f">（準備中です。いまは上の LINE か電話をお使いください）</p>
       <p class="lead">書いて整理したい方はこちらから。項目は少なくしてあります。</p>
 
       <div class="f">
@@ -188,8 +189,8 @@
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
       <div class="ct-send">
-        <button type="submit">送信する</button>
-        <p>送信すると、入力内容が木下スタジオにメールで届きます。</p>
+        <button type="submit" id="ctSend">送信する</button>
+        <p id="ctStatus">送信すると、入力内容が木下スタジオにメールで届きます。</p>
       </div>
 
       <div class="ct-note">
@@ -221,6 +222,64 @@
   b.addEventListener('click', function(){ set(!document.body.classList.contains('menu-open')); });
   m.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
   addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+})();
+</script>
+
+<script>
+// 送信はページを離れずに行う（別ページへ飛ぶと戻ってこない）
+(function(){
+  // 🔴 送信先。Formspree で新しいフォームを作って、ここの xxxxxxxx を差し替える。
+  //    差し替えるまでは送信ボタンを押しても送らず、LINE / 電話に案内する。
+  var FORM_ENDPOINT = 'https://formspree.io/f/xxxxxxxx';
+  var READY = FORM_ENDPOINT.indexOf('xxxxxxxx') < 0;
+
+  var f=document.getElementById('ctForm');
+  if(!f) return;
+  var btn=document.getElementById('ctSend'), st=document.getElementById('ctStatus');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(f._gotcha && f._gotcha.value){ return; }          // スパム避け
+    if(!READY){
+      st.innerHTML='いまフォームの準備中です。お手数ですが '+
+        '<a href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINE</a> か '+
+        '<a href="tel:08040196535">080-4019-6535</a> へご連絡ください。';
+      st.style.color='#c9480f';
+      return;
+    }
+    var fd=new FormData(f);
+    var topics=fd.getAll('topic').join('、');
+    var body={
+      name: fd.get('name') || '',
+      company: fd.get('company') || '',
+      email: fd.get('email') || '',
+      topic: topics || '（選択なし）',
+      when: fd.get('when') || '急いでいない',
+      message: fd.get('message') || '',
+      _subject: '【kinoshitastudio.com】相談が届きました'
+    };
+    btn.disabled=true; btn.textContent='送信中…';
+    st.textContent='送信しています。少しお待ちください。'; st.style.color='';
+    fetch(FORM_ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(body)
+    }).then(function(res){
+      if(res.ok){
+        f.querySelectorAll('.f, h2, .lead').forEach(function(el){ el.style.display='none'; });
+        btn.style.display='none';
+        st.innerHTML='<b style="font-size:17px;color:var(--ink)">送信しました。</b><br>'+
+          '24時間以内にお返事します。急ぎのときは LINE か 080-4019-6535 へ。';
+      }else{
+        throw new Error('ng');
+      }
+    }).catch(function(){
+      btn.disabled=false; btn.textContent='送信する';
+      st.innerHTML='うまく送れませんでした。お手数ですが '+
+        '<a href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINE</a> か '+
+        '<a href="tel:08040196535">080-4019-6535</a> へご連絡ください。';
+      st.style.color='#c9480f';
+    });
+  });
 })();
 </script>
 </body>
