@@ -313,14 +313,27 @@ section.dark .sec-sub{ color:var(--dark-sub) }
   padding:clamp(40px,5vw,72px) clamp(24px,3.4vw,48px);
 }
 .face .q{
-  font-family:var(--jp); font-weight:900; color:#fff; margin:0 0 18px;
-  font-size:clamp(23px,2.9vw,40px); line-height:1.32; letter-spacing:-.04em;
+  font-family:var(--jp); font-weight:900; color:#fff; margin:0 0 22px;
+  font-size:clamp(29px,4vw,58px); line-height:1.22; letter-spacing:-.05em;
 }
+/* 答えの帯。左から右へ1字ずつ大きくなり、白い縁も字に連れて厚くなる。
+   ⭐ 縁の厚みは padding を em で取っているので、字が大きくなれば勝手に広がる */
 .face .a{
-  margin:0; color:var(--accent); font-family:var(--jp); font-weight:700;
-  font-size:clamp(13px,1.3vw,17px); line-height:1.75; letter-spacing:-.02em;
-  background:#fff; display:inline-block; padding:.5em .85em; align-self:flex-start;
+  --fa:clamp(11px,1.1vw,14px);
+  margin:0; padding:0; background:none; align-self:flex-start;
+  display:flex; flex-wrap:wrap; align-items:flex-end;
+  font-family:var(--jp); font-weight:800; letter-spacing:-.02em;
 }
+.face .a span{
+  background:#fff; color:var(--accent);
+  font-size:calc(var(--fa) * (1 + var(--i,0) * 1.15));
+  padding:.44em .03em .4em; line-height:1.1;
+}
+.face .a span:first-child{ padding-left:.5em }
+.face .a span:last-child{ padding-right:.5em }
+/* 字に分ける前（JSが動かないとき）も、白地に青で読める形のまま */
+.face .a:not(.split){ display:inline-block; background:#fff; color:var(--accent);
+  font-size:clamp(13px,1.3vw,17px); line-height:1.75; padding:.5em .85em }
 .face figure{ margin:0; position:relative; min-height:clamp(280px,34vw,440px) }
 .face img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30% }
 @media (max-width:760px){
