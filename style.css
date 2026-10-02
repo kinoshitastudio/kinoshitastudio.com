@@ -180,10 +180,33 @@ br.sp-br{ display:none }
   .stage-notes{ grid-template-columns:1fr; margin-top:18px }
   .stage-notes li{ padding:16px 0 0 }
 }
+/* ── 画面下に貼りつく相談ボタン ──
+   ⭐ 最初から出すと読む前にふさぐので、少し読んでから出す。
+      ページ末尾の相談欄が見えたら引っ込める（同じボタンが2つ並ぶため） */
+.sticky-cta{
+  position:fixed; left:0; right:0; bottom:0; z-index:40;
+  display:flex; gap:10px; justify-content:center;
+  padding:12px clamp(12px,3vw,24px);
+  padding-bottom:calc(12px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.93); backdrop-filter:blur(14px);
+  border-top:1px solid rgba(0,0,0,.1);
+  transform:translateY(130%); transition:transform .32s cubic-bezier(.2,.8,.2,1);
+  pointer-events:none;
+}
+body.cta-on .sticky-cta{ transform:none; pointer-events:auto }
+.sticky-cta .btn{ min-height:52px; font-size:14px; font-weight:800; font-family:var(--jp) }
+@media (max-width:560px){
+  .sticky-cta{ gap:8px; padding-left:12px; padding-right:12px }
+  .sticky-cta .btn{ flex:1 1 0; padding:0 10px; font-size:13px; min-width:0 }
+}
+/* メニューを開いているあいだは出さない */
+body.menu-open .sticky-cta{ transform:translateY(130%) }
+
 /* 舞台を見終わったところで、サービスの説明へ送る */
-.stage-cta{ margin:34px 0 0; display:flex; justify-content:center }
-.stage-cta .btn{ min-height:56px; padding:0 32px; font-size:15px; font-weight:800; font-family:var(--jp) }
-@media (max-width:560px){ .stage-cta .btn{ width:100%; padding:0 18px } }
+.stage-cta{ margin:34px 0 54px; display:flex; justify-content:center }
+/* 🔴 幅いっぱいに伸びる帯に pill の角丸（999px）は効きすぎる。小さく取る */
+.stage-cta .btn{ min-height:58px; padding:0 32px; font-size:15px; font-weight:800; font-family:var(--jp); border-radius:10px }
+@media (max-width:560px){ .stage-cta{ margin-bottom:44px } .stage-cta .btn{ width:100%; padding:0 18px } }
 a.say:hover{ color:var(--accent) }
 
 /* 大きな字（参考の「得」）＝青いベタ */
@@ -247,6 +270,9 @@ a.say:hover{ color:var(--accent) }
 .crumb a{ text-decoration:none }
 .svc-hero .grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center }
 @media (max-width:860px){ .svc-hero .grid{ grid-template-columns:1fr } }
+/* 🔴 右に置くものが無いページでは、見出しを半分の幅に押し込めない。
+   case の「予約が120%増えた。」が入りきらず3行に割れていた */
+.svc-hero .grid > :only-child{ grid-column:1 / -1 }
 .svc-hero .kicker{ font-family:'Inter',var(--jp); font-weight:700; font-size:13px; letter-spacing:.06em; margin:0 0 14px; color:var(--accent) }
 .svc-hero h1{ font-family:var(--jp); font-weight:900; font-size:clamp(36px,6vw,76px); line-height:1.2; letter-spacing:-.05em; margin:0 0 22px }
 /* 🔴 em の既定は斜体。数字を強めたいだけなので、斜体は消して色で効かせる */

@@ -28,7 +28,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"困りごと窓口","item":"https://kinoshitastudio.com/"},{"@type":"ListItem","position":2,"name":"社内資料","item":"https://kinoshitastudio.com/docs.html"}]}
 </script>
-<link rel="stylesheet" href="style.css?v=1002f">
+<link rel="stylesheet" href="style.css?v=1002g">
   <script defer src="/js/analytics.js"></script>
   <meta name="google-site-verification" content="I-f-B1gGH0Q0V1P0-94IluFXpy5OzGNTwfxTCPptmtQ" />
 </head>
@@ -203,6 +203,11 @@
     </div>
   </section>
 </main>
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
+  <a class="btn btn-accent" href="contact.html">フォームで相談する</a>
+</div>
+
 
 <footer class="site-foot">
   <div class="wrap area">
@@ -242,6 +247,20 @@
     el.classList.add('split');
   });
   addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+})();
+// 画面下の相談ボタン。少し読んでから出し、末尾の相談欄が見えたら引っ込める
+(function(){
+  var el = document.getElementById('stickyCta');
+  if(!el) return;
+  var tail = document.getElementById('contact') || document.querySelector('.site-foot');
+  function upd(){
+    var on = scrollY > 420;
+    if(tail && tail.getBoundingClientRect().top < innerHeight) on = false;
+    document.body.classList.toggle('cta-on', on);
+  }
+  addEventListener('scroll', upd, {passive:true});
+  addEventListener('resize', upd);
+  upd();
 })();
 </script>
 </body>

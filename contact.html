@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1002f">
+<link rel="stylesheet" href="style.css?v=1002g">
 <script defer src="/js/analytics.js"></script>
 <style>
   .ct-head{ padding:84px 0 40px }
@@ -209,6 +209,11 @@
     </form>
   </div>
 </main>
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn-line" href="https://page.line.me/424oyeob" target="_blank" rel="noopener">LINEで相談する</a>
+  <a class="btn btn-accent" href="contact.html">フォームで相談する</a>
+</div>
+
 
 <footer class="site-foot">
   <div class="wrap area">
@@ -232,6 +237,20 @@
   if(c) c.addEventListener('click', function(){ set(false); });
   m.addEventListener('click', function(e){ if(e.target.tagName==='A') set(false); });
   addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+})();
+// 画面下の相談ボタン。少し読んでから出し、末尾の相談欄が見えたら引っ込める
+(function(){
+  var el = document.getElementById('stickyCta');
+  if(!el) return;
+  var tail = document.getElementById('contact') || document.querySelector('.site-foot');
+  function upd(){
+    var on = scrollY > 420;
+    if(tail && tail.getBoundingClientRect().top < innerHeight) on = false;
+    document.body.classList.toggle('cta-on', on);
+  }
+  addEventListener('scroll', upd, {passive:true});
+  addEventListener('resize', upd);
+  upd();
 })();
 </script>
 
