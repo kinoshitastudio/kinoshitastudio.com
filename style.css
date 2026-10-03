@@ -685,3 +685,21 @@ section.dark .tax, .on-dark .tax{ color:var(--dark-sub) }
   .cmp.tri th{ width:22% }
   .cmp.tri td small{ font-size:10px }
 }
+
+/* 受付状況。安さを保ったまま「順番待ち」に切り替えるための1行。
+   🔴 混んだら文言だけ替える。値段は動かさない */
+.slots{
+  display:inline-flex; align-items:center; gap:.7em; flex-wrap:wrap;
+  margin:clamp(14px,1.8vw,20px) 0 0; padding:9px 15px;
+  border:1px solid var(--line); border-radius:8px;
+  font-family:var(--jp); font-weight:700; font-size:clamp(12px,1.25vw,14px);
+  color:var(--ink); background:rgba(255,255,255,.6);
+}
+.slots b{
+  font-weight:800; font-size:.86em; letter-spacing:.08em; color:#fff;
+  background:var(--ink); padding:.3em .6em; border-radius:4px;
+}
+.slots em{ font-style:normal; font-weight:500; font-size:.86em; color:var(--ink-sub) }
+section.dark .slots{ border-color:rgba(255,255,255,.3); background:transparent; color:#fff }
+section.dark .slots b{ background:var(--accent) }
+section.dark .slots em{ color:var(--dark-sub) }
