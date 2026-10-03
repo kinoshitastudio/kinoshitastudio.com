@@ -703,3 +703,11 @@ section.dark .tax, .on-dark .tax{ color:var(--dark-sub) }
 section.dark .slots{ border-color:rgba(255,255,255,.3); background:transparent; color:#fff }
 section.dark .slots b{ background:var(--accent) }
 section.dark .slots em{ color:var(--dark-sub) }
+
+/* 受付状況の数字と、絞っている理由 */
+.slots strong{ font-family:'Inter',var(--jp); font-weight:900; font-size:1.3em; letter-spacing:-.02em; color:var(--accent); margin:0 .1em }
+.slots-why{
+  margin:10px 0 0; font-family:var(--jp); font-weight:500;
+  font-size:clamp(11px,1.15vw,13px); line-height:1.8; color:var(--ink-sub); max-width:34em;
+}
+section.dark .slots-why{ color:var(--dark-sub) }
