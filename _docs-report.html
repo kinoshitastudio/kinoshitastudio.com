@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本の社内資料2（しごと調査レポート）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 架空の調査レポート「滋賀のしごと調査 2027」。
+     ⭐ 赤と青の2色だけ。粒（ドット）を散らして、2つの立場が混ざっていく図にしている。
+     🔴 レポートなので、見出しは大きな欧文、本文は小さく詰める。表と図が主役。
+     1920×1080 の実寸で組み、板の上では縮めて並べているだけ。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP','Inter',sans-serif }
+  .board{ width:1500px; height:1000px; background:#56585a; margin:0 auto; position:relative; overflow:hidden }
+
+  .cover{ position:absolute; left:50%; top:54px; transform:translateX(-50%);
+    width:960px; height:540px; overflow:hidden; background:#fff;
+    box-shadow:0 18px 40px rgba(0,0,0,.34) }
+  .cover .s{ transform:scale(.5) }
+  .thumbs{ position:absolute; left:50%; top:628px; transform:translateX(-50%);
+    display:grid; grid-template-columns:repeat(3,316px); gap:12px }
+  .cell{ width:316px; height:178px; overflow:hidden; background:#fff;
+    box-shadow:0 6px 16px rgba(0,0,0,.28) }
+  .cell .s{ transform:scale(.16458) }
+  .s{ width:1920px; height:1080px; transform-origin:top left; position:relative; overflow:hidden;
+    background:#fdfdfd; color:#141822 }
+
+  /* ── 粒 ── */
+  .dots{ position:absolute; inset:0; pointer-events:none }
+  .dots b{ position:absolute; border-radius:50%; display:block }
+  .blur{ position:absolute; border-radius:50%; filter:blur(60px) }
+
+  .c-ask{ position:absolute; left:0; right:0; top:296px; text-align:center; font-size:27px;
+    letter-spacing:.3em; font-weight:500; color:#2a3140 }
+  .c-ttl{ position:absolute; left:0; right:0; top:352px; text-align:center;
+    font-family:'Inter'; font-weight:900; font-size:132px; letter-spacing:.02em; color:#141822 }
+  .c-sub{ position:absolute; left:0; right:0; top:516px; text-align:center;
+    font-family:'Inter'; font-weight:700; font-size:40px; letter-spacing:.42em; color:#141822 }
+  .c-jp{ position:absolute; left:0; right:0; top:576px; text-align:center; font-size:25px;
+    letter-spacing:.3em; color:#4e586b }
+  .c-by{ position:absolute; left:0; right:0; bottom:112px; text-align:center;
+    font-family:'Inter'; font-weight:700; font-size:46px; letter-spacing:.12em; line-height:1.05 }
+  .c-by i{ display:block; font-style:normal; font-size:17px; font-weight:400; letter-spacing:.3em;
+    color:#4e586b; margin-top:16px }
+
+  .p{ padding:88px 112px; position:relative; z-index:1 }
+  .p .eng{ font-family:'Inter'; font-weight:800; font-size:92px; letter-spacing:.04em; line-height:1 }
+  .p .eng.sm{ font-size:64px }
+  .p .kick{ font-size:22px; letter-spacing:.3em; color:#6b7585; font-weight:700 }
+  .p h2{ font-size:54px; font-weight:700; letter-spacing:-.01em; margin-top:18px; line-height:1.4 }
+  .p .lead{ font-size:23px; line-height:2.05; color:#333c4c; margin-top:34px; max-width:1180px }
+
+  .toc{ margin-top:52px; font-size:26px; line-height:2.5 }
+  .toc div{ display:flex; gap:26px; align-items:baseline; border-bottom:1px solid #dfe3e9 }
+  .toc em{ font-style:normal; margin-left:auto; font-family:'Inter'; color:#6b7585; font-size:22px }
+
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:64px; margin-top:52px }
+  .two .box{ border:2px solid #141822; padding:44px 46px }
+  .two .box h3{ font-size:34px; font-weight:700; line-height:1.5 }
+  .two .box p{ font-size:21px; line-height:2; color:#333c4c; margin-top:24px }
+  .two .box .big{ font-family:'Inter'; font-weight:900; font-size:108px; margin-top:26px; line-height:1 }
+  .two .box:first-child .big{ color:#1f4fd8 } .two .box:last-child .big{ color:#e02a35 }
+
+  /* 面グラフ */
+  .chart{ margin-top:46px; height:420px; position:relative; border-bottom:2px solid #141822;
+    border-left:2px solid #141822 }
+  .chart svg{ position:absolute; inset:0; width:100%; height:100% }
+  .chart .yl{ position:absolute; left:-70px; font-size:19px; color:#6b7585 }
+  .chart .xl{ position:absolute; bottom:-44px; font-size:19px; color:#6b7585 }
+
+  /* 国の比較 */
+  .cmp{ margin-top:44px; display:grid; grid-template-columns:260px repeat(4,1fr); gap:0;
+    border-top:2px solid #141822 }
+  .cmp div{ border-bottom:1px solid #dfe3e9; padding:26px 20px; font-size:23px }
+  .cmp .hd{ font-weight:700; font-size:25px; border-bottom:2px solid #141822; text-align:center }
+  .cmp .hd:first-child{ text-align:left }
+  .cmp .v{ text-align:center; font-family:'Inter'; font-weight:700; font-size:34px }
+  .cmp .v.red{ color:#e02a35 } .cmp .v.blue{ color:#1f4fd8 }
+
+  .pg{ position:absolute; right:56px; bottom:44px; font-family:'Inter'; font-size:21px; color:#9aa3b0 }
+  .run{ position:absolute; left:56px; top:46px; font-size:18px; letter-spacing:.2em; color:#9aa3b0 }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#9a9c9e; font-weight:600 }
+  .credit{ position:absolute; left:30px; bottom:14px; font-size:12px; letter-spacing:.12em; color:#8e9092 }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:22px">社内資料　／　調査レポート　／　16 : 9</span>
+
+  <!-- 表紙 -->
+  <div class="cover"><div class="s">
+    <div class="blur" style="left:150px;top:60px;width:560px;height:560px;background:#1f4fd8;opacity:.17"></div>
+    <div class="blur" style="right:130px;top:90px;width:520px;height:520px;background:#e02a35;opacity:.17"></div>
+    <div class="dots" id="d1"></div>
+    <div class="c-ask">小 さ な 会 社 の 時 間 は 、 ど こ へ 行 っ て い る の か ？</div>
+    <div class="c-ttl">SHIGA WORK</div>
+    <div class="c-sub">R E P O R T</div>
+    <div class="c-jp">滋 賀 の し ご と 調 査　2 0 2 7</div>
+    <div class="c-by">KOHAN<i>S O C I A L　R E S E A R C H　／　架 空</i></div>
+  </div></div>
+
+  <div class="thumbs">
+
+    <!-- 1 はじめに -->
+    <div class="cell"><div class="s">
+      <div class="blur" style="left:-80px;bottom:-120px;width:620px;height:620px;background:#1f4fd8;opacity:.13"></div>
+      <div class="p">
+        <div class="run">S H I G A　W O R K　R E P O R T　2 0 2 7</div>
+        <div class="kick">I N T R O D U C T I O N</div>
+        <h2>はじめに</h2>
+        <p class="lead">滋賀県内で働く人 1,204 名と、従業員 20 名以下の事業者 318 社に聞きました。
+        聞いたのは「何に時間を使っているか」の一点だけです。<br><br>
+        売上や利益の話はしていません。時間の使い道は、その会社が何を大事にしているかが
+        いちばん素直に出るところだと考えたからです。数字はすべて 2027 年 1 月の調査によります。</p>
+        <div class="eng" style="margin-top:72px;color:#dfe3e9">SHIGA WORK</div>
+      </div>
+      <div class="pg">02</div>
+    </div></div>
+
+    <!-- 2 監修 -->
+    <div class="cell"><div class="s">
+      <div class="blur" style="right:-60px;top:-80px;width:680px;height:680px;background:#e02a35;opacity:.16"></div>
+      <div class="blur" style="right:220px;bottom:-140px;width:540px;height:540px;background:#1f4fd8;opacity:.14"></div>
+      <div class="p">
+        <div class="run">S H I G A　W O R K　R E P O R T　2 0 2 7</div>
+        <div class="eng">SUPERVISION</div>
+        <h2 style="margin-top:46px">分けて考えず、<br>重ねて考える。</h2>
+        <p class="lead">時間の使い方は、仕事と暮らしに分けられません。
+        分けて数えた瞬間に、いちばん大事なところが落ちます。<br><br>
+        監修　湖南大学 経営学部　架空</p>
+      </div>
+      <div class="pg">04</div>
+    </div></div>
+
+    <!-- 3 CONTENTS -->
+    <div class="cell"><div class="s">
+      <div class="blur" style="left:40%;top:-180px;width:760px;height:760px;background:#1f4fd8;opacity:.15"></div>
+      <div class="p">
+        <div class="eng">CONTENTS</div>
+        <div class="toc">
+          <div>はじめに<em>P 02</em></div>
+          <div>CHAPTER 1　時間は、どこへ行っているのか<em>P 06</em></div>
+          <div>CHAPTER 2　人を雇えない会社がしていること<em>P 18</em></div>
+          <div>CHAPTER 3　紙と画面、どちらで決まっているか<em>P 30</em></div>
+          <div>CHAPTER 4　これから起きること<em>P 42</em></div>
+          <div>おわりに<em>P 52</em></div>
+        </div>
+      </div>
+      <div class="pg">05</div>
+    </div></div>
+
+    <!-- 4 章扉 -->
+    <div class="cell"><div class="s">
+      <div class="blur" style="left:860px;top:120px;width:860px;height:860px;background:#e02a35;opacity:.2"></div>
+      <div class="blur" style="left:560px;top:260px;width:640px;height:640px;background:#1f4fd8;opacity:.2"></div>
+      <div class="p">
+        <div class="eng" style="font-size:118px">CHAPTER<span style="color:#e02a35"> 1</span></div>
+        <h2 style="margin-top:62px;font-size:62px">時間は、<br>どこへ行っているのか</h2>
+        <p class="lead" style="max-width:760px">社員 20 名以下の会社で、いちばん時間を取っているのは
+        「決まったことを、もう一度決め直す時間」でした。</p>
+      </div>
+      <div class="pg">06</div>
+    </div></div>
+
+    <!-- 5 グラフ -->
+    <div class="cell"><div class="s"><div class="p">
+      <div class="run">C H A P T E R　1</div>
+      <h2>4人に1人が「同じことを2回決めている」と答えた</h2>
+      <div class="chart">
+        <svg viewBox="0 0 1600 420" preserveAspectRatio="none">
+          <path d="M0 400 L160 330 L320 352 L480 268 L640 290 L800 196 L960 230 L1120 150 L1280 178 L1440 96 L1600 128 L1600 420 L0 420 Z"
+                fill="#1f4fd8" opacity=".22"/>
+          <path d="M0 418 L160 392 L320 400 L480 356 L640 372 L800 316 L960 338 L1120 288 L1280 306 L1440 254 L1600 272 L1600 420 L0 420 Z"
+                fill="#e02a35" opacity=".26"/>
+          <path d="M0 400 L160 330 L320 352 L480 268 L640 290 L800 196 L960 230 L1120 150 L1280 178 L1440 96 L1600 128"
+                fill="none" stroke="#1f4fd8" stroke-width="5"/>
+          <path d="M0 418 L160 392 L320 400 L480 356 L640 372 L800 316 L960 338 L1120 288 L1280 306 L1440 254 L1600 272"
+                fill="none" stroke="#e02a35" stroke-width="5"/>
+        </svg>
+        <span class="yl" style="top:-10px">40%</span>
+        <span class="yl" style="top:190px">20%</span>
+        <span class="yl" style="bottom:-10px">0</span>
+        <span class="xl" style="left:0">2018</span>
+        <span class="xl" style="left:46%">2022</span>
+        <span class="xl" style="right:0">2027</span>
+      </div>
+      <p class="lead" style="margin-top:62px;font-size:21px">
+        <span style="color:#1f4fd8;font-weight:700">■</span> 20名以下の会社
+        <span style="color:#e02a35;font-weight:700">■</span> 21名以上の会社</p>
+      <div class="pg">11</div>
+    </div></div></div>
+
+    <!-- 6 比較表 -->
+    <div class="cell"><div class="s"><div class="p">
+      <div class="run">C H A P T E R　3</div>
+      <h2>決める場所は、まだ「紙の上」だった</h2>
+      <div class="cmp">
+        <div class="hd">最後に決めた場所</div>
+        <div class="hd">紙</div><div class="hd">画面</div><div class="hd">口頭</div><div class="hd">決めていない</div>
+        <div>社員 5 名以下</div>
+        <div class="v red">48%</div><div class="v">19%</div><div class="v blue">26%</div><div class="v">7%</div>
+        <div>6 — 20 名</div>
+        <div class="v red">41%</div><div class="v">28%</div><div class="v blue">24%</div><div class="v">7%</div>
+        <div>21 — 50 名</div>
+        <div class="v">26%</div><div class="v blue">52%</div><div class="v">18%</div><div class="v">4%</div>
+        <div>51 名以上</div>
+        <div class="v">14%</div><div class="v blue">71%</div><div class="v">12%</div><div class="v">3%</div>
+      </div>
+      <p class="lead" style="margin-top:44px;font-size:21px">
+        小さい会社ほど、最後のひと押しが紙の上で起きています。画面に移す前に、
+        まず紙の側を整えるほうが早いことがあります。</p>
+      <div class="pg">33</div>
+    </div></div></div>
+
+  </div>
+  <span class="credit">自主制作 / Kinoshita Studio —— 架空の調査です</span>
+</div>
+
+<script>
+// 表紙の粒。赤と青が中央で混ざるように散らす
+(function(){
+  const box=document.getElementById('d1'); if(!box) return;
+  let h='';
+  for(let i=0;i<620;i++){
+    const t=Math.random();
+    const x=120+t*1680 + (Math.random()-.5)*140;
+    const mid=Math.abs(t-.5)*2;                 // 中央ほど0
+    // 🔴 題字の帯（上下中央）に粒を入れない。字が読めなくなる
+    const side=(i%2===0?-1:1);
+    const y=540 + side*(205 + Math.abs(Math.sin(t*Math.PI*2.2))*240) + (Math.random()-.5)*170;
+    const col = t<.5 ? '#1f4fd8' : '#e02a35';
+    const r=2+Math.random()*8;
+    const op=(.18+Math.random()*.62)*(1-mid*.25);
+    h+='<b style="left:'+x.toFixed(0)+'px;top:'+y.toFixed(0)+'px;width:'+r.toFixed(1)+'px;height:'
+      +r.toFixed(1)+'px;background:'+col+';opacity:'+op.toFixed(2)+'"></b>';
+  }
+  box.innerHTML=h;
+})();
+</script>
+</body>
+</html>

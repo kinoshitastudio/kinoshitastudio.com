@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本の社内資料3（湖畔バス 方針説明）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 架空の「湖畔バス」の方針説明。社内で配って読む資料。
+     ⭐ 光が左から差して、右へ広がる。会社の色（湖の青）から、朝の黄へ。
+     🔴 社内資料なので、図が主役。1枚に1つの図だけ置いて、文は図の説明に徹する。
+     1920×1080 の実寸で組み、板の上では縮めて並べているだけ。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP','Inter',sans-serif }
+  .board{ width:1500px; height:1000px; background:#eef1f2; margin:0 auto; position:relative; overflow:hidden }
+
+  .cover{ position:absolute; left:50%; top:54px; transform:translateX(-50%);
+    width:960px; height:540px; overflow:hidden; background:#fff;
+    box-shadow:0 18px 40px rgba(20,40,60,.2) }
+  .cover .s{ transform:scale(.5) }
+  .thumbs{ position:absolute; left:50%; top:628px; transform:translateX(-50%);
+    display:grid; grid-template-columns:repeat(3,316px); gap:12px }
+  .cell{ width:316px; height:178px; overflow:hidden; background:#fff;
+    box-shadow:0 6px 16px rgba(20,40,60,.15) }
+  .cell .s{ transform:scale(.16458) }
+  .s{ width:1920px; height:1080px; transform-origin:top left; position:relative; overflow:hidden;
+    background:#fff; color:#10232e }
+
+  /* 光 */
+  .beam{ position:absolute; left:0; top:0; bottom:0; width:100%;
+    background:conic-gradient(from 72deg at 2% 50%,
+      rgba(0,178,227,0) 0deg, rgba(0,178,227,.42) 8deg, rgba(120,214,236,.34) 18deg,
+      rgba(236,230,120,.42) 30deg, rgba(247,224,72,.5) 38deg, rgba(247,224,72,0) 48deg) }
+  .beam2{ position:absolute; inset:0; background:
+    radial-gradient(ellipse at 0% 50%, rgba(0,178,227,.26), rgba(255,255,255,0) 58%) }
+  .box3d{ position:absolute; left:92px; top:328px; width:118px; height:424px;
+    background:linear-gradient(90deg,#00b2e3,#0a94bd); }
+  .box3d i{ position:absolute; left:-44px; top:26px; width:44px; height:424px;
+    background:#0b7fa3; transform:skewY(26deg); transform-origin:top right }
+
+  .c-ttl{ position:absolute; right:150px; top:300px; text-align:right;
+    font-family:'Inter'; font-weight:300; font-size:120px; line-height:1.22; letter-spacing:-.02em;
+    color:#10232e }
+  .c-jp{ position:absolute; right:152px; top:628px; text-align:right; font-size:30px;
+    letter-spacing:.24em; color:#3d5b6b }
+  .c-logo{ position:absolute; left:92px; bottom:88px; display:flex; align-items:center; gap:24px }
+  .c-logo svg{ width:104px; height:auto; display:block }
+  .c-logo b{ font-size:34px; font-weight:700; letter-spacing:.16em; color:#10232e }
+
+  .p{ padding:92px 112px; position:relative; z-index:1 }
+  .p .kick{ font-size:22px; letter-spacing:.3em; color:#5f7e8e; font-weight:700 }
+  .p h2{ font-size:58px; font-weight:700; letter-spacing:-.01em; margin-top:20px; line-height:1.4 }
+  .p h2 b{ color:#0a94bd }
+  .p .lead{ font-size:23px; line-height:2.05; color:#2f4654; margin-top:30px; max-width:1160px }
+  .head-bar{ position:absolute; left:0; right:0; top:0; height:92px; background:#f1f7f9;
+    display:flex; align-items:center; padding:0 56px; font-size:22px; letter-spacing:.14em; color:#5f7e8e }
+  .head-bar em{ font-style:normal; color:#0a94bd; font-weight:700; margin-right:18px }
+
+  /* ベン図 */
+  .venn{ position:relative; height:520px; margin-top:40px }
+  .venn div{ position:absolute; top:0; width:480px; height:480px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-size:38px; font-weight:700; line-height:1.5; color:#0b3b4d }
+  .venn .a{ left:300px; background:rgba(0,178,227,.46) }
+  .venn .b{ left:660px; background:rgba(247,224,72,.6) }
+  .venn .a span{ margin-right:150px } .venn .b span{ margin-left:150px }
+
+  /* 工程 */
+  .flow{ display:flex; margin-top:56px; height:300px; gap:0 }
+  .flow div{ flex:1; position:relative; background:#f1f7f9; margin-right:34px;
+    padding:44px 38px; clip-path:polygon(0 0, calc(100% - 34px) 0, 100% 50%, calc(100% - 34px) 100%, 0 100%, 34px 50%) }
+  .flow div:first-child{ clip-path:polygon(0 0, calc(100% - 34px) 0, 100% 50%, calc(100% - 34px) 100%, 0 100%) }
+  .flow div:last-child{ margin-right:0; background:#0a94bd; color:#fff;
+    clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%, 34px 50%) }
+  .flow b{ display:block; font-size:30px; font-weight:700; line-height:1.45 }
+  .flow span{ display:block; font-size:21px; line-height:1.95; color:#3d5b6b; margin-top:22px }
+  .flow div:last-child span{ color:#dff2f8 }
+
+  /* 数字 */
+  .hl{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:52px }
+  .hl div{ background:#f1f7f9; padding:48px 44px; border-top:6px solid #00b2e3 }
+  .hl div:nth-child(3n+2){ border-top-color:#f7e048 }
+  .hl b{ display:block; font-family:'Inter'; font-weight:800; font-size:106px; line-height:1;
+    letter-spacing:-.03em; color:#0a94bd }
+  .hl div:nth-child(3n+2) b{ color:#b89a09 }
+  .hl b em{ font-style:normal; font-size:40px; margin-left:8px }
+  .hl span{ display:block; font-size:22px; color:#2f4654; margin-top:20px; line-height:1.7 }
+
+  .toc{ margin-top:48px; display:grid; grid-template-columns:1fr 1fr; gap:26px 80px; font-size:26px }
+  .toc div{ display:flex; gap:24px; align-items:baseline; border-bottom:1px solid #d8e4e9; padding-bottom:20px }
+  .toc i{ font-style:normal; font-family:'Inter'; font-weight:700; color:#0a94bd; font-size:26px }
+  .toc em{ font-style:normal; margin-left:auto; color:#5f7e8e; font-size:21px; font-family:'Inter' }
+
+  .ch{ position:absolute; left:112px; top:300px }
+  .ch b{ display:block; font-family:'Inter'; font-weight:800; font-size:172px; line-height:1; color:#00b2e3 }
+  .ch h3{ font-size:54px; font-weight:700; line-height:1.45; margin-top:32px }
+
+  .pg{ position:absolute; right:56px; bottom:44px; font-family:'Inter'; font-size:21px; color:#9fb2bb }
+  .brand{ position:absolute; left:56px; bottom:44px; font-size:19px; letter-spacing:.2em; color:#9fb2bb }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#9fa8ab; font-weight:600 }
+  .credit{ position:absolute; left:30px; bottom:14px; font-size:12px; letter-spacing:.12em; color:#aab3b6 }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:22px">社内資料　／　方針説明　／　16 : 9</span>
+
+  <!-- 表紙 -->
+  <div class="cover"><div class="s">
+    <div class="beam"></div><div class="beam2"></div>
+    <div class="box3d"><i></i></div>
+    <div class="c-ttl">kohan bus<br>story 2027</div>
+    <div class="c-jp">2 0 2 7 年 度　方 針 説 明</div>
+    <div class="c-logo">
+      <svg viewBox="-10 -10 420 290">
+        <defs><linearGradient id="lk" x1="0" y1="0" x2="1" y2="0.35">
+          <stop offset="0" stop-color="#0a2f86"/><stop offset=".55" stop-color="#1676cf"/>
+          <stop offset="1" stop-color="#22b8ee"/></linearGradient></defs>
+        <rect x="0" y="20" width="70" height="230" rx="35" fill="url(#lk)"/>
+        <path d="M70 150 C 70 90, 110 60, 160 60 C 160 120, 130 150, 70 150 Z" fill="url(#lk)"/>
+        <path d="M70 150 C 120 150, 165 180, 165 250 C 110 250, 70 215, 70 150 Z" fill="url(#lk)"/>
+        <circle cx="200" cy="232" r="18" fill="url(#lk)"/>
+        <rect x="240" y="0" width="70" height="250" rx="35" fill="url(#lk)"/>
+        <circle cx="330" cy="175" r="90" fill="url(#lk)"/>
+      </svg>
+      <b>湖畔バス 株式会社</b>
+    </div>
+  </div></div>
+
+  <div class="thumbs">
+
+    <!-- 1 Contents -->
+    <div class="cell"><div class="s"><div class="p">
+      <div class="kick">C O N T E N T S</div>
+      <h2>この資料でお話しすること</h2>
+      <div class="toc">
+        <div><i>01</i>いまの乗客数と、その中身<em>P 03</em></div>
+        <div><i>04</i>運転士の働き方を変える<em>P 24</em></div>
+        <div><i>02</i>2027年度に目指す2つのこと<em>P 11</em></div>
+        <div><i>05</i>路線をどう決め直すか<em>P 32</em></div>
+        <div><i>03</i>決め方を変える（4つの段）<em>P 18</em></div>
+        <div><i>06</i>来年度のスケジュール<em>P 40</em></div>
+      </div>
+      <div class="brand">K O H A N　B U S</div><div class="pg">02</div>
+    </div></div></div>
+
+    <!-- 2 ベン図 -->
+    <div class="cell"><div class="s">
+      <div class="head-bar"><em>02</em>2027年度に目指す2つのこと</div>
+      <div class="p" style="padding-top:140px">
+        <h2>乗る人の<b>便利</b>と、<br>走る人の<b>無理のなさ</b>の両立</h2>
+        <div class="venn">
+          <div class="a"><span>乗る人の<br>便利</span></div>
+          <div class="b"><span>走る人の<br>無理のなさ</span></div>
+        </div>
+      </div>
+      <div class="brand">K O H A N　B U S</div><div class="pg">11</div>
+    </div></div>
+
+    <!-- 3 工程 -->
+    <div class="cell"><div class="s">
+      <div class="head-bar"><em>03</em>決め方を変える</div>
+      <div class="p" style="padding-top:140px">
+        <h2>決めてから走るのではなく、<b>走りながら決め直す</b></h2>
+        <div class="flow">
+          <div><b>① 数える</b><span>どの便に何人乗ったか。<br>毎日、運転士が1行だけ書く</span></div>
+          <div><b>② 並べる</b><span>月に一度、全員が見える<br>ところに貼り出す</span></div>
+          <div><b>③ 話す</b><span>30分だけ。<br>決めるのはその場で1つ</span></div>
+          <div><b>④ 変える</b><span>翌月のダイヤに<br>そのまま入れる</span></div>
+        </div>
+      </div>
+      <div class="brand">K O H A N　B U S</div><div class="pg">18</div>
+    </div></div>
+
+    <!-- 4 章扉 -->
+    <div class="cell"><div class="s">
+      <div class="beam" style="opacity:.55"></div><div class="beam2"></div>
+      <div class="ch">
+        <b>04</b>
+        <h3>運転士の働き方を<br>変える</h3>
+      </div>
+      <div class="pg">24</div>
+    </div></div>
+
+    <!-- 5 数字 -->
+    <div class="cell"><div class="s">
+      <div class="head-bar"><em>01</em>いまの乗客数と、その中身</div>
+      <div class="p" style="padding-top:140px">
+        <h2>数字のまとめ<span style="font-size:24px;color:#5f7e8e;font-weight:400;margin-left:20px">2027年3月時点</span></h2>
+        <div class="hl">
+          <div><b>1,320<em>名</em></b><span>1日あたりの乗客<br>（全12路線の合計）</span></div>
+          <div><b>91.7<em>%</em></b><span>定時に着いた便の割合</span></div>
+          <div><b>89.8<em>%</em></b><span>「このバスがないと困る」と<br>答えた沿線の方</span></div>
+        </div>
+        <div class="hl" style="margin-top:34px">
+          <div><b>68<em>%</em></b><span>運転士の平均年齢が<br>50歳を超えた路線</span></div>
+          <div><b>57.5<em>%</em></b><span>朝の便に集中している<br>乗客の割合</span></div>
+          <div><b>90.7<em>%</em></b><span>現金以外で払った人</span></div>
+        </div>
+      </div>
+      <div class="brand">K O H A N　B U S</div><div class="pg">04</div>
+    </div></div>
+
+    <!-- 6 まとめ -->
+    <div class="cell"><div class="s">
+      <div class="head-bar"><em>06</em>来年度のスケジュール</div>
+      <div class="p" style="padding-top:140px">
+        <h2>1年を、<b>3か月ずつ</b>で区切ります</h2>
+        <div class="flow" style="height:280px">
+          <div><b>4 — 6月</b><span>数えるしくみを入れる。<br>まずは1行だけ</span></div>
+          <div><b>7 — 9月</b><span>貼り出して話す。<br>路線は変えない</span></div>
+          <div><b>10 — 12月</b><span>1路線だけ変えてみる</span></div>
+          <div><b>1 — 3月</b><span>全路線のダイヤに<br>入れ直す</span></div>
+        </div>
+        <p class="lead" style="margin-top:44px">一度に全部は変えません。変えた結果が分かる長さで区切ります。</p>
+      </div>
+      <div class="brand">K O H A N　B U S</div><div class="pg">40</div>
+    </div></div>
+
+  </div>
+  <span class="credit">自主制作 / Kinoshita Studio —— 架空の会社です</span>
+</div>
+</body>
+</html>

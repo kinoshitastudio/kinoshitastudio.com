@@ -87,10 +87,6 @@
 
   /* ── 札を押したら開く窓。既存の .wk には触っていない ── */
   .wk{ cursor:zoom-in }
-  .wk .tag-m{ position:absolute; left:8px; top:8px; z-index:2;
-    background:rgba(255,255,255,.93); color:#1b1c1a; font-family:var(--jp); font-weight:700;
-    font-size:10px; letter-spacing:.08em; padding:3px 7px; border-radius:2px;
-    box-shadow:0 1px 4px rgba(0,0,0,.12) }
   .wk-modal{ position:fixed; inset:0; z-index:9000; display:none;
     background:rgba(16,16,14,.93); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px) }
   body.wkm-on .wk-modal{ display:block }
@@ -187,6 +183,7 @@
       <button data-f="web">ホームページ</button>
       <button data-f="logo">ロゴ・看板</button>
       <button data-f="flyer">チラシ・会社案内</button>
+      <button data-f="docs">社内資料</button>
       <button data-f="poster">ポスター</button>
       <button data-f="type">文字をつくる</button>
     </div>
@@ -327,6 +324,13 @@ const WORKS = [
    '展示「SOUND INTERACTION」の告知。額に入れて壁に掛けた状態で確かめています。'],
   ['img-flyer-kinoshita','Zine／ブランドブック','flyer',0,
    'スタジオのZine。できることと、考えている順番を1冊にまとめたもの。'],
+  // 社内資料
+  ['docs-nagi','鉄工所｜カルチャーデッキ','docs',1,
+   '架空の鉄工所が採用で渡す資料。1枚ずつ 1920×1080 の実寸で組んでいます。見出しは明朝、中身はゴシック。色は鉄の青と、焼けた鉄のオレンジだけ。'],
+  ['docs-report','調査レポート','docs',1,
+   '架空の「滋賀のしごと調査」。赤と青の粒を散らして、2つの立場が混ざっていく図にしました。題字の帯には粒を入れていません（字が負けるので）。'],
+  ['docs-kohan','バス会社｜方針説明','docs',1,
+   '架空のバス会社が社内に配る資料。1枚に図を1つだけ置いて、文は図の説明に徹しています。光が左から差して右へ広がる構え。'],
   // ポスター
   ['img-poster-advinder','クリニック','poster',1,
    '架空のクリニック ADVINDER のポスター。受ける手順を3段に分けています。'],
@@ -378,11 +382,10 @@ const WORKS = [
   ['koegakikoeteru','切り貼り｜声が聞こえてる','type',0,
    '自主制作。黒の上に緑を1色だけ乗せたもの。'],
   ];
-const CAT={web:'ホームページ',poster:'ポスター',flyer:'チラシ・会社案内',logo:'ロゴ・看板',type:'文字をつくる'};
+const CAT={web:'ホームページ',poster:'ポスター',flyer:'チラシ・会社案内',docs:'社内資料',logo:'ロゴ・看板',type:'文字をつくる'};
 const grid=document.getElementById('grid');
-grid.innerHTML = WORKS.map(([f,t,c,mock],i)=>
+grid.innerHTML = WORKS.map(([f,t,c],i)=>
   `<figure class="wk" data-c="${c}" data-i="${i}">
-     ${mock?'<span class="tag-m">見本・架空</span>':''}
      <img src="img/w/${f}.webp" alt="${t}" loading="lazy" decoding="async">
      <figcaption><span>${CAT[c]}</span><b>${t}</b></figcaption>
    </figure>`).join('');

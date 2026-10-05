@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本の社内資料1（凪工業 カルチャーデッキ）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* 架空の「凪工業」のカルチャーデッキ。採用で渡す、会社の説明の束。
+     ⭐ 1枚ずつは 1920×1080 の実寸で組み、板の上では縮めて並べているだけ。
+        だから文字の大きさも行間も、実際にスクリーンに出したときのまま。
+     🔴 色は鉄の青と、焼けた鉄のオレンジの2つだけ。見出しは明朝、中身はゴシック。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP','Inter',sans-serif }
+  .board{ width:1500px; height:1000px; background:#e8e7e3; margin:0 auto; position:relative; overflow:hidden }
+
+  .cover{ position:absolute; left:50%; top:54px; transform:translateX(-50%);
+    width:960px; height:540px; overflow:hidden; background:#fff;
+    box-shadow:0 18px 40px rgba(20,24,30,.22) }
+  .cover .s{ transform:scale(.5) }
+  .thumbs{ position:absolute; left:50%; top:628px; transform:translateX(-50%);
+    display:grid; grid-template-columns:repeat(3,316px); gap:12px }
+  .cell{ width:316px; height:178px; overflow:hidden; background:#fff;
+    box-shadow:0 6px 16px rgba(20,24,30,.16) }
+  .cell .s{ transform:scale(.16458) }
+  .s{ width:1920px; height:1080px; transform-origin:top left; position:relative; overflow:hidden;
+    background:#fff; color:#15202b }
+
+  /* ── スライドの中身（1920×1080 の実寸で書く） ── */
+  .mincho{ font-family:'Noto Serif JP',serif }
+  .grad{ position:absolute; inset:0; background:
+    linear-gradient(118deg,#1d4e8f 0%,#2e6fb5 32%,#8fb4d8 56%,#e8b48a 78%,#d4703a 100%) }
+  .band{ position:absolute; left:0; right:0; bottom:0; height:286px; display:flex }
+  .band i{ flex:1; background:linear-gradient(0deg,rgba(255,255,255,.30),rgba(255,255,255,0)) }
+  .band i:nth-child(2n){ background:linear-gradient(0deg,rgba(255,255,255,.07),rgba(255,255,255,0)) }
+
+  .c-logo{ position:absolute; left:120px; top:96px; width:300px }
+  .c-logo svg{ width:100%; height:auto; display:block }
+  .c-up{ position:absolute; left:120px; top:560px; color:#fff; font-size:30px;
+    letter-spacing:.2em; font-weight:300 }
+  .c-ttl{ position:absolute; left:120px; top:620px; color:#fff; font-size:150px; line-height:1.05;
+    letter-spacing:.02em; font-weight:400 }
+  .c-sub{ position:absolute; left:124px; top:860px; color:#eaf1f8; font-size:28px;
+    letter-spacing:.26em; font-weight:400 }
+
+  .p{ padding:96px 120px }
+  .p .kicker{ font-size:24px; letter-spacing:.34em; color:#6d7b88; font-weight:700 }
+  .p h2{ font-size:96px; font-weight:400; letter-spacing:.02em; margin-top:18px; line-height:1.15 }
+  .p h2 small{ display:block; font-size:26px; font-family:'Noto Sans JP'; font-weight:500;
+    letter-spacing:.2em; color:#6d7b88; margin-top:18px }
+  .p .rule{ height:3px; background:#15202b; margin:34px 0 0 }
+
+  .idx{ display:grid; grid-template-columns:1fr 1fr; gap:34px 90px; margin-top:62px }
+  .idx div{ display:flex; gap:28px; align-items:baseline; border-bottom:1px solid #cfd6dc; padding-bottom:22px }
+  .idx b{ font-family:'Inter'; font-weight:600; font-size:30px; color:#2e6fb5; flex:none }
+  .idx span{ font-size:36px; font-weight:500 }
+  .idx em{ font-style:normal; font-size:22px; color:#6d7b88; margin-left:auto; letter-spacing:.1em }
+
+  .mis{ position:absolute; left:120px; top:360px; right:120px }
+  .mis h3{ font-size:116px; font-weight:400; line-height:1.22; letter-spacing:.01em }
+  .mis p{ font-size:28px; line-height:2.1; color:#39485a; margin-top:46px; max-width:1180px }
+  .circle{ position:absolute; right:86px; top:150px; width:720px; height:720px; border-radius:50%;
+    background:radial-gradient(circle at 34% 28%,#cfe0f2,#2e6fb5 62%,#d4703a 120%); opacity:.9 }
+
+  .his{ display:flex; align-items:flex-end; gap:0; margin-top:70px; height:420px }
+  .his div{ flex:1; border-left:2px solid #cfd6dc; padding:0 0 0 26px; position:relative; height:100% }
+  .his div:last-child{ border-right:2px solid #cfd6dc }
+  .his b{ position:absolute; bottom:0; font-family:'Inter'; font-size:34px; font-weight:600; color:#2e6fb5 }
+  .his span{ position:absolute; bottom:70px; font-size:26px; line-height:1.7; width:86% }
+  .his i{ position:absolute; left:-9px; width:16px; height:16px; border-radius:50%; background:#d4703a }
+  .hisbg{ position:absolute; left:104px; top:286px; font-family:'Inter'; font-weight:700;
+    font-size:360px; color:#f1f5f9; letter-spacing:-.05em; z-index:0; line-height:1 }
+  .his{ position:relative; z-index:1 }
+
+  .nums{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:72px }
+  .nums div{ padding:0 48px; border-left:3px solid #d4703a }
+  .nums b{ display:block; font-family:'Inter'; font-weight:700; font-size:132px; line-height:1;
+    letter-spacing:-.03em; color:#15202b }
+  .nums b em{ font-style:normal; font-size:46px; margin-left:10px }
+  .nums span{ display:block; font-size:26px; color:#39485a; margin-top:20px; line-height:1.7 }
+
+  .vals{ position:absolute; inset:0; display:grid; grid-template-columns:repeat(3,1fr); color:#fff }
+  .vals div{ padding:120px 70px; display:flex; flex-direction:column; justify-content:flex-end;
+    border-right:1px solid rgba(255,255,255,.26) }
+  .vals div:last-child{ border-right:0 }
+  .vals b{ font-family:'Noto Serif JP'; font-weight:400; font-size:72px; line-height:1.25 }
+  .vals span{ font-size:25px; line-height:2; margin-top:34px; color:#e3ecf5 }
+
+  .pg{ position:absolute; right:60px; bottom:46px; font-family:'Inter'; font-size:22px; color:#9aa6b2 }
+  .brand{ position:absolute; left:60px; bottom:44px; font-size:20px; letter-spacing:.26em; color:#9aa6b2 }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#a3a29c; font-weight:600 }
+  .credit{ position:absolute; left:30px; bottom:14px; font-size:12px; letter-spacing:.12em; color:#b2b1aa }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:22px">社内資料　／　カルチャーデッキ　／　16 : 9</span>
+
+  <!-- 表紙 -->
+  <div class="cover"><div class="s">
+    <div class="grad"></div>
+    <div class="band"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="c-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -12 870 324">
+        <g fill="#fff">
+          <path d="M0 0 h74 v300 h-74 z"/><path d="M126 0 h74 v300 h-74 z"/>
+          <path d="M0 0 h74 L200 300 h-74 z"/>
+          <path d="M310 0 L410 300 h-74 L310 114.7 L284 300 H210 z"/>
+          <rect x="261.8" y="186" width="96.4" height="54.76"/>
+          <path fill-rule="evenodd" d="M520 0 a150 150 0 1 0 0 300 a150 150 0 1 0 0 -300 z
+                M520 74 a76 76 0 1 1 0 152 a76 76 0 1 1 0 -152 z"/>
+          <rect x="514" y="115.96" width="129" height="68.08"/>
+          <rect x="566" y="115.96" width="74" height="93"/>
+          <path d="M693 0 h74 v300 h-74 z"/>
+        </g>
+      </svg>
+    </div>
+    <div class="c-up">Update 2027.4</div>
+    <div class="c-ttl mincho">CULTURE DECK</div>
+    <div class="c-sub">凪 工 業 株 式 会 社　／　N A G I　I R O N　W O R K S</div>
+  </div></div>
+
+  <div class="thumbs">
+
+    <!-- 1 INDEX -->
+    <div class="cell"><div class="s"><div class="p">
+      <div class="kicker">I N D E X</div>
+      <h2 class="mincho">目次<small>この資料でお話しすること</small></h2>
+      <div class="rule"></div>
+      <div class="idx">
+        <div><b>01</b><span>会社のこと</span><em>P 03</em></div>
+        <div><b>04</b><span>働く人のこと</span><em>P 21</em></div>
+        <div><b>02</b><span>作っているもの</span><em>P 09</em></div>
+        <div><b>05</b><span>これからのこと</span><em>P 28</em></div>
+        <div><b>03</b><span>数字で見る凪工業</span><em>P 16</em></div>
+        <div><b>06</b><span>採用について</span><em>P 33</em></div>
+      </div>
+      <div class="brand">N A G I　I R O N　W O R K S</div><div class="pg">02</div>
+    </div></div></div>
+
+    <!-- 2 MISSION -->
+    <div class="cell"><div class="s">
+      <div class="circle"></div>
+      <div class="p"><div class="kicker">M I S S I O N</div></div>
+      <div class="mis">
+        <h3 class="mincho">図面の無いものを、<br>かたちにする。</h3>
+        <p>うちに来る仕事の半分は、図面がありません。手で描いた絵と、現物と、
+        「こんな感じ」という言葉だけで来ます。それを形にするのが、この会社の仕事です。</p>
+      </div>
+      <div class="brand">N A G I　I R O N　W O R K S</div><div class="pg">10</div>
+    </div></div>
+
+    <!-- 3 HISTORY -->
+    <div class="cell"><div class="s"><div class="p">
+      <div class="hisbg">1968</div>
+      <div class="kicker">H I S T O R Y</div>
+      <h2 class="mincho">沿革</h2>
+      <div class="his">
+        <div><i style="bottom:52px"></i><span>創業。鉄工所として、近江の農機具を直すところから</span><b>1968</b></div>
+        <div><i style="bottom:52px"></i><span>精密板金へ。図面のある仕事が増える</span><b>1994</b></div>
+        <div><i style="bottom:52px"></i><span>三代目へ。図面の無い一品ものを受けはじめる</span><b>2012</b></div>
+        <div><i style="bottom:52px"></i><span>短納期の体制へ。社員 24 名</span><b>2027</b></div>
+      </div>
+      <div class="brand">N A G I　I R O N　W O R K S</div><div class="pg">05</div>
+    </div></div></div>
+
+    <!-- 4 数字 -->
+    <div class="cell"><div class="s"><div class="p">
+      <div class="kicker">N U M B E R S</div>
+      <h2 class="mincho">数字で見る<small>2027年3月時点</small></h2>
+      <div class="rule"></div>
+      <div class="nums">
+        <div><b>24<em>名</em></b><span>社員。うち18名が<br>製造の現場にいます</span></div>
+        <div><b>11<em>年</em></b><span>平均の勤続年数。<br>いちばん長い人で38年</span></div>
+        <div><b>62<em>%</em></b><span>図面の無いところから<br>はじまった仕事の割合</span></div>
+      </div>
+      <div class="nums" style="margin-top:70px">
+        <div><b>3<em>日</em></b><span>いちばん短い納期<br>（治具・1点もの）</span></div>
+        <div><b>121<em>日</em></b><span>年間の休日</span></div>
+        <div><b>0<em>件</em></b><span>この5年の労災</span></div>
+      </div>
+      <div class="brand">N A G I　I R O N　W O R K S</div><div class="pg">17</div>
+    </div></div></div>
+
+    <!-- 5 VALUES -->
+    <div class="cell"><div class="s">
+      <div class="grad" style="opacity:.96"></div>
+      <div class="p" style="position:absolute;color:#fff"><div class="kicker" style="color:#dbe7f2">V A L U E S</div></div>
+      <div class="vals">
+        <div><b class="mincho">手で<br>確かめる</b><span>測ってから触るのではなく、触ってから測ります。数字が合っていても、手が違和感を言うことがあるので。</span></div>
+        <div><b class="mincho">断らずに<br>まず聞く</b><span>できるかどうかは、話を聞いてからでないと分かりません。無理なら無理と、理由をつけて返します。</span></div>
+        <div><b class="mincho">人を<br>急かさない</b><span>急ぐのは段取りで。手を急がせると、鉄は必ずそれを覚えています。</span></div>
+      </div>
+      <div class="pg" style="color:#cfdcea">29</div>
+    </div></div>
+
+    <!-- 6 採用 -->
+    <div class="cell"><div class="s"><div class="p">
+      <div class="kicker">R E C R U I T I N G</div>
+      <h2 class="mincho">採用について<small>2027年度　新卒・中途</small></h2>
+      <div class="rule"></div>
+      <div class="idx" style="grid-template-columns:1fr">
+        <div><b>01</b><span>工場を半日見てもらう</span><em>履歴書は要りません</em></div>
+        <div><b>02</b><span>現場の人と話す</span><em>人事は同席しません</em></div>
+        <div><b>03</b><span>やってみたい工程を選ぶ</span><em>変えても構いません</em></div>
+        <div><b>04</b><span>条件の話をする</span><em>ここで初めてお金の話を</em></div>
+      </div>
+      <div class="brand">N A G I　I R O N　W O R K S</div><div class="pg">34</div>
+    </div></div></div>
+
+  </div>
+  <span class="credit">自主制作 / Kinoshita Studio —— 架空の会社です</span>
+</div>
+</body>
+</html>
