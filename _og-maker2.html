@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>OG画像をつくる（logo / sign）── 公開には使わない</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* ⚠️ img/og/og-about.jpg の体裁に合わせてある。並べたときに揃わないと意味がない */
+  :root{ --ink:#0b0b0b; --sub:#5f6672; --accent:#1f3cff; --line:#0b0b0b }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#ddd; padding:30px; font-family:'Noto Sans JP',sans-serif }
+
+  .og{
+    width:1200px; height:630px; background:#fff; color:var(--ink);
+    position:relative; overflow:hidden; margin:0 0 30px;
+    display:grid; grid-template-columns:1fr 470px; gap:0; align-items:center;
+    background-image:radial-gradient(rgba(0,0,0,.085) 1px, transparent 1.1px);
+    background-size:17px 17px;
+  }
+  .L{ padding:0 0 0 72px }
+  .brand{
+    display:inline-flex; align-items:flex-start; gap:0;
+    font-family:'Noto Sans JP',sans-serif; font-weight:900; font-size:46px;
+    line-height:1; letter-spacing:-.05em; margin-bottom:62px;
+  }
+  .brand span{ color:var(--accent) }
+  .brand svg{ width:.62em; height:.62em; margin:.02em 0 0 -.1em; overflow:visible }
+  .brand svg line{ stroke:var(--ink); stroke-width:22 }
+  .brand svg circle{ fill:var(--ink) }
+
+  .kicker{
+    font-family:'Inter',sans-serif; font-weight:700; font-size:17px;
+    letter-spacing:.2em; color:var(--sub); margin-bottom:22px;
+  }
+  h1{
+    font-family:'Noto Sans JP',sans-serif; font-weight:900;
+    font-size:62px; line-height:1.22; letter-spacing:-.055em;
+    font-feature-settings:'palt';
+  }
+  h1 em{ font-style:normal; color:var(--accent) }
+  .note{ margin-top:26px; font-size:19px; font-weight:700; color:var(--sub); letter-spacing:-.01em }
+
+  .R{ padding-right:72px }
+  .R figure{
+    margin:0; background:#dfe3ea; border-radius:22px; overflow:hidden;
+    width:100%; aspect-ratio:1/1; display:grid; place-items:center;
+  }
+  .R img{ width:100%; height:100%; object-fit:cover; display:block }
+  .R img.pad{ width:82%; height:82%; object-fit:contain }
+
+  .foot{
+    position:absolute; left:72px; right:72px; bottom:40px;
+    border-top:3px solid var(--line); padding-top:16px;
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:'Inter',sans-serif; font-weight:700; font-size:16px; letter-spacing:.12em;
+  }
+</style>
+</head>
+<body>
+
+<div class="og" id="og-logo">
+  <div class="L">
+    <p class="brand">それ<span>ナル</span><svg viewBox="0 0 500 500"><g fill="none" stroke-linecap="round"><line x1="235" y1="234" x2="158" y2="147"/><line x1="248" y1="228" x2="235" y2="90"/><line x1="266" y1="235" x2="345" y2="162"/><line x1="272" y1="250" x2="402" y2="251"/><line x1="264" y1="267" x2="336" y2="350"/><line x1="251" y1="272" x2="259" y2="407"/><line x1="233" y1="264" x2="153" y2="327"/><line x1="228" y1="251" x2="102" y2="255"/></g><circle cx="250" cy="250" r="22"/></svg></p>
+    <p class="kicker">LOGO</p>
+    <h1>ロゴから、<br><em>作ります。</em></h1>
+    <p class="note">ロゴ・名刺｜木下スタジオ</p>
+  </div>
+  <div class="R"><figure><img class="pad" src="img/logo-advinder.webp" alt=""></figure></div>
+  <div class="foot"><b>KINOSHITASTUDIO.COM</b><span>SHIGA</span></div>
+</div>
+
+<div class="og" id="og-sign">
+  <div class="L">
+    <p class="brand">それ<span>ナル</span><svg viewBox="0 0 500 500"><g fill="none" stroke-linecap="round"><line x1="235" y1="234" x2="158" y2="147"/><line x1="248" y1="228" x2="235" y2="90"/><line x1="266" y1="235" x2="345" y2="162"/><line x1="272" y1="250" x2="402" y2="251"/><line x1="264" y1="267" x2="336" y2="350"/><line x1="251" y1="272" x2="259" y2="407"/><line x1="233" y1="264" x2="153" y2="327"/><line x1="228" y1="251" x2="102" y2="255"/></g><circle cx="250" cy="250" r="22"/></svg></p>
+    <p class="kicker">SIGN</p>
+    <h1>看板も、<br><em>名刺も。</em></h1>
+    <p class="note">看板・サイン｜木下スタジオ</p>
+  </div>
+  <div class="R"><figure><img src="img/sign-jutaku.webp" alt=""></figure></div>
+  <div class="foot"><b>KINOSHITASTUDIO.COM</b><span>SHIGA</span></div>
+</div>
+
+</body>
+</html>
