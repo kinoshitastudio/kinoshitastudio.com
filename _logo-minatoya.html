@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本ロゴ（港の酒場 ミナトヤ）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
+<style>
+  /* 架空の店「港の酒場 ミナトヤ」（浜大津の大衆酒場）のロゴ。カタカナを四角と斜めの板だけで組み、上に丸い札を4つ */
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP',sans-serif }
+  .board{ width:1500px; height:1000px; background:#efefed; margin:0 auto; position:relative; overflow:hidden; display:grid; place-items:center }
+  .lbl{ position:absolute; left:30px; top:24px; font-family:'Inter'; font-size:13px; letter-spacing:.14em; color:#999 }
+  .credit{ position:absolute; left:30px; bottom:16px; font-family:'Inter'; font-size:12px; letter-spacing:.12em; color:#bbb }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl">MAIN</span>
+  <svg width="1060" height="420" viewBox="0 0 1060 420" aria-label="港の酒場 ミナトヤ">
+    <!-- 丸い札（港・の・酒・場）＝ゆるい弧に並べる -->
+    <g font-family="Noto Sans JP" font-weight="900" font-size="40" text-anchor="middle" fill="#fff">
+      <g transform="translate(380 92) rotate(-8)"><circle r="38" fill="#111"/><text y="14">港</text></g>
+      <g transform="translate(470 72) rotate(-3)"><circle r="38" fill="#111"/><text y="14">の</text></g>
+      <g transform="translate(560 72) rotate(3)"><circle r="38" fill="#111"/><text y="14">酒</text></g>
+      <g transform="translate(650 92) rotate(8)"><circle r="38" fill="#111"/><text y="14">場</text></g>
+    </g>
+    <!-- ミナトヤ：1字＝200×200・板の太さ44・全体を少し前に倒す -->
+    <g transform="translate(70 170) skewX(-10)" fill="#111">
+      <!-- ミ -->
+      <g>
+        <polygon points="30,8 178,30 172,70 24,48"/>
+        <polygon points="40,78 170,98 164,138 34,118"/>
+        <polygon points="18,146 196,174 190,214 12,186"/>
+      </g>
+      <!-- ナ -->
+      <g transform="translate(230 0)">
+        <rect x="0" y="52" width="200" height="44"/>
+        <polygon points="96,0 142,0 142,112 104,214 54,214 96,112"/>
+      </g>
+      <!-- ト -->
+      <g transform="translate(470 0)">
+        <rect x="40" y="0" width="48" height="214"/>
+        <polygon points="88,62 112,40 196,104 172,140"/>
+      </g>
+      <!-- ヤ -->
+      <g transform="translate(690 0)">
+        <polygon points="0,78 196,50 200,92 160,150 112,150 146,98 6,118"/>
+        <polygon points="58,0 104,0 140,214 94,214"/>
+      </g>
+    </g>
+  </svg>
+  <div class="credit">自主制作 / Kinoshita Studio ── 架空のお店です</div>
+</div>
+</body>
+</html>

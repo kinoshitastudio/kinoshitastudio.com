@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本ロゴ（エコー・レコード）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  /* 架空の店「エコー・レコード」（中古レコード店）のロゴ。太い板を前に倒して角を丸め、2段に組む */
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Inter',sans-serif }
+  .board{ width:1500px; height:1000px; background:#fff; margin:0 auto; position:relative; overflow:hidden; display:grid; place-items:center }
+  .lbl{ position:absolute; left:30px; top:24px; font-size:13px; letter-spacing:.14em; color:#999 }
+  .credit{ position:absolute; left:30px; bottom:16px; font-size:12px; letter-spacing:.12em; color:#bbb }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl">MAIN</span>
+  <svg width="1100" height="640" viewBox="-50 0 1100 640" aria-label="エコー・レコード">
+    <!-- 1字＝200×220・板の太さ56。縁に同じ色の太い線を引いて角を丸める -->
+    <g fill="#111" stroke="#111" stroke-width="14" stroke-linejoin="round">
+      <!-- 1段目：エコー・ -->
+      <g transform="translate(100 40) skewX(-14)">
+        <!-- エ -->
+        <rect x="24" y="0" width="156" height="50"/><rect x="76" y="0" width="54" height="220"/><rect x="0" y="170" width="204" height="50"/>
+        <!-- コ -->
+        <g transform="translate(266 0)"><rect x="0" y="0" width="196" height="50"/><rect x="144" y="0" width="52" height="220"/><rect x="0" y="170" width="196" height="50"/></g>
+        <!-- ー -->
+        <g transform="translate(530 0)"><rect x="0" y="88" width="170" height="50"/></g>
+        <!-- ・ -->
+        <circle cx="740" cy="112" r="20" stroke="none"/>
+      </g>
+      <!-- 2段目：レコード -->
+      <g transform="translate(20 330) skewX(-14)">
+        <!-- レ -->
+        <g><rect x="16" y="0" width="56" height="220"/><polygon points="72,220 72,160 172,40 196,40 196,110 130,220"/></g>
+        <!-- コ -->
+        <g transform="translate(260 0)"><rect x="0" y="0" width="196" height="50"/><rect x="144" y="0" width="52" height="220"/><rect x="0" y="170" width="196" height="50"/></g>
+        <!-- ー -->
+        <g transform="translate(518 0)"><rect x="0" y="88" width="160" height="50"/></g>
+        <!-- ド -->
+        <g transform="translate(712 0)">
+          <rect x="30" y="0" width="56" height="220"/>
+          <polygon points="86,96 104,78 196,136 178,172"/>
+          <rect x="150" y="-24" width="20" height="44" transform="rotate(14 160 -2)"/>
+          <rect x="186" y="-24" width="20" height="44" transform="rotate(14 196 -2)"/>
+        </g>
+      </g>
+    </g>
+  </svg>
+  <div class="credit">自主制作 / Kinoshita Studio ── 架空のお店です</div>
+</div>
+</body>
+</html>
