@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本看板2（耳鼻科・小児科・野立て看板）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 野立て看板 3000×2000mm を想定（3:2）。画面用に 1500×1000 */
+  :root{ --navy:#26357a; --cream:#f7f3ea; --org:#f0a33a; --yel:#f6c445; --ink:#26357a }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Zen Maru Gothic',sans-serif }
+  .board{ width:1500px; height:1000px; position:relative; overflow:hidden; background:var(--cream); margin:0 auto; color:var(--ink) }
+  .wave{ position:absolute; left:0; right:0; bottom:0; height:400px }
+  .mark{ position:absolute; left:50%; top:34px; transform:translateX(-50%); width:300px; height:220px }
+  .en{ position:absolute; left:0; right:0; top:258px; text-align:center; font-family:'Inter',sans-serif; font-weight:700; color:var(--navy) }
+  .en b{ display:block; font-size:34px; letter-spacing:.2em } .en small{ font-size:17px; letter-spacing:.16em }
+  .name{ position:absolute; left:0; right:0; top:336px; text-align:center; font-size:104px; font-weight:900; letter-spacing:.08em; line-height:1 }
+  .pills{ position:absolute; left:0; right:0; top:480px; display:flex; justify-content:center; gap:26px }
+  .pills span{ background:var(--org); color:var(--navy); font-weight:900; font-size:40px; padding:6px 34px; border-radius:999px }
+  .pills span:nth-child(odd){ background:var(--yel) }
+  .tel{ position:absolute; left:80px; top:690px; color:#fff; font-family:'Inter',sans-serif; font-weight:800; font-size:52px; letter-spacing:.03em; display:flex; align-items:center; gap:14px }
+  .search{ position:absolute; left:80px; top:790px; width:420px; height:70px; background:#fff; display:flex; align-items:center; font-size:30px; font-weight:900; padding-left:20px }
+  .search b{ margin-left:auto; width:72px; height:100%; background:var(--org); display:grid; place-items:center }
+  .chara{ position:absolute; left:520px; top:640px; width:200px; height:330px }
+  .kensaku{ position:absolute; left:530px; top:615px; color:#fff; font-weight:900; font-size:30px }
+  .route{ position:absolute; right:60px; top:650px; width:700px; height:310px }
+  .credit{ position:absolute; right:60px; bottom:14px; font-family:'Inter',sans-serif; font-size:13px; letter-spacing:.12em; color:#8e98c4 }
+</style>
+</head>
+<body>
+<div class="board" id="sheet">
+  <!-- マーク：滋賀の県鳥カイツブリの親子（オリジナル） -->
+  <svg class="mark" viewBox="0 0 300 220" aria-label="マーク">
+    <g id="bird">
+      <ellipse cx="88" cy="150" rx="70" ry="44" fill="#7a5a3a"/>
+      <ellipse cx="80" cy="160" rx="54" ry="28" fill="#c9a27a"/>
+      <circle cx="120" cy="92" r="42" fill="#7a5a3a"/>
+      <ellipse cx="134" cy="104" rx="20" ry="16" fill="#c96b3c"/>
+      <circle cx="132" cy="84" r="7" fill="#fff"/><circle cx="133" cy="84" r="3.5" fill="#26357a"/>
+      <path d="M158 96 l22 6 l-22 6z" fill="#f6c445"/>
+      <!-- おでこの丸い鏡（お医者さん） -->
+      <circle cx="112" cy="58" r="13" fill="#e8eef9" stroke="#26357a" stroke-width="4"/><circle cx="112" cy="58" r="4" fill="#26357a"/>
+    </g>
+    <g transform="translate(150 40) scale(.72)">
+      <ellipse cx="88" cy="150" rx="70" ry="44" fill="#9a7650"/><ellipse cx="80" cy="160" rx="54" ry="28" fill="#e3c39c"/>
+      <circle cx="120" cy="92" r="42" fill="#9a7650"/><ellipse cx="134" cy="104" rx="20" ry="16" fill="#e08a5a"/>
+      <circle cx="132" cy="84" r="7" fill="#fff"/><circle cx="133" cy="84" r="3.5" fill="#26357a"/><path d="M158 96 l22 6 l-22 6z" fill="#f6c445"/>
+    </g>
+    <path d="M10 200 C 60 186, 100 214, 150 200 S 240 186, 290 200" fill="none" stroke="#26357a" stroke-width="7" stroke-linecap="round"/>
+  </svg>
+  <div class="en"><b>SETA</b><small>E.N.T. &amp; PEDIATRIC CLINIC</small></div>
+  <div class="name">せた耳鼻科・こども科</div>
+  <div class="pills"><span>耳鼻咽喉科</span><span>小児科</span><span>アレルギー科</span><span>予防接種</span></div>
+
+  <svg class="wave" viewBox="0 0 1500 400" preserveAspectRatio="none"><path d="M0 40 C 120 0, 240 70, 380 36 S 640 0, 780 36 S 1040 76, 1180 36 S 1400 0, 1500 30 V400 H0 Z" fill="#26357a"/></svg>
+
+  <div class="tel"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>077-000-5833</div>
+  <div class="search">せた耳鼻科・こども科<b><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#26357a" stroke-width="2.8"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/></svg></b></div>
+
+  <div class="kensaku">＼ 検索！ ／</div>
+  <svg class="chara" viewBox="0 0 200 330" aria-label="キャラクター">
+    <!-- 白衣のカイツブリ先生 -->
+    <path d="M40 150 h120 l14 170 h-148z" fill="#fff"/>
+    <path d="M100 150 v170" stroke="#d9dde8" stroke-width="3"/>
+    <rect x="86" y="150" width="28" height="22" fill="#e5484d"/>
+    <circle cx="100" cy="100" r="64" fill="#7a5a3a"/>
+    <ellipse cx="118" cy="120" rx="30" ry="22" fill="#c96b3c"/>
+    <circle cx="80" cy="92" r="10" fill="#fff"/><circle cx="82" cy="92" r="5" fill="#26357a"/>
+    <circle cx="124" cy="92" r="10" fill="#fff"/><circle cx="126" cy="92" r="5" fill="#26357a"/>
+    <path d="M90 118 l22 0 l-11 14z" fill="#f6c445"/>
+    <circle cx="100" cy="46" r="15" fill="#e8eef9" stroke="#26357a" stroke-width="4"/><circle cx="100" cy="46" r="5" fill="#26357a"/>
+    <path d="M40 200 C 10 190, 0 160, 6 140" stroke="#fff" stroke-width="20" stroke-linecap="round" fill="none"/>
+  </svg>
+
+  <svg class="route" viewBox="0 0 700 310" aria-label="道案内">
+    <!-- 黄色い左折の矢印 -->
+    <path d="M690 130 H230 V40 L20 170 L230 300 V240 H690 Z" fill="#f6c445"/>
+    <g transform="translate(250 30)"><rect width="200" height="64" rx="12" fill="#fff"/><text x="100" y="46" text-anchor="middle" font-family="Zen Maru Gothic" font-weight="900" font-size="40" fill="#26357a">大萱</text></g>
+    <g transform="translate(480 36)"><rect width="150" height="52" rx="26" fill="#fff"/><circle cx="40" cy="26" r="14" fill="#26357a"/><circle cx="75" cy="26" r="14" fill="#26357a"/><circle cx="110" cy="26" r="14" fill="#26357a"/></g>
+    <text x="455" y="206" text-anchor="middle" font-family="Zen Maru Gothic" font-weight="900" font-size="60" fill="#26357a">左折 150m先</text>
+  </svg>
+  <div class="credit">自主制作 / Kinoshita Studio ── 架空のクリニックです</div>
+</div>
+</body>
+</html>

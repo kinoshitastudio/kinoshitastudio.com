@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本看板1（内科・野立て看板）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 野立て看板 3000×2000mm を想定（3:2）。画面用に 1500×1000 */
+  :root{ --blue:#2f63c9; --blue-d:#1f4ea8; --yel:#f2c94c; --ink:#1d2b4f }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Zen Maru Gothic','Noto Sans JP',sans-serif }
+  .board{ width:1500px; height:1000px; position:relative; overflow:hidden; background:#fff; margin:0 auto }
+  /* 右の青い面（左辺はゆるいS字） */
+  .blue{ position:absolute; inset:0; }
+  .blue svg{ width:100%; height:100% }
+
+  /* ロゴ：丸の中に「堅」ではなく、湖の波を抱いた「か」 */
+  .logo{ position:absolute; left:190px; top:70px; width:360px; height:360px }
+  .en{ position:absolute; left:120px; width:500px; top:450px; text-align:center; font-family:'Inter',sans-serif; font-weight:700; font-size:36px; letter-spacing:.24em; color:var(--blue) }
+  .dept{ position:absolute; left:110px; top:560px; font-size:38px; line-height:1.3; font-weight:700; color:var(--blue) }
+  .name{ position:absolute; left:290px; top:552px; font-size:92px; font-weight:900; letter-spacing:.06em; color:var(--blue); line-height:1 }
+  .search{ position:absolute; left:110px; top:740px; width:600px; height:62px; border:3px solid var(--blue); display:flex; align-items:center; font-size:26px; font-weight:700; color:var(--ink) }
+  .search i{ width:56px; height:100%; display:grid; place-items:center }
+  .search span{ flex:1 }
+  .search b{ width:120px; height:100%; background:var(--yel); display:grid; place-items:center; font-size:24px }
+  .tel{ position:absolute; left:110px; top:850px; font-family:'Inter',sans-serif; font-weight:800; font-size:44px; color:var(--blue); letter-spacing:.02em }
+  .tel small{ font-family:'Zen Maru Gothic'; font-size:24px; margin-right:12px; vertical-align:6px }
+
+  /* 右：道案内 */
+  .route{ position:absolute; right:50px; top:50px; width:600px; height:560px }
+  .go{ position:absolute; right:60px; top:640px; width:620px; text-align:center; color:#fff; font-weight:900; font-size:76px; line-height:1.25; letter-spacing:.04em }
+  .go small{ display:block; font-family:'Inter',sans-serif; font-weight:800; font-size:86px }
+  .credit{ position:absolute; left:110px; bottom:22px; font-family:'Inter',sans-serif; font-size:13px; letter-spacing:.12em; color:#b9c2d6 }
+</style>
+</head>
+<body>
+<div class="board" id="sheet">
+  <div class="blue">
+    <svg viewBox="0 0 1500 1000" preserveAspectRatio="none">
+      <path d="M800 0 C 700 180, 900 330, 820 500 C 740 680, 900 820, 800 1000 L1500 1000 L1500 0 Z" fill="#2f63c9"/>
+      <!-- 湖の波のしるし（右の面に散らす） -->
+      <g stroke-linecap="round" fill="none" stroke-width="14">
+        <g transform="translate(1340 70)"><path d="M0 0 h110" stroke="#f2c94c"/><path d="M0 26 h110" stroke="#7fa3e6"/></g>
+        <g transform="translate(860 230)"><path d="M0 0 h80" stroke="#7fa3e6"/><path d="M0 26 h80" stroke="#f2c94c"/></g>
+        <g transform="translate(1360 470)"><path d="M0 0 h100" stroke="#f2c94c"/><path d="M0 26 h100" stroke="#7fa3e6"/></g>
+        <g transform="translate(850 820)"><path d="M0 0 h90" stroke="#7fa3e6"/><path d="M0 26 h90" stroke="#f2c94c"/></g>
+        <g transform="translate(1350 880)"><path d="M0 0 h110" stroke="#f2c94c"/><path d="M0 26 h110" stroke="#7fa3e6"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <svg class="logo" viewBox="0 0 360 360" aria-label="ロゴ">
+    <circle cx="180" cy="180" r="160" fill="none" stroke="#2f63c9" stroke-width="22"/>
+    <!-- 「か」を太い線で。払いの代わりに湖の波 -->
+    <g fill="none" stroke="#2f63c9" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M88 132 H204 C 232 132, 236 160, 232 196 C 226 250, 208 276, 176 270"/>
+      <path d="M150 92 C 146 170, 128 230, 92 268"/>
+      <path d="M252 120 C 272 150, 282 180, 282 214"/>
+    </g>
+    <path d="M86 214 C 130 196, 170 232, 214 214 S 290 196, 300 210" fill="none" stroke="#f2c94c" stroke-width="20" stroke-linecap="round"/>
+  </svg>
+  <div class="en">KATATA CLINIC</div>
+  <div class="dept">内科<br>消化器科</div>
+  <div class="name">かたた内科</div>
+  <div class="search"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1d2b4f" stroke-width="2.6"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/></svg></i><span>かたた内科　堅田</span><b>検索</b></div>
+  <div class="tel"><small>TEL</small>077-000-2470</div>
+
+  <svg class="route" viewBox="0 0 600 560" aria-label="道案内">
+    <!-- 大きな右折の矢印（白） -->
+    <path d="M250 540 V250 H400 V160 L570 300 L400 440 V350 H350 V540 Z" fill="#fff"/>
+    <!-- 信号 -->
+    <g transform="translate(70 120)"><rect width="200" height="64" rx="32" fill="#fff"/><circle cx="50" cy="32" r="17" fill="#3b82f6"/><circle cx="100" cy="32" r="17" fill="#f2c94c"/><circle cx="150" cy="32" r="17" fill="#e5484d"/></g>
+    <!-- 交差点名の吹き出し -->
+    <g transform="translate(30 20)"><rect width="280" height="76" rx="38" fill="#fff"/><path d="M120 76 l20 22 l20 -22z" fill="#fff"/><text x="140" y="52" text-anchor="middle" font-family="Zen Maru Gothic" font-weight="900" font-size="38" fill="#1d2b4f">堅田駅前</text></g>
+    <!-- 国道 -->
+    <g transform="translate(40 330)"><path d="M0 0 h150 l-75 110 z" fill="#fff"/><path d="M14 8 h122 l-61 88z" fill="#2f63c9"/><text x="75" y="58" text-anchor="middle" font-family="Inter" font-weight="800" font-size="40" fill="#fff">477</text></g>
+  </svg>
+  <div class="go">次の信号 右折<small>300m</small></div>
+  <div class="credit">自主制作 / Kinoshita Studio ── 架空のクリニックです</div>
+</div>
+</body>
+</html>

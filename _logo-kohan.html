@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本ロゴ（湖畔バス）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* 架空の会社「湖畔バス（KOHAN BUS）」のロゴ。頭文字 k・b を丸い形で組み、点＝バス停。湖の色のグラデーション */
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Inter','Noto Sans JP',sans-serif }
+  .board{ width:1500px; height:1000px; background:#fff; margin:0 auto; position:relative; overflow:hidden; display:grid; grid-template-columns:1.25fr 1fr; color:#111 }
+  .main{ display:flex; align-items:center; justify-content:center; border-right:1px solid #eee }
+  .side{ display:grid; grid-template-rows:1fr 1fr 0.8fr }
+  .side>div{ display:flex; align-items:center; justify-content:center; border-bottom:1px solid #eee; gap:24px }
+  .side .dark{ background:#0c2a6e }
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#999; font-weight:600 }
+  .wm{ font-weight:700; letter-spacing:.32em; line-height:1.55; font-size:30px; color:#111 }
+  .jp{ font-family:'Noto Sans JP'; font-weight:700; font-size:22px; letter-spacing:.3em; color:#333; margin-top:10px }
+  .credit{ position:absolute; left:30px; bottom:16px; font-size:12px; letter-spacing:.12em; color:#bbb }
+</style>
+</head>
+<body>
+<div class="board">
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="lake" x1="0" y1="0" x2="1" y2="0.35">
+        <stop offset="0" stop-color="#0a2f86"/><stop offset=".55" stop-color="#1676cf"/><stop offset="1" stop-color="#22b8ee"/>
+      </linearGradient>
+      <!-- 記号（k・点・b）だけ。幅 420×高さ 300 -->
+      <g id="mk">
+        <!-- k：丸い縦の棒＋2枚の葉 -->
+        <rect x="0" y="20" width="70" height="230" rx="35" fill="url(#lake)"/>
+        <path d="M70 150 C 70 90, 110 60, 160 60 C 160 120, 130 150, 70 150 Z" fill="url(#lake)"/>
+        <path d="M70 150 C 120 150, 165 180, 165 250 C 110 250, 70 215, 70 150 Z" fill="url(#lake)"/>
+        <!-- 点＝バス停 -->
+        <circle cx="200" cy="232" r="18" fill="url(#lake)"/>
+        <!-- b：丸い縦の棒＋大きな丸 -->
+        <rect x="240" y="0" width="70" height="250" rx="35" fill="url(#lake)"/>
+        <circle cx="330" cy="175" r="90" fill="url(#lake)"/>
+        <circle cx="330" cy="175" r="32" fill="#fff"/>
+      </g>
+    </defs>
+  </svg>
+
+  <div class="main">
+    <div class="lbl" style="left:30px;top:24px">MAIN</div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:38px">
+      <svg width="440" height="300" viewBox="0 -10 430 290"><use href="#mk"/></svg>
+      <div><div class="wm">KOHAN<br>BUS</div><div class="jp">湖畔バス</div></div>
+    </div>
+  </div>
+  <div class="side">
+    <div><div class="lbl" style="right:30px;top:24px">HORIZONTAL</div>
+      <svg width="170" height="118" viewBox="0 -10 430 290"><use href="#mk"/></svg>
+      <div class="wm" style="font-size:24px;line-height:1.5">KOHAN<br>BUS</div></div>
+    <div class="dark"><div class="lbl" style="right:30px;top:520px;color:#7f93c4">ON DARK</div>
+      <svg width="170" height="118" viewBox="0 -10 430 290"><use href="#mk"/></svg>
+      <div class="wm" style="font-size:24px;line-height:1.5;color:#fff">KOHAN<br>BUS</div></div>
+    <div><div class="lbl" style="right:30px;top:860px">ICON</div>
+      <div style="width:120px;height:120px;border-radius:28px;background:#0c2a6e;display:grid;place-items:center"><svg width="86" height="60" viewBox="0 -10 430 290"><use href="#mk"/></svg></div>
+      <div style="width:64px;height:64px;border-radius:50%;background:#fff;border:1px solid #ddd;display:grid;place-items:center"><svg width="44" height="30" viewBox="0 -10 430 290"><use href="#mk"/></svg></div></div>
+  </div>
+  <div class="credit">自主制作 / Kinoshita Studio ── 架空の会社です</div>
+</div>
+</body>
+</html>

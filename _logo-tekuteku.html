@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本ロゴ（てくてくひろば）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+<style>
+  /* 架空の施設「てくてくひろば」（こどもの遊び場）のロゴ。太い線のかなを3色の部品で組み、目が2つ歩いている */
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP',sans-serif }
+  .board{ width:1500px; height:1000px; background:#f8f8f6; margin:0 auto; position:relative; overflow:hidden; display:grid; grid-template-columns:1.3fr 1fr }
+  .main{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px; border-right:1px solid #e6e6e2 }
+  .en{ font-family:'Inter'; font-weight:800; font-size:44px; letter-spacing:.24em; color:#2a63b8 }
+  .side{ display:grid; grid-template-rows:1fr 1fr 1fr }
+  .side>div{ display:flex; align-items:center; justify-content:center; border-bottom:1px solid #e6e6e2; position:relative; gap:20px }
+  .lbl{ position:absolute; font-family:'Inter'; font-size:13px; letter-spacing:.14em; color:#999 }
+  .credit{ position:absolute; left:30px; bottom:16px; font-family:'Inter'; font-size:12px; letter-spacing:.12em; color:#bbb }
+</style>
+</head>
+<body>
+<div class="board">
+  <svg width="0" height="0" style="position:absolute"><defs>
+    <!-- 1字＝200×200。線の太さ34。色＝濃い青／水色／オレンジ -->
+    <g id="te" stroke-width="34" stroke-linecap="butt" fill="none">
+      <path d="M20 50 H180" stroke="#7fc6e0"/>
+      <path d="M120 50 C 60 70, 40 110, 50 150" stroke="#2a63b8"/>
+      <path d="M50 150 C 60 180, 100 185, 140 180" stroke="#efa63a"/>
+    </g>
+    <g id="ku" stroke-width="34" stroke-linecap="butt" fill="none">
+      <path d="M140 20 L60 100" stroke="#2a63b8"/>
+      <path d="M60 100 L140 180" stroke="#7fc6e0"/>
+    </g>
+    <g id="eyes">
+      <circle cx="0" cy="0" r="16" fill="#efa63a"/><circle cx="4" cy="2" r="6" fill="#111"/>
+      <circle cx="40" cy="-10" r="16" fill="#7fc6e0"/><circle cx="44" cy="-8" r="6" fill="#111"/>
+    </g>
+    <g id="mark">
+      <use href="#te" x="0"/><use href="#ku" x="190"/><use href="#te" x="380"/><use href="#ku" x="570"/>
+      <use href="#eyes" x="250" y="110"/>
+      <path d="M720 30 q16 -12 32 0 M728 46 q8 -6 16 0" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <!-- ひろば：下に細い帯で -->
+      <text x="390" y="270" text-anchor="middle" font-family="Noto Sans JP" font-weight="700" font-size="44" letter-spacing="30" fill="#2a63b8">ひろば</text>
+    </g>
+  </defs></svg>
+
+  <div class="main">
+    <span class="lbl" style="left:30px;top:24px">MAIN</span>
+    <svg width="760" height="290" viewBox="0 0 780 290"><use href="#mark"/></svg>
+    <div class="en">TEKUTEKU HIROBA</div>
+  </div>
+  <div class="side">
+    <div><span class="lbl" style="right:30px;top:20px">SMALL</span><svg width="300" height="112" viewBox="0 0 780 290"><use href="#mark"/></svg></div>
+    <div style="background:#2a63b8"><span class="lbl" style="right:30px;top:20px;color:#cfe0f5">SIGN</span>
+      <div style="background:#fff;border-radius:18px;padding:18px 22px"><svg width="300" height="112" viewBox="0 0 780 290"><use href="#mark"/></svg></div></div>
+    <div><span class="lbl" style="right:30px;top:20px">ICON</span>
+      <div style="width:130px;height:130px;border-radius:30px;background:#fff;border:1px solid #ddd;display:grid;place-items:center"><svg width="110" height="70" viewBox="0 0 380 200"><use href="#te"/><use href="#ku" x="190"/><use href="#eyes" x="250" y="110"/></svg></div></div>
+  </div>
+  <div class="credit">自主制作 / Kinoshita Studio ── 架空の施設です</div>
+</div>
+</body>
+</html>
