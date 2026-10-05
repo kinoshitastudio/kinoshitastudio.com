@@ -535,12 +535,14 @@ section.dark .flow b{ color:#fff }
 .hero-float .it-c{ left:6%; top:4%; width:40% }
 .hero-float .it-d{ left:44%; top:14%; width:44% }
 .hero-float .it-e{ left:0; bottom:0; font-size:30cqw }
-.hero-float .it-f{ left:4%; top:4%; width:40%; font-size:5cqw }
-.hero-float .it-g{ left:50%; top:14%; width:38%; font-size:5cqw }
-.hero-float .it-h{ left:18%; top:50%; width:40%; font-size:5cqw }
+.hero-float .it-f{ left:0; top:6%; width:38%; font-size:5cqw }
+.hero-float .it-g{ left:6%; top:44%; width:34%; font-size:5cqw }
+.hero-float .it-h{ left:34%; top:68%; width:36%; font-size:5cqw }
 .hero-float .it-i{ left:0; top:4%; width:76%; font-size:3.4cqw }
 .hero-float .it-j{ left:20%; top:42%; width:76%; font-size:3.4cqw }
 .hero-float .it-k{ right:0; bottom:0; font-size:26cqw }
+/* 付箋の後ろに敷くイラスト（consul・meeting）。DOMで先に置く＝付箋が上に乗る */
+.hero-float .it-p{ right:0; top:2%; width:62% }
 .hero-float img{ width:100% }
 
 /* ── 議題のカード（会議のメリハリ）── 実際に渡す「1枚」の形 */
