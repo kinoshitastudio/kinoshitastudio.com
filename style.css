@@ -711,3 +711,16 @@ section.dark .slots em{ color:var(--dark-sub) }
   font-size:clamp(11px,1.15vw,13px); line-height:1.8; color:var(--ink-sub); max-width:34em;
 }
 section.dark .slots-why{ color:var(--dark-sub) }
+
+/* ═══ 2026-10-05 タイルに版画風のイラスト（黒・青・白の3色）═══
+   元＝Midjourneyの写真 → 明るさのむらを消して3段に分け、輪郭を黒で足した（~/Desktop/道具/それナル_版画にする.py）
+   大きな字は残すが、イラストの上で白抜きの輪郭にして主役をイラストに譲る */
+.tile.pic{ background:var(--accent) }
+.tile.pic::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,transparent 22%,transparent 45%,rgba(0,0,0,.85) 100%); display:block }
+.tile.pic img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .5s }
+.tile.pic:hover img{ transform:scale(1.06) }
+.tile.pic b{ position:absolute; inset:auto 14px 64px auto; display:block; z-index:1; font-family:'Inter',sans-serif; font-weight:900; letter-spacing:-.07em; line-height:.9;
+  font-size:clamp(34px,4vw,62px); color:transparent; -webkit-text-stroke:1.6px #fff; padding:0; opacity:.95 }
+.tile.pic b.jp{ font-family:var(--jp); letter-spacing:-.04em; font-size:clamp(30px,3.6vw,56px) }
+.tile.pic .tag{ color:#fff }
+.tile.pic .arrow{ background:#fff; color:var(--accent) }
