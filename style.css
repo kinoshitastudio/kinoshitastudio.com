@@ -713,7 +713,7 @@ section.dark .slots em{ color:var(--dark-sub) }
 section.dark .slots-why{ color:var(--dark-sub) }
 
 /* ═══ 2026-10-05 タイルに版画風のイラスト（黒・青・白の3色）═══
-   元＝Midjourneyの写真 → 明るさのむらを消して3段に分け、輪郭を黒で足した（~/Desktop/道具/それナル_版画にする.py）
+   元＝Midjourneyの写真 → 明るさのむらを消して3段に分け、輪郭を黒で足した（iCloud/道具/それナル/それナル_版画にする.py）
    大きな字は残すが、イラストの上で白抜きの輪郭にして主役をイラストに譲る */
 .tile.pic{ background:var(--accent) }
 .tile.pic::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,transparent 22%,transparent 45%,rgba(0,0,0,.85) 100%); display:block }
