@@ -9,8 +9,8 @@
   /* 架空の会社「湖畔バス（KOHAN BUS）」のロゴ。頭文字 k・b を丸い形で組み、点＝バス停。湖の色のグラデーション */
   *{box-sizing:border-box;margin:0;padding:0}
   body{ background:#555; padding:40px; font-family:'Inter','Noto Sans JP',sans-serif }
-  .board{ width:1500px; height:1000px; background:#fff; margin:0 auto; position:relative; overflow:hidden; display:grid; grid-template-columns:1.25fr 1fr; color:#111 }
-  .main{ display:flex; align-items:center; justify-content:center; border-right:1px solid #eee }
+  .board{ width:1500px; height:1000px; background:#fff; margin:0 auto; position:relative; overflow:hidden; display:grid; grid-template-columns:1fr; color:#111 }
+  .main{ display:flex; align-items:center; justify-content:center }
   .side{ display:grid; grid-template-rows:1fr 1fr 0.8fr }
   .side>div{ display:flex; align-items:center; justify-content:center; border-bottom:1px solid #eee; gap:24px }
   .side .dark{ background:#0c2a6e }
@@ -49,17 +49,6 @@
       <svg width="440" height="300" viewBox="0 -10 430 290"><use href="#mk"/></svg>
       <div><div class="wm">KOHAN<br>BUS</div><div class="jp">湖畔バス</div></div>
     </div>
-  </div>
-  <div class="side">
-    <div><div class="lbl" style="right:30px;top:24px">HORIZONTAL</div>
-      <svg width="170" height="118" viewBox="0 -10 430 290"><use href="#mk"/></svg>
-      <div class="wm" style="font-size:24px;line-height:1.5">KOHAN<br>BUS</div></div>
-    <div class="dark"><div class="lbl" style="right:30px;top:520px;color:#7f93c4">ON DARK</div>
-      <svg width="170" height="118" viewBox="0 -10 430 290"><use href="#mk"/></svg>
-      <div class="wm" style="font-size:24px;line-height:1.5;color:#fff">KOHAN<br>BUS</div></div>
-    <div><div class="lbl" style="right:30px;top:860px">ICON</div>
-      <div style="width:120px;height:120px;border-radius:28px;background:#0c2a6e;display:grid;place-items:center"><svg width="86" height="60" viewBox="0 -10 430 290"><use href="#mk"/></svg></div>
-      <div style="width:64px;height:64px;border-radius:50%;background:#fff;border:1px solid #ddd;display:grid;place-items:center"><svg width="44" height="30" viewBox="0 -10 430 290"><use href="#mk"/></svg></div></div>
   </div>
   <div class="credit">自主制作 / Kinoshita Studio ── 架空の会社です</div>
 </div>
