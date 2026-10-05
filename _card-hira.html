@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本名刺（比良製菓）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* 架空の「比良製菓」の名刺。
+     ⭐ ロゴの芯＝h の頭が比良山の稜線になっているところ。名刺では【その稜線だけ】を
+        紙の横いっぱいに1本引いて、罫の代わりにしている。
+     🔴 色は墨1色。和菓子屋なので紙は生成り、字は明朝、余白は多め。
+     縦型 55×91mm。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP','Inter',sans-serif }
+  .board{ width:1500px; height:1000px; background:#eae6dc; margin:0 auto; position:relative;
+    overflow:hidden; display:flex; align-items:center; justify-content:center; gap:96px; color:#241f1a }
+  .card{ width:414px; height:685px; position:relative; overflow:hidden; background:#f6f2e7;
+    box-shadow:0 24px 44px rgba(60,50,30,.18), 0 2px 5px rgba(60,50,30,.10) }
+  .mincho{ font-family:'Noto Serif JP',serif }
+
+  /* 山の稜線。表は中ほど、裏は上のほうに同じ形で */
+  .ridge{ position:absolute; left:0; right:0; height:52px }
+  .ridge svg{ width:100%; height:100%; display:block }
+
+  /* ── 表 ── */
+  .face .mk{ position:absolute; left:50%; top:180px; transform:translateX(-50%); width:206px }
+  .face .mk svg{ width:100%; height:auto; display:block }
+  .face .ridge{ top:300px }
+  .face .jp{ position:absolute; left:0; right:0; top:378px; text-align:center;
+    font-size:15px; letter-spacing:.44em; text-indent:.44em }
+  .face .sub{ position:absolute; left:0; right:0; top:418px; text-align:center;
+    font-size:10.5px; letter-spacing:.3em; color:#7b7060; text-indent:.3em }
+  .face .adr{ position:absolute; left:0; right:0; bottom:54px; text-align:center;
+    font-size:11px; letter-spacing:.16em; color:#4b4238; line-height:1.95 }
+
+  /* ── 裏 ── */
+  .back{ padding:58px 44px 0 }
+  .back .ridge{ top:148px; opacity:.5 }
+  .back .nm{ font-size:27px; letter-spacing:.08em; line-height:1.3 }
+  .back .nm em{ font-style:normal; display:block; font-size:11px; font-weight:400;
+    letter-spacing:.26em; color:#7b7060; margin-top:10px; font-family:'Inter' }
+  .back .ttl{ font-size:12px; letter-spacing:.2em; color:#4b4238; margin-top:16px }
+  .back .body{ position:absolute; left:44px; right:44px; top:224px; font-size:11.5px;
+    line-height:2.15; color:#3a332b }
+  .back .body b{ font-weight:500 }
+  .back .tel{ position:absolute; left:44px; bottom:92px; font-size:16px; letter-spacing:.06em;
+    font-family:'Inter'; font-weight:500 }
+  .back .web{ position:absolute; left:44px; bottom:62px; font-size:11px; letter-spacing:.08em;
+    color:#4b4238; font-family:'Inter' }
+  .back .seal{ position:absolute; right:40px; bottom:52px; width:56px; height:56px;
+    border:1.5px solid #241f1a; border-radius:50%; display:flex; align-items:center;
+    justify-content:center; font-size:19px; letter-spacing:0 }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#a69e8c; font-weight:600 }
+  .credit{ position:absolute; left:30px; bottom:16px; font-size:12px; letter-spacing:.12em; color:#b3ab99 }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:24px">BUSINESS CARD　／　55 × 91 mm</span>
+
+  <div class="card face">
+    <div class="mk">
+      <svg viewBox="0 0 640 360" aria-label="hira">
+        <g fill="none" stroke="#241f1a" stroke-width="40" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 330 V150 C 30 90, 60 40, 110 20"/>
+          <path d="M30 230 C 30 180, 70 160, 105 160 C 145 160, 170 185, 170 230 V330"/>
+          <path d="M250 175 V330"/>
+          <path d="M330 330 V230 C 330 190, 360 172, 400 175"/>
+          <path d="M590 230 C 590 190, 560 170, 525 170 C 485 170, 460 200, 460 250 C 460 300, 485 330, 525 330 C 560 330, 590 305, 590 270"/>
+          <path d="M590 180 V330"/>
+        </g>
+      </svg>
+    </div>
+    <div class="ridge">
+      <svg viewBox="0 0 414 52" preserveAspectRatio="none">
+        <path d="M0 46 L74 20 L112 34 L178 6 L232 30 L286 14 L340 36 L414 18"
+              fill="none" stroke="#241f1a" stroke-width="1.6"/>
+      </svg>
+    </div>
+    <div class="jp mincho">比良製菓</div>
+    <div class="sub">H I R A　S E I K A　／　滋 賀 ・ 大 津</div>
+    <div class="adr">生菓子・干菓子・季節のもの<br>注文は三日前までにお願いします</div>
+  </div>
+
+  <div class="card back">
+    <div class="nm mincho">比良 千鶴<em>H I R A 　 C H I Z U R U</em></div>
+    <div class="ttl mincho">四 代 目 ／ 菓 子 司</div>
+    <div class="ridge">
+      <svg viewBox="0 0 414 52" preserveAspectRatio="none">
+        <path d="M0 46 L74 20 L112 34 L178 6 L232 30 L286 14 L340 36 L414 18"
+              fill="none" stroke="#241f1a" stroke-width="1.6"/>
+      </svg>
+    </div>
+    <div class="body">
+      〒520-0000<br>
+      滋賀県大津市比良〇丁目 0-0<br>
+      <b>JR 比良駅から徒歩 9 分</b><br><br>
+      水曜・木曜はお休みです。<br>
+      山が見える日は、朝が早いです。
+    </div>
+    <div class="tel">077-000-0000</div>
+    <div class="web">HIRA-SEIKA.JP</div>
+    <div class="seal mincho">比</div>
+  </div>
+
+  <span class="credit">自主制作 / Kinoshita Studio —— 架空の店です</span>
+</div>
+</body>
+</html>

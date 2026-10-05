@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本名刺（港の酒場 ミナトヤ）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 架空の「港の酒場 ミナトヤ」の名刺。
+     ⭐ ロゴの【丸い札】を名刺でも使う。表は札を1つだけ落として、店名の代わりにする。
+     🔴 色は墨と紙の2つだけ。大衆酒場なので、紙は白く、字は太く、線は引かない。
+     縦型 55×91mm。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP','Inter',sans-serif }
+  .board{ width:1500px; height:1000px; background:#e6e4df; margin:0 auto; position:relative;
+    overflow:hidden; display:flex; align-items:center; justify-content:center; gap:96px; color:#111 }
+  .card{ width:414px; height:685px; position:relative; overflow:hidden;
+    box-shadow:0 24px 44px rgba(20,20,20,.22), 0 2px 5px rgba(20,20,20,.12) }
+
+  /* ── 表 ── */
+  .face{ background:#111; color:#fdfcf8 }
+  .face .mk{ position:absolute; left:50%; top:206px; transform:translateX(-50%); width:296px }
+  .face .mk svg{ width:100%; height:auto; display:block }
+  .face .fuda{ position:absolute; left:50%; top:112px; transform:translateX(-50%);
+    width:74px; height:74px; border-radius:50%; background:#fdfcf8; color:#111;
+    display:flex; align-items:center; justify-content:center; font-weight:900; font-size:28px }
+  .face .en{ position:absolute; left:0; right:0; bottom:112px; text-align:center;
+    font-size:11px; letter-spacing:.44em; color:#b7b2a6; text-indent:.44em }
+  .face .adr{ position:absolute; left:0; right:0; bottom:62px; text-align:center;
+    font-size:11.5px; letter-spacing:.14em; color:#fdfcf8 }
+
+  /* ── 裏 ── */
+  .back{ background:#fdfcf8; padding:60px 44px 0 }
+  .back .nm{ font-weight:900; font-size:30px; letter-spacing:.04em; line-height:1.3 }
+  .back .nm em{ font-style:normal; display:block; font-size:11.5px; font-weight:500;
+    letter-spacing:.24em; color:#8a857a; margin-top:9px }
+  .back .ttl{ font-size:12.5px; font-weight:700; letter-spacing:.16em; color:#44403a; margin-top:22px }
+  .back .adr{ font-size:12px; line-height:2.05; color:#2d2a25; margin-top:36px }
+  .back .adr b{ font-weight:700 }
+  .back .tel{ font-size:17px; font-weight:700; letter-spacing:.06em; margin-top:18px }
+  .back .open{ position:absolute; left:44px; right:44px; bottom:46px; border-top:3px solid #111;
+    padding-top:14px; font-size:11.5px; line-height:1.9; color:#2d2a25 }
+  .back .open b{ font-weight:700; letter-spacing:.1em }
+  .back .fuda{ position:absolute; right:40px; top:52px; width:62px; height:62px; border-radius:50%;
+    background:#111; color:#fdfcf8; display:flex; align-items:center; justify-content:center;
+    font-weight:900; font-size:24px }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#a4a098; font-weight:600 }
+  .credit{ position:absolute; left:30px; bottom:16px; font-size:12px; letter-spacing:.12em; color:#b2aea6 }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:24px">BUSINESS CARD　／　55 × 91 mm</span>
+
+  <div class="card face">
+    <div class="fuda">港</div>
+    <div class="mk">
+      <svg viewBox="30 152 1010 262" aria-label="ミナトヤ">
+        <g transform="translate(70 170) skewX(-10)" fill="#fdfcf8">
+          <g>
+            <polygon points="30,8 178,30 172,70 24,48"/>
+            <polygon points="40,78 170,98 164,138 34,118"/>
+            <polygon points="18,146 196,174 190,214 12,186"/>
+          </g>
+          <g transform="translate(230 0)">
+            <rect x="0" y="52" width="200" height="44"/>
+            <polygon points="96,0 142,0 142,112 104,214 54,214 96,112"/>
+          </g>
+          <g transform="translate(470 0)">
+            <rect x="40" y="0" width="48" height="214"/>
+            <polygon points="88,62 112,40 196,104 172,140"/>
+          </g>
+          <g transform="translate(690 0)">
+            <polygon points="0,78 196,50 200,92 160,150 112,150 146,98 6,118"/>
+            <polygon points="58,0 104,0 140,214 94,214"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="en">M I N A T O Y A</div>
+    <div class="adr">滋賀・浜大津　なぎさ通り</div>
+  </div>
+
+  <div class="card back">
+    <div class="fuda">酒</div>
+    <div class="nm">湊 一志<em>M I N A T O 　 K A Z U S H I</em></div>
+    <div class="ttl">店 主</div>
+    <div class="adr">
+      〒520-0000<br>
+      滋賀県大津市浜大津〇丁目 0-0<br>
+      <b>京阪 浜大津駅から徒歩 3 分</b>
+    </div>
+    <div class="tel">077-000-0000</div>
+    <div class="open">
+      <b>17:00 — 24:00　日曜休み</b><br>
+      予約は電話だけ。席は18。立ち飲みは予約なしでどうぞ
+    </div>
+  </div>
+
+  <span class="credit">自主制作 / Kinoshita Studio —— 架空の店です</span>
+</div>
+</body>
+</html>
