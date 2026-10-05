@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本チラシ4（PC・ネットワーク保守サポート）</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 参考の型＝困りごとのチェックリスト＋大きな「解決」＋3つの入口＋対象者の悩み（架空の会社） */
+  :root{ --blue:#1f6fd1; --blue-d:#14549f; --pale:#eaf2fc; --ink:#14243a; --org:#f0782d }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP',sans-serif; font-feature-settings:'palt' }
+  .a4{ width:1240px; height:1754px; position:relative; overflow:hidden; background:#fff; color:var(--ink); margin:0 auto 40px }
+
+  /* 上の青い面（下辺はゆるい弧） */
+  .top{ position:absolute; left:0; right:0; top:0; height:760px; background:var(--blue); border-radius:0 0 50% 50% / 0 0 90px 90px }
+  .lead{ position:absolute; left:0; right:0; top:62px; text-align:center; color:#fff; font-weight:900; font-size:64px; letter-spacing:.02em }
+  .lead em{ font-style:normal; font-size:72px }
+
+  .checks{ position:absolute; top:180px; display:grid; gap:14px; color:#fff; font-size:26px; font-weight:500 }
+  .checks.l{ left:70px } .checks.r{ right:70px }
+  .checks li{ list-style:none; display:flex; align-items:center; gap:12px }
+  .checks li::before{ content:'✓'; display:grid; place-items:center; width:32px; height:32px; flex:none; background:#fff; color:var(--org); font-weight:900; font-size:24px; border-radius:4px }
+  .checks b{ font-weight:900 }
+
+  .kaiketsu{ position:absolute; left:50%; top:150px; transform:translateX(-50%); color:#fff; font-weight:900; font-size:250px; line-height:1.02; writing-mode:vertical-rl; letter-spacing:.02em; text-shadow:0 6px 0 rgba(0,0,0,.08) }
+
+  /* イラスト（それナルの漫画の絵を丸窓に） */
+  .ill{ position:absolute; width:330px; height:330px; border-radius:50%; overflow:hidden; border:10px solid #fff; box-shadow:0 14px 30px rgba(0,0,0,.25); top:400px }
+  .ill img{ width:100%; height:100%; object-fit:cover }
+  .ill.l{ left:110px } .ill.r{ right:110px }
+  .q{ position:absolute; top:380px; font-family:'Inter',sans-serif; font-weight:900; font-size:64px; color:#fff }
+
+  /* 名前と主役 */
+  .name{ position:absolute; left:0; right:0; top:800px; display:flex; justify-content:center; align-items:center; gap:18px; font-size:34px; font-weight:700 }
+  .name .co{ font-family:'Inter',sans-serif; font-weight:800; letter-spacing:.04em; color:var(--blue-d) }
+  .name .pill{ background:var(--blue); color:#fff; padding:8px 30px; border-radius:999px; font-weight:900; font-size:40px }
+  .main{ position:absolute; left:0; right:0; top:880px; text-align:center; font-size:132px; font-weight:900; letter-spacing:.04em; color:var(--blue) }
+  .main span{ font-weight:500 }
+
+  /* 3つの入口 */
+  .ways{ position:absolute; left:0; right:0; top:1070px; display:flex; justify-content:center; gap:56px }
+  .ways div{ width:230px; height:230px; border-radius:50%; background:var(--blue); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center }
+  .ways svg{ width:54px; height:54px; margin-bottom:6px }
+  .ways b{ font-size:40px; font-weight:900; line-height:1.1 } .ways small{ font-size:20px; font-weight:700 }
+  .staff{ position:absolute; left:0; right:0; top:1318px; text-align:center; font-size:22px; font-weight:700 }
+  .staff b{ color:var(--blue) }
+
+  /* 対象と悩み */
+  .who{ position:absolute; left:0; right:0; top:1370px; bottom:96px; background:var(--pale) }
+  .who h3{ text-align:center; margin-top:28px; font-size:38px; font-weight:900 }
+  .who h3 em{ font-style:normal; color:var(--blue) } .who h3 i{ font-style:normal; color:var(--org) }
+  .pains{ display:flex; justify-content:center; gap:40px; margin-top:28px }
+  .pains div{ width:330px; display:flex; gap:14px; align-items:flex-end; font-size:21px; font-weight:700; line-height:1.5; border-bottom:3px solid var(--org); padding-bottom:10px }
+  .pains div span{ color:var(--org) }
+  .pains svg{ width:44px; height:52px; flex:none }
+  .who .all{ text-align:center; margin-top:26px; font-size:46px; font-weight:900 }
+  .who .all em{ font-style:normal; color:var(--org) }
+
+  .foot{ position:absolute; left:0; right:0; bottom:0; height:96px; background:var(--blue); color:#fff; display:flex; align-items:center; justify-content:space-between; padding:0 70px; font-size:22px; font-weight:700 }
+  .foot .tel{ font-family:'Inter',sans-serif; font-weight:900; font-size:44px; letter-spacing:.02em }
+  .credit{ position:absolute; right:70px; top:1388px; font-family:'Inter',sans-serif; font-size:12px; letter-spacing:.12em; color:#9aa7b6 }
+</style>
+</head>
+<body>
+
+<div class="a4" id="sheet">
+  <div class="top"></div>
+  <div class="lead">PC・ネットワークの<em>“困った”</em>を</div>
+
+  <ul class="checks l">
+    <li><span>PCが<b>起動しない</b>、<b>遅い</b>！</span></li>
+    <li><span><b>ウイルス</b>に感染したかも？</span></li>
+    <li><span><b>アップデート</b>後、なんか変？</span></li>
+  </ul>
+  <ul class="checks r">
+    <li><span><b>ネット</b>が繋がらない、遅い！</span></li>
+    <li><span><b>メール</b>が送れない！</span></li>
+    <li><span><b>印刷</b>ができない！</span></li>
+  </ul>
+
+  <div class="kaiketsu">解決</div>
+  <div class="ill l"><img src="img/flyer-src/it-man.jpg" alt=""></div>
+  <div class="ill r"><img src="img/flyer-src/it-woman.jpg" alt=""></div>
+  <div class="q" style="left:380px">?!</div>
+
+  <div class="name"><span class="co">KOKORO IT</span><span>の</span><span class="pill">PC・ネットワーク</span></div>
+  <div class="main">保守<span>サポート</span></div>
+
+  <div class="ways">
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><b>電話</b><small>サポート</small></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><b>リモート</b><small>サポート</small></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg><b>訪問</b><small>サポート</small></div>
+  </div>
+  <div class="staff"><b>パソコン整備士</b>の資格をもつスタッフが、状況に合わせて対応します。</div>
+
+  <div class="who">
+    <h3><em>PC担当者</em>がいない<i>中小企業さま</i>に、おすすめです。</h3>
+    <div class="pains">
+      <div><svg viewBox="0 0 44 52"><circle cx="22" cy="14" r="11" fill="#14243a"/><path d="M2 52c0-13 9-21 20-21s20 8 20 21z" fill="#14243a"/></svg><p>そもそも、どこに<br><span>頼めばいいか分からない</span></p></div>
+      <div><svg viewBox="0 0 44 52"><circle cx="22" cy="14" r="11" fill="#14243a"/><path d="M2 52c0-13 9-21 20-21s20 8 20 21z" fill="#14243a"/></svg><p>トラブルのたびに、<br><span>費用がかかっている</span></p></div>
+      <div><svg viewBox="0 0 44 52"><circle cx="22" cy="14" r="11" fill="#14243a"/><path d="M2 52c0-13 9-21 20-21s20 8 20 21z" fill="#14243a"/></svg><p>いまの保守契約の<br><span>金額を見直したい</span></p></div>
+    </div>
+    <div class="all">そんな悩みも、<em>まとめて解決</em>します！</div>
+  </div>
+  <div class="credit">自主制作 / Kinoshita Studio ── 架空の会社です</div>
+  <div class="foot"><span>KOKORO IT ／ 中小企業のIT活用を支えています</span><span class="tel">0120-000-000</span></div>
+</div>
+
+</body>
+</html>

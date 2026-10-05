@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本チラシ3（企業ブランド・採用ポスター）</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 参考の型＝暗い映画的な写真＋大きな欧文＋1色の差し色＋短い宣言文（架空の会社） */
+  :root{ --bg:#0d141b; --acc:#ff5a2e; --ink:#eef1f4; --sub:#9aa6b2 }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP',sans-serif }
+  /* A4 縦 210×297mm。画面用に 1240×1754 */
+  .a4{ width:1240px; height:1754px; position:relative; overflow:hidden; background:var(--bg); color:var(--ink); margin:0 auto 40px }
+
+  /* 写真：右寄せ・下を闇に溶かす */
+  .photo{ position:absolute; right:-40px; top:120px; width:900px; height:923px }
+  .photo img{ width:100%; height:100%; object-fit:cover; display:block }
+  .photo::after{ content:''; position:absolute; inset:0;
+    background:linear-gradient(90deg,var(--bg) 0%,rgba(13,20,27,.55) 22%,transparent 45%),
+               linear-gradient(0deg,var(--bg) 2%,transparent 38%),
+               linear-gradient(180deg,var(--bg) 0%,transparent 18%) }
+  /* 右上から差す光 */
+  .beam{ position:absolute; right:-120px; top:-200px; width:900px; height:1400px; transform:rotate(28deg);
+    background:linear-gradient(90deg,transparent,rgba(190,215,235,.10) 40%,rgba(190,215,235,.16) 50%,rgba(190,215,235,.10) 60%,transparent) ; filter:blur(18px); pointer-events:none }
+  /* 床の格子（遠近） */
+  .floor{ position:absolute; left:0; right:0; bottom:0; height:640px; perspective:900px; overflow:hidden }
+  .floor i{ position:absolute; left:-30%; right:-30%; bottom:-200px; height:900px; transform:rotateX(68deg); transform-origin:bottom;
+    background-image:linear-gradient(rgba(255,255,255,.06) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.06) 2px,transparent 2px);
+    background-size:150px 150px; mask-image:linear-gradient(0deg,#000 10%,transparent 80%); -webkit-mask-image:linear-gradient(0deg,#000 10%,transparent 80%) }
+  /* 小さな人影（遠くに立つ人たち） */
+  .fig{ position:absolute; width:22px; height:70px; border-radius:11px 11px 4px 4px; background:linear-gradient(#2a3540,#151c23) }
+  .fig::before{ content:''; position:absolute; left:3px; top:-20px; width:16px; height:16px; border-radius:50%; background:#2a3540 }
+  .fig::after{ content:''; position:absolute; left:-30px; bottom:-8px; width:80px; height:14px; border-radius:50%; background:rgba(0,0,0,.45); filter:blur(4px) }
+
+  .logo{ position:absolute; left:84px; top:84px; font-family:'Inter',sans-serif; font-weight:900; font-size:30px; letter-spacing:.18em; color:var(--acc) }
+  .head{ position:absolute; left:84px; top:690px; z-index:3 }
+  .head .we{ font-family:'Inter',sans-serif; font-weight:900; font-size:148px; line-height:.95; letter-spacing:-.01em; color:var(--ink) }
+  .head .nm{ font-family:'Inter',sans-serif; font-weight:900; font-size:150px; line-height:.95; letter-spacing:-.01em; color:var(--acc); position:relative; display:inline-block }
+  .head .nm::after{ content:''; position:absolute; left:-12px; right:-24px; top:50%; height:11px; background:var(--acc); transform:skewX(-24deg) }
+
+  .body{ position:absolute; left:84px; top:1060px; width:600px; z-index:3; font-size:21px; line-height:1.95; font-weight:500; color:var(--acc); font-feature-settings:'palt' }
+  .body p{ margin-bottom:18px }
+  .tag{ position:absolute; left:84px; top:1560px; z-index:3; font-size:44px; font-weight:900; letter-spacing:.02em; color:var(--ink) }
+
+  .qr{ position:absolute; right:84px; bottom:84px; display:flex; gap:22px; z-index:3 }
+  .qr div{ text-align:center; font-family:'Inter',sans-serif; font-weight:800; font-size:12px; letter-spacing:.14em; color:var(--sub) }
+  .qr b{ display:block; width:118px; height:118px; margin-top:8px; background:#fff; border-radius:6px; padding:8px }
+  .qr svg{ width:100%; height:100%; display:block }
+  .credit{ position:absolute; left:84px; bottom:44px; font-family:'Inter',sans-serif; font-size:13px; letter-spacing:.12em; color:rgba(255,255,255,.35) }
+</style>
+</head>
+<body>
+
+<div class="a4" id="sheet">
+  <div class="photo"><img src="img/flyer-src/brand-woman.jpg" alt=""></div>
+  <div class="beam"></div>
+  <div class="floor"><i></i></div>
+  <span class="fig" style="left:820px;bottom:420px"></span>
+  <span class="fig" style="left:1010px;bottom:300px;transform:scale(1.25)"></span>
+  <span class="fig" style="left:560px;bottom:180px;transform:scale(1.5)"></span>
+  <span class="fig" style="left:1120px;bottom:520px;transform:scale(.8)"></span>
+
+  <div class="logo">LAKEWORKS</div>
+
+  <div class="head">
+    <div class="we">WE ARE</div>
+    <div class="nm">LAKEWORKS</div>
+  </div>
+
+  <div class="body">
+    <p>技術や経験が足りないこと。<br>働き方に、制限が生まれること。</p>
+    <p>人手やスキルが足りないこと。<br>地方では、採用が叶わないこと。</p>
+    <p>それらを、個人のキャリアや<br>会社の成長を止める理由にはしたくない。</p>
+    <p>はたらく人と会社が、ともに満たされる未来のために。<br>わたしたちは「LAKEWORKS」として始動します。</p>
+  </div>
+
+  <div class="tag">可能性を、湖の向こうへ。</div>
+
+  <div class="qr"><div>SPECIAL SITE<b></b></div><div>BRAND MOVIE<b></b></div></div>
+  <div class="credit">自主制作 / Kinoshita Studio ── 架空の会社です</div>
+</div>
+
+<script>
+// 見本用のQR風の模様（読み取れない。本番では本物のQRに差し替える）
+document.querySelectorAll('.qr b').forEach((b,k)=>{let n=25,s='',seed=7+k*13;const r=()=>(seed=(seed*9301+49297)%233280)/233280;
+ const fin=(x,y)=>`<rect x="${x}" y="${y}" width="7" height="7"/><rect x="${x+1}" y="${y+1}" width="5" height="5" fill="#fff"/><rect x="${x+2}" y="${y+2}" width="3" height="3"/>`;
+ for(let y=0;y<n;y++)for(let x=0;x<n;x++){const f=(x<8&&y<8)||(x>16&&y<8)||(x<8&&y>16);if(!f&&r()>.52)s+=`<rect x="${x}" y="${y}" width="1" height="1"/>`}
+ b.innerHTML=`<svg viewBox="0 0 25 25" fill="#111">${s}${fin(0,0)}${fin(18,0)}${fin(0,18)}</svg>`});
+</script>
+</body>
+</html>
