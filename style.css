@@ -742,3 +742,11 @@ section.dark .slots-why{ color:var(--dark-sub) }
   /* 🔴 スマホでは1列になる。絵が見出しの上に来ると「何の話か」が遅れるので下に置いたまま、幅だけ締める */
   .svc-hero .hero-ill img{ max-width:300px }
 }
+
+/* ── 全ページ共通：画面に入ったら順に出す（js/motion.js が .rv / .in を付ける） ──
+   ⭐ transform でなく translate を使う＝元から回している物（付箋・カード）の傾きを壊さない
+   ⭐ 終わったら元の不透明度に戻る（animation の to を書かない） */
+.rv:not(.in){ opacity:0 }
+.rv.in{ animation:rv-in .6s cubic-bezier(.2,.75,.25,1) both; animation-delay:var(--rv-d,0ms) }
+@keyframes rv-in{ from{ opacity:0; translate:0 24px } }
+@media (prefers-reduced-motion:reduce){ .rv:not(.in){ opacity:1 } .rv.in{ animation:none } }
