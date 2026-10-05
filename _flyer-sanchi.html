@@ -1,0 +1,140 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<title>見本チラシ｜滋賀のつくり手フェア（架空）</title>
+<style>
+/* ⭐ 参考の型＝つくり手と売り手が並ぶ写真を【3枚そろえて】見せる。
+   🔴 3枚が同じ構図・同じ光でないとシリーズに見えない。そこだけは写真の指定で縛る。
+   書体は細い明朝。極太を使わないことで、さっきの採用チラシと紙面がぶつからない。
+   A4（210×297mm）。塗り足しは入れていない＝画面で見せる見本。 */
+@page{ size:A4; margin:0 }
+:root{ --sumi:#211e19; --aka:#9d2b2b; --usu:#7d7667; --sen:#ddd6c7; --ji:#fcfaf4 }
+*{ box-sizing:border-box; margin:0; padding:0 }
+body{ width:210mm; height:297mm; background:var(--ji); overflow:hidden; color:var(--sumi);
+  font:400 9.5pt/1.85 "ヒラギノ角ゴ ProN","Hiragino Kaku Gothic ProN",sans-serif;
+  font-feature-settings:"palt"; display:flex; flex-direction:column; padding:12mm 14mm 9mm }
+.mincho{ font-family:"ヒラギノ明朝 ProN","Hiragino Mincho ProN",serif }
+
+.head{ flex:none; text-align:center }
+.head .eyebrow{ font-size:9pt; letter-spacing:.42em; color:var(--aka); font-weight:700 }
+.head h1{ font-weight:600; font-size:34pt; line-height:1.3; letter-spacing:.02em; margin:4mm 0 0 }
+.head h1 em{ font-style:normal; color:var(--aka) }
+.head .lead{ font-size:9.5pt; line-height:1.95; color:#4a453b; margin:4.5mm auto 0; max-width:142mm }
+.head .bar{ width:16mm; border-top:.5mm solid var(--aka); margin:6mm auto 0 }
+
+/* つくり手3枚 */
+.three{ display:grid; grid-template-columns:repeat(3,1fr); gap:0 6mm; margin-top:7mm; flex:none }
+.three figure{ margin:0 }
+.pic{ aspect-ratio:4/5; background:#eae4d6; position:relative; overflow:hidden }
+.pic img{ width:100%; height:100%; object-fit:cover; display:block }
+.pic .wait{ position:absolute; inset:0; border:.4mm dashed #b8ae99;
+  background:repeating-linear-gradient(135deg,#9b9076 0 5mm,#948a70 5mm 10mm);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2mm;
+  color:#fdfbf5; font-size:8.5pt; letter-spacing:.14em; font-weight:700; text-align:center; padding:0 3mm }
+.pic .wait small{ font-size:7pt; font-weight:400; letter-spacing:.04em; line-height:1.75; opacity:.93 }
+.three figcaption{ margin-top:3.5mm }
+.three .no{ font-size:8pt; letter-spacing:.3em; color:var(--aka); font-weight:700 }
+.three .nm{ font-size:13pt; font-weight:600; line-height:1.4; margin-top:1mm }
+.three .pl{ font-size:8pt; color:var(--usu); letter-spacing:.1em; margin-top:.8mm }
+.three p{ font-size:8.5pt; line-height:1.9; color:#4a453b; margin-top:2.5mm;
+  border-top:.3mm solid var(--sen); padding-top:2.5mm }
+
+/* 下＝会期の表 */
+.others{ margin-top:7mm; flex:none; border-top:.3mm solid var(--sen);
+  border-bottom:.3mm solid var(--sen); padding:4.5mm 0 5mm }
+.others h2{ font-size:8.5pt; letter-spacing:.3em; color:var(--usu); font-weight:700 }
+.others .list{ margin-top:2.5mm; font-size:9pt; line-height:1.95; letter-spacing:.02em }
+.others .list b{ font-weight:600 }
+.others .list em{ font-style:normal; color:var(--usu); font-size:8pt; margin:0 1mm 0 .6mm }
+.when{ margin-top:auto; flex:none; border-top:.5mm solid var(--sumi); padding-top:5mm;
+  display:grid; grid-template-columns:1fr 1fr 30mm; gap:0 9mm }
+.when h2{ font-size:8.5pt; letter-spacing:.3em; color:var(--usu); font-weight:700; margin-bottom:3mm }
+.when .big{ font-size:13pt; font-weight:600; line-height:1.4; letter-spacing:.01em; white-space:nowrap }
+.when .big u{ display:block; text-decoration:none; font-size:9pt; letter-spacing:.2em; color:var(--usu) }
+.when .big i{ display:block; font-style:normal; font-size:9pt; font-weight:400; color:#4a453b;
+  letter-spacing:.06em; margin-top:1.5mm }
+.kv{ display:flex; gap:3.5mm; font-size:9pt; line-height:1.85 }
+.kv span{ color:var(--usu); flex:none; width:12mm; font-size:8pt; letter-spacing:.1em }
+.qrbox{ text-align:center }
+.qr{ width:24mm; height:24mm; margin:0 auto; background:#fff; background-image:
+  repeating-linear-gradient(90deg,#211e19 0 1.7mm,#fff 1.7mm 3.4mm),
+  repeating-linear-gradient(0deg,#211e19 0 1.7mm,transparent 1.7mm 3.4mm) }
+.qrbox b{ display:block; margin-top:2mm; font-size:7.5pt; letter-spacing:.14em; font-weight:700 }
+.foot{ flex:none; margin-top:3.5mm; border-top:.3mm solid var(--sen); padding-top:3mm;
+  font-size:7.5pt; color:#8a8375; display:flex; justify-content:space-between }
+</style></head><body>
+
+<div class="head">
+  <div class="eyebrow">S H I G A　M A K E R S　F A I R</div>
+  <h1 class="mincho">つくった人が、<br><em>そこに立ちます。</em></h1>
+  <div class="lead">三日間だけ、売り場につくり手が立ちます。
+  どこの畑か、何でできているか、なぜその形なのか。<br>
+  聞いてから買える売り場を、滋賀の二十一軒でつくります。</div>
+  <div class="bar"></div>
+</div>
+
+<div class="three">
+  <figure>
+    <div class="pic"><img src="img/p/fair-1.webp" alt="ハウスの中で野菜の木箱を一緒に持つ生産者と店員"></div>
+    <figcaption>
+      <div class="no">0 1</div>
+      <div class="nm mincho">西野 農園</div>
+      <div class="pl">近江八幡市　野菜</div>
+      <p>朝に採って、昼には棚へ。葉がまだ立っているうちに運ぶため、
+      収穫は三時からはじまります。</p>
+    </figcaption>
+  </figure>
+  <figure>
+    <div class="pic"><img src="img/p/fair-2.webp" alt="岸壁で魚の籠を一緒に持つ漁師と店員"></div>
+    <figcaption>
+      <div class="no">0 2</div>
+      <div class="nm mincho">堅田 水産</div>
+      <div class="pl">大津市　湖魚</div>
+      <p>小鮎、えび豆、ふなずし。炊き方は家ごとに違うので、
+      売り場では炊く前の魚も並べます。</p>
+    </figcaption>
+  </figure>
+  <figure>
+    <div class="pic"><img src="img/p/fair-3.webp" alt="店のカウンターでコテと皿を持つ店主と店員"></div>
+    <figcaption>
+      <div class="no">0 3</div>
+      <div class="nm mincho">こなや 田中</div>
+      <div class="pl">湖南市　粉もの</div>
+      <p>三代で同じ鉄板を使っています。その鉄板ごと、
+      会場に持っていくことにしました。</p>
+    </figcaption>
+  </figure>
+</div>
+
+<div class="others">
+  <h2>ほ　か　に　並　ぶ　1　8　軒</h2>
+  <div class="list mincho">
+    <b>やまの養鶏</b><em>日野・卵</em>／<b>湖北の味噌</b><em>長浜・味噌</em>／<b>木地師 森</b><em>東近江・器</em>／
+    <b>近江の麻</b><em>愛荘・布</em>／<b>うえだ豆腐</b><em>彦根・豆腐</em>／<b>こうが茶舗</b><em>甲賀・茶</em>／
+    <b>信楽 土屋</b><em>甲賀・陶</em>／<b>湖西の蜂蜜</b><em>高島・蜜</em>／<b>ひらの酒造</b><em>野洲・酒</em>／
+    <b>堅田パン</b><em>大津・パン</em>／<b>くさつ苺園</b><em>草津・果実</em>／<b>北比良の薪</b><em>大津・薪</em>／
+    <b>びわこ珈琲</b><em>守山・珈琲</em>／<b>よし笛 中村</b><em>近江八幡・葦</em>／<b>多賀の漬物</b><em>多賀・漬物</em>／
+    <b>湖南ジャム</b><em>湖南・加工</em>／<b>米原の蕎麦</b><em>米原・蕎麦</em>／<b>安曇川の鮒</b><em>高島・湖魚</em>
+  </div>
+</div>
+
+<div class="when">
+  <div>
+    <h2>会　期</h2>
+    <div class="big mincho"><u>2027年</u>3月5日（金）— 7日（日）
+      <i>10:00 — 18:00　最終日は 17:00 まで</i></div>
+  </div>
+  <div>
+    <h2>会　場　と　お　願　い</h2>
+    <div class="kv"><span>会場</span>びわこ百貨店 7階 催事場（架空）</div>
+    <div class="kv"><span>入場</span>無料・予約不要</div>
+    <div class="kv"><span>持物</span>保冷バッグをお持ちください</div>
+    <div class="kv"><span>問合</span>077-000-0000（10:00〜18:00）</div>
+  </div>
+  <div class="qrbox"><div class="qr"></div><b>出店21軒</b></div>
+</div>
+
+<div class="foot">
+  <span>主催：滋賀のつくり手フェア実行委員会（架空）　shiga-makers.example.jp　※この紙面は見本です</span>
+  <span>自主制作 / Kinoshita Studio —— 架空の催しです</span>
+</div>
+
+</body></html>

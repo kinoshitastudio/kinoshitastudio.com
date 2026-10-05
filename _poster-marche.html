@@ -1,0 +1,105 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<title>見本ポスター｜びわこ朝市マルシェ（架空）</title>
+<style>
+/* ⭐ 参考の型＝屋外イベント。写真を全面に敷いて、空の側に大きな字を乗せる。
+   🔴 だから写真は【空が上1/3あいている】ものでないと成立しない（プロンプトにそう書く）。
+   A2（420×594mm）。塗り足しは入れていない＝画面で見せる見本。 */
+@page{ size:420mm 594mm; margin:0 }
+:root{ --aka:#e2552e; --midori:#24533c; --kinari:#fdfaf2; --sumi:#1c1a16 }
+*{ box-sizing:border-box; margin:0; padding:0 }
+body{ width:420mm; height:594mm; background:var(--kinari); overflow:hidden; color:var(--sumi);
+  font:400 11pt/1.8 "ヒラギノ角ゴ ProN","Hiragino Kaku Gothic ProN",sans-serif;
+  font-feature-settings:"palt"; display:flex; flex-direction:column }
+
+/* 上＝写真の面 */
+.ph{ height:465mm; position:relative; flex:none; overflow:hidden; background:#dfe6dc }
+.ph img{ width:100%; height:100%; object-fit:cover; display:block }
+.wait{ position:absolute; inset:0; border:1mm dashed #a8b4a4; background:
+  repeating-linear-gradient(135deg,#8e9b8a 0 8mm,#86937f 8mm 16mm);
+  border-color:#b3bdaf;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4mm;
+  color:#f0f3ee; letter-spacing:.2em; font-weight:700; font-size:13pt; text-align:center }
+.wait small{ font-size:10pt; font-weight:400; letter-spacing:.08em; line-height:1.9; opacity:.92 }
+
+/* 🔴 空が明るいと白い字が負ける。字の側でなく【背景】に薄い影を敷く */
+.ph::before{ content:""; position:absolute; left:0; right:0; top:0; height:160mm; z-index:1;
+  background:linear-gradient(to bottom,rgba(16,34,52,.50),rgba(16,34,52,.34) 48%,
+    rgba(16,34,52,.14) 74%,rgba(16,34,52,0)) }
+.over{ position:absolute; inset:16mm 26mm auto; color:#fff; z-index:2;
+  text-shadow:0 0 6mm rgba(12,26,20,.34) }
+.over .mark{ display:inline-block; border:1.1mm solid #fff; border-radius:50mm;
+  padding:3mm 9mm 3.4mm; font-size:12pt; font-weight:700; letter-spacing:.3em }
+.over h1{ font-weight:900; font-size:88pt; line-height:1.04; letter-spacing:-.03em; margin:8mm 0 0 }
+.over h1 span{ display:block }
+/* 🔴 影を濃くしても、雲の一番明るいところに重なると小さい字は溶ける。
+   そこだけは【地を敷く】。丸バッジと同じ系統になり、紙面もまとまる */
+.over .when{ display:inline-block; margin-top:7mm; font-size:21pt; font-weight:900;
+  letter-spacing:.02em; background:rgba(14,30,46,.52); padding:3.5mm 8mm 4mm }
+.over .when i{ font-style:normal; font-size:13pt; font-weight:700; letter-spacing:.1em;
+  display:block; margin-top:1.5mm }
+
+/* 写真の下側に、朱の帯で一行 */
+.strip{ position:absolute; left:0; right:0; bottom:0; z-index:2; background:var(--aka); color:#fff;
+  padding:5mm 26mm 5.5mm; font-weight:900; font-size:19pt; letter-spacing:.04em;
+  display:flex; align-items:baseline; gap:8mm }
+.strip i{ font-style:normal; font-weight:400; font-size:11pt; letter-spacing:.1em; margin-left:auto }
+
+/* 下＝生成りの情報 */
+.foot{ flex:1 1 auto; padding:12mm 26mm 10mm; display:grid;
+  grid-template-columns:1fr 1fr 40mm; gap:0 12mm; align-items:start }
+.foot h2{ font-size:9.5pt; letter-spacing:.3em; color:var(--midori); font-weight:700;
+  border-bottom:.4mm solid var(--midori); padding-bottom:2.5mm; margin-bottom:4mm }
+.foot li{ list-style:none; font-size:10.5pt; line-height:1.95 }
+.foot li b{ font-weight:700 }
+.foot li em{ font-style:normal; color:#6b6558; font-size:9pt; margin-left:2mm }
+.kv{ display:flex; gap:4mm; font-size:10.5pt; line-height:1.9; margin-bottom:1.2mm }
+.kv span{ color:#6b6558; flex:none; width:13mm; font-size:9.5pt; letter-spacing:.1em }
+.qrbox{ text-align:center }
+.qr{ width:32mm; height:32mm; margin:0 auto; background:#fff; background-image:
+  repeating-linear-gradient(90deg,#1c1a16 0 2.2mm,#fff 2.2mm 4.4mm),
+  repeating-linear-gradient(0deg,#1c1a16 0 2.2mm,transparent 2.2mm 4.4mm) }
+.qrbox b{ display:block; margin-top:3mm; font-size:9pt; letter-spacing:.14em }
+.note{ grid-column:1/-1; margin-top:7mm; border-top:.3mm solid #d6cfbe; padding-top:3.5mm;
+  font-size:8.5pt; color:#8a8375; display:flex; justify-content:space-between }
+</style></head><body>
+
+<div class="ph">
+  <img src="img/p/poster-marche.webp" alt="湖のそばの公園に白いテントが並ぶ朝の市">
+
+  <div class="over">
+    <span class="mark">第 12 回</span>
+    <h1><span>湖のそばで、</span><span>朝に買う。</span></h1>
+    <div class="when">2027年5月15日（土）・16日（日）
+      <i>7:00 — 12:00　／　雨天決行・荒天中止</i></div>
+  </div>
+
+  <div class="strip">滋賀のつくり手 48 組が並びます<i>入場無料・予約不要</i></div>
+</div>
+
+<div class="foot">
+  <div>
+    <h2>並ぶもの</h2>
+    <ul>
+      <li><b>朝採りの野菜</b><em>近江八幡・草津・守山</em></li>
+      <li><b>焼きたてのパンと菓子</b><em>大津・湖南</em></li>
+      <li><b>湖魚の佃煮と乾物</b><em>高島・長浜</em></li>
+      <li><b>器と木の道具</b><em>信楽・甲賀</em></li>
+      <li><b>珈琲と、その場で飲めるもの</b></li>
+    </ul>
+  </div>
+  <div>
+    <h2>場所と来かた</h2>
+    <div class="kv"><span>会場</span>びわこ湖畔公園 芝生広場（架空）</div>
+    <div class="kv"><span>電車</span>JR〇〇駅 西口から徒歩 12 分</div>
+    <div class="kv"><span>車</span>臨時駐車場 240台（1日 500円）</div>
+    <div class="kv"><span>持物</span>袋はお持ちください。保冷剤は会場でお渡しします</div>
+    <div class="kv"><span>問合</span>077-000-0000（平日 10:00〜16:00）</div>
+  </div>
+  <div class="qrbox"><div class="qr"></div><b>出店一覧</b></div>
+  <div class="note">
+    <span>主催：びわこ朝市実行委員会（架空）　biwako-asaichi.example.jp　※この紙面は見本です</span>
+    <span>自主制作 / Kinoshita Studio —— 架空の催しです</span>
+  </div>
+</div>
+
+</body></html>

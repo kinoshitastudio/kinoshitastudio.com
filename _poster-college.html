@@ -1,0 +1,116 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<title>見本ポスター｜市民カレッジ 受講生募集（架空）</title>
+<style>
+/* ⭐ 参考の型＝横顔の寄りを段に重ね、その上に大きな一行。
+   🔴 白い一行は【写真の暗いほう】に置く（実測：1枚目は左下42.8／2枚目は右下57.6）。
+   A2（420×594mm）。塗り足しは入れていない＝画面で見せる見本。 */
+@page{ size:420mm 594mm; margin:0 }
+:root{ --sumi:#1a1a1a; --nama:#f2ede3; --aka:#b3272d; --usu:#6a6257 }
+*{ box-sizing:border-box; margin:0; padding:0 }
+body{ width:420mm; height:594mm; background:var(--nama); overflow:hidden; color:var(--sumi);
+  font:400 11pt/1.8 "ヒラギノ角ゴ ProN","Hiragino Kaku Gothic ProN",sans-serif;
+  font-feature-settings:"palt"; display:flex; flex-direction:column }
+
+/* 写真の段 */
+.ph{ position:relative; flex:none; overflow:hidden }
+.ph img{ width:100%; height:100%; object-fit:cover; display:block }
+.ph1{ height:200mm }
+.ph2{ height:156mm }
+/* 白い一行の後ろにだけ、ごく薄い影を敷く（写真はばらつきが大きいので字が負ける） */
+.ph .veil{ position:absolute; inset:auto 0 0; height:58mm;
+  -webkit-mask-image:linear-gradient(to top,#000 42%,transparent);
+  mask-image:linear-gradient(to top,#000 42%,transparent) }
+.ph1 .veil{ background:linear-gradient(90deg,rgba(0,0,0,.40),rgba(0,0,0,0) 60%) }
+.ph2 .veil{ background:linear-gradient(270deg,rgba(0,0,0,.44),rgba(0,0,0,0) 60%) }
+.ph .lead{ position:absolute; bottom:14mm; color:#fff; letter-spacing:.06em }
+.ph1 .lead{ left:26mm }
+.ph2 .lead{ right:26mm; text-align:right }
+.ph .lead b{ display:block; font-weight:600; font-size:25pt; line-height:1.3;
+  font-family:"ヒラギノ明朝 ProN","Hiragino Mincho ProN",serif; letter-spacing:.04em }
+.ph .lead i{ display:block; font-style:normal; font-size:10.5pt; opacity:.88; margin-top:2mm;
+  letter-spacing:.12em }
+
+/* 真ん中＝字の段 */
+.mid{ flex:1 1 auto; padding:15mm 26mm 12mm; display:flex; flex-direction:column }
+.eyebrow{ display:flex; align-items:center; gap:5mm; font-size:10pt; letter-spacing:.3em;
+  color:var(--aka); font-weight:700 }
+.eyebrow::after{ content:""; flex:1; border-top:.4mm solid var(--aka) }
+h1{ font-family:"ヒラギノ明朝 ProN","Hiragino Mincho ProN",serif; font-weight:600;
+  font-size:96pt; line-height:1.14; letter-spacing:-.01em; margin:8mm 0 0 }
+h1 span{ display:block }
+h1 ruby{ color:var(--aka) }
+.say{ display:grid; grid-template-columns:1fr 1fr; gap:0 12mm; margin-top:9mm;
+  font-size:12.5pt; line-height:1.95; color:#3a3630 }
+
+/* 一番下＝情報の帯 */
+.info{ flex:none; background:var(--sumi); color:#fff; padding:11mm 26mm 10mm;
+  display:grid; grid-template-columns:1fr 1fr 44mm; gap:0 12mm; align-items:start }
+.info h2{ font-size:9.5pt; letter-spacing:.3em; color:#b9b1a4; font-weight:700;
+  border-bottom:.3mm solid #4a443c; padding-bottom:2.5mm; margin-bottom:4mm }
+.info li{ list-style:none; font-size:10.5pt; line-height:1.95 }
+.info li em{ font-style:normal; color:#b9b1a4; font-size:9pt; margin-left:2mm }
+.info .kv{ display:flex; gap:4mm; font-size:10.5pt; line-height:1.9; margin-bottom:1.5mm }
+.info .kv span{ color:#b9b1a4; flex:none; width:13mm; letter-spacing:.1em; font-size:9.5pt }
+.qrbox{ text-align:center }
+.qr{ width:34mm; height:34mm; margin:0 auto; background:#fff; background-image:
+  repeating-linear-gradient(90deg,#1a1a1a 0 2.4mm,#fff 2.4mm 4.8mm),
+  repeating-linear-gradient(0deg,#1a1a1a 0 2.4mm,transparent 2.4mm 4.8mm) }
+.qrbox b{ display:block; margin-top:3mm; font-size:9pt; letter-spacing:.14em; font-weight:700 }
+.note{ grid-column:1/-1; margin-top:6mm; border-top:.3mm solid #4a443c; padding-top:3.5mm;
+  font-size:8.5pt; color:#8d8578; display:flex; justify-content:space-between }
+</style></head><body>
+
+<div class="ph ph1">
+  <img src="img/p/poster-yoko1.webp" alt="書棚を背に、手元を見て考えている30代の女性の横顔">
+  <div class="veil"></div>
+  <div class="lead"><b>湖南市民カレッジ</b><i>2027年度 受講生募集</i></div>
+</div>
+
+<div class="mid">
+  <div class="eyebrow">まなびなおす</div>
+  <h1><span>はじめるのに、</span><span>いい年齢はない。</span></h1>
+  <div class="say">
+    <p>二十代で来る人も、六十代で来る人もいます。同じ机に座って、
+    同じところでつまずきます。それが面白いのだと、みなさん言います。</p>
+    <p>資格は出ません。単位も付きません。わかるまで聞ける時間だけが
+    あります。見学は一度だけ無料です。まず座ってみてください。</p>
+  </div>
+</div>
+
+<div class="ph ph2">
+  <img src="img/p/poster-yoko2.webp" alt="夕方の書棚のあかりの中で、本に目を落としている女性の横顔">
+  <div class="veil"></div>
+  <div class="lead"><b>夜七時から、週に一度。</b><i>全12回 ／ 湖南市民会館 3階</i></div>
+</div>
+
+<div class="info">
+  <div>
+    <h2>2027 年度の講座</h2>
+    <ul>
+      <li>日本の近代文学を読む<em>月曜</em></li>
+      <li>地図から読む湖南の地形<em>火曜</em></li>
+      <li>はじめての簿記<em>水曜</em></li>
+      <li>英語をもう一度、声に出す<em>木曜</em></li>
+      <li>写真の撮り方と選び方<em>金曜</em></li>
+      <li>手を動かす工芸<em>土曜</em></li>
+    </ul>
+  </div>
+  <div>
+    <h2>申し込み</h2>
+    <div class="kv"><span>期間</span>2027年1月6日（水）〜 2月26日（金）必着</div>
+    <div class="kv"><span>受講料</span>1 講座 12,000円（全12回・教材費別）</div>
+    <div class="kv"><span>定員</span>各講座 24名（応募多数のときは抽選）</div>
+    <div class="kv"><span>見学</span>各講座 1回まで無料。予約は不要です</div>
+    <div class="kv"><span>問合せ</span>0748-00-0000（平日 9:00〜17:00）</div>
+  </div>
+  <div class="qrbox">
+    <div class="qr"></div>
+    <b>申込フォーム</b>
+  </div>
+  <div class="note">
+    <span>主催：湖南市民カレッジ運営協議会（架空）　kounan-college.example.jp　※この紙面は見本です</span>
+    <span>自主制作 / Kinoshita Studio —— 架空のカレッジです</span>
+  </div>
+</div>
+
+</body></html>

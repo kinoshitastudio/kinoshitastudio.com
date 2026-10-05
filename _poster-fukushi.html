@@ -1,0 +1,127 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<title>見本ポスター｜福祉の職員募集（架空）</title>
+<style>
+/* ⭐ 参考の型＝写真の上に白い一行を乗せて、それを何段も重ねる。
+   🔴 一行は【写真の下 1/3】に乗る。だから写真は「顎から下が暗いか、均一」でないと字が負ける。
+      それが効くよう、各枚の下側にだけ薄い影を敷いてある。
+   A3（297×420mm）。塗り足しは入れていない＝画面で見せる見本。 */
+@page{ size:297mm 420mm; margin:0 }
+:root{ --ao:#1f6b63; --fuka:#12433e; --kinari:#f7f4ec; --sumi:#1d2322 }
+*{ box-sizing:border-box; margin:0; padding:0 }
+body{ width:297mm; height:420mm; background:var(--kinari); overflow:hidden; color:var(--sumi);
+  font:400 10pt/1.8 "ヒラギノ角ゴ ProN","Hiragino Kaku Gothic ProN",sans-serif;
+  font-feature-settings:"palt"; display:flex; flex-direction:column }
+
+/* 上＝見出し */
+.head{ flex:none; background:var(--ao); color:#fff; padding:11mm 18mm 10mm; position:relative }
+.head .eyebrow{ font-size:9.5pt; letter-spacing:.34em; opacity:.85; font-weight:700 }
+.head h1{ font-weight:900; font-size:38pt; line-height:1.14; letter-spacing:-.03em; margin:5mm 0 0 }
+.head h1 em{ font-style:normal; background:#fff; color:var(--ao); padding:0 2mm; margin:0 -1mm }
+.head .co{ position:absolute; right:18mm; top:13mm; text-align:right; font-size:9pt;
+  line-height:1.7; opacity:.82; letter-spacing:.08em }
+.head .co b{ display:block; font-size:12pt; font-weight:900; opacity:1; letter-spacing:.02em }
+
+/* 写真を4枚 */
+.grid{ flex:none; display:grid; grid-template-columns:1fr 1fr; gap:3.5mm; padding:3.5mm 18mm 0 }
+.cell{ position:relative; aspect-ratio:1/.92; overflow:hidden; background:#cdd8d5 }
+.cell img{ width:100%; height:100%; object-fit:cover; display:block }
+.cell .veil{ position:absolute; inset:auto 0 0; height:46mm;
+  background:linear-gradient(to top,rgba(10,30,28,.52),rgba(10,30,28,0));
+  -webkit-mask-image:linear-gradient(to top,#000 50%,transparent);
+  mask-image:linear-gradient(to top,#000 50%,transparent) }
+.cell .line{ position:absolute; left:7mm; right:7mm; bottom:7mm; color:#fff; font-weight:900;
+  font-size:17pt; line-height:1.34; letter-spacing:-.01em; text-shadow:0 0 9mm rgba(8,24,22,.4) }
+.cell .line i{ display:block; font-style:normal; font-weight:400; font-size:9pt;
+  letter-spacing:.08em; opacity:.9; margin-top:1.5mm }
+.cell .wait{ position:absolute; inset:0; border:.5mm dashed #9fb0ac;
+  background:repeating-linear-gradient(135deg,#7f918d 0 6mm,#778986 6mm 12mm);
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+  gap:2mm; padding:11mm 8mm 0; color:#f2f6f5; font-size:9.5pt; letter-spacing:.14em;
+  font-weight:700; text-align:center }
+.cell .wait small{ font-size:8pt; font-weight:400; letter-spacing:.04em; line-height:1.8; opacity:.93 }
+
+/* 下＝情報 */
+.foot{ flex:1 1 auto; padding:8mm 18mm 9mm; display:grid;
+  grid-template-columns:1fr 1fr 32mm; gap:0 10mm; align-items:start }
+.foot h2{ font-size:9pt; letter-spacing:.3em; color:var(--ao); font-weight:700;
+  border-bottom:.4mm solid var(--ao); padding-bottom:2.2mm; margin-bottom:3.5mm }
+.foot li{ list-style:none; font-size:10pt; line-height:1.95 }
+.foot li b{ font-weight:700 }
+.foot li em{ font-style:normal; color:#6d7673; font-size:8.5pt; margin-left:2mm }
+.kv{ display:flex; gap:3.5mm; font-size:10pt; line-height:1.85; margin-bottom:.6mm }
+.kv span{ color:#6d7673; flex:none; width:13mm; font-size:8.5pt; letter-spacing:.1em }
+.qrbox{ text-align:center }
+.qr{ width:26mm; height:26mm; margin:0 auto; background:#fff; background-image:
+  repeating-linear-gradient(90deg,#1d2322 0 1.8mm,#fff 1.8mm 3.6mm),
+  repeating-linear-gradient(0deg,#1d2322 0 1.8mm,transparent 1.8mm 3.6mm) }
+.qrbox b{ display:block; margin-top:2.4mm; font-size:8.5pt; letter-spacing:.14em }
+.cta{ grid-column:1/-1; margin-top:5mm; background:var(--fuka); color:#fff;
+  padding:4.5mm 8mm 4.8mm; display:flex; align-items:center; gap:7mm }
+.cta .big{ font-weight:900; font-size:15pt; letter-spacing:.02em }
+.cta .sm{ font-size:9pt; opacity:.84; line-height:1.7; margin-left:auto; text-align:right }
+.note{ grid-column:1/-1; margin-top:3.5mm; font-size:8pt; color:#8a918e;
+  display:flex; justify-content:space-between }
+</style></head><body>
+
+<div class="head">
+  <div class="eyebrow">2 0 2 7 年 度 　 職 員 募 集</div>
+  <div class="co"><b>社会福祉法人 こなん会</b>滋賀県湖南市　＊架空の法人です</div>
+  <h1>手を貸すことが、<br><em>仕事になります。</em></h1>
+</div>
+
+<div class="grid">
+  <div class="cell">
+    <img src="img/p/fukushi-1.webp" alt="窓辺のソファで利用者と並んで笑っている介護職員">
+    <div class="veil"></div>
+    <div class="line">資格がなくても、<br>入れます。<i>入ってから取る人のほうが多い職場です</i></div>
+  </div>
+  <div class="cell">
+    <img src="img/p/fukushi-2.webp" alt="厨房で鍋をかきまぜている職員の手元">
+    <div class="veil"></div>
+    <div class="line">夜勤のない<br>働き方もあります。<i>週3日・1日4時間からでも組めます</i></div>
+  </div>
+  <div class="cell">
+    <img src="img/p/fukushi-3.webp" alt="廊下で若い職員に説明している60代の職員">
+    <div class="veil"></div>
+    <div class="line">60代で入った人が、<br>3人います。<i>いちばん長い人で、もう8年目になります</i></div>
+  </div>
+  <div class="cell">
+    <img src="img/p/fukushi-4.webp" alt="休憩室でお茶を飲みながら話している職員3人">
+    <div class="veil"></div>
+    <div class="line">辞めた人が、<br>戻ってくる職場です。<i>この3年で4人。それがいちばんの説明です</i></div>
+  </div>
+</div>
+
+<div class="foot">
+  <div>
+    <h2>募　集　し　て　い　る　仕　事</h2>
+    <ul>
+      <li><b>介護職員</b><em>正職員・パート／未経験可</em></li>
+      <li><b>生活支援員</b><em>正職員／日勤のみ</em></li>
+      <li><b>調理補助</b><em>パート／週3日から</em></li>
+      <li><b>送迎の運転</b><em>パート／朝夕のみ・普通免許</em></li>
+      <li><b>事務</b><em>正職員／PCの基本操作ができる方</em></li>
+    </ul>
+  </div>
+  <div>
+    <h2>働　き　か　た</h2>
+    <div class="kv"><span>給与</span>月 19.8 万円〜（正職員・賞与 年2回）</div>
+    <div class="kv"><span>休日</span>年 118 日（シフト制・希望を先に出せます）</div>
+    <div class="kv"><span>資格</span>取得の費用は法人が負担します</div>
+    <div class="kv"><span>場所</span>湖南市・甲賀市の 4 施設（希望を聞きます）</div>
+    <div class="kv"><span>見学</span>いつでも。履歴書は要りません</div>
+  </div>
+  <div class="qrbox"><div class="qr"></div><b>見学の申込</b></div>
+
+  <div class="cta">
+    <div class="big">まず、半日だけ見に来てください。</div>
+    <div class="sm">社会福祉法人こなん会（架空）　0748-00-0000（平日 9:00〜17:00）<br>
+      konan-kai.example.jp　／　担当：採用係</div>
+  </div>
+  <div class="note">
+    <span>※この紙面は見本です</span>
+    <span>自主制作 / Kinoshita Studio —— 架空の法人です</span>
+  </div>
+</div>
+
+</body></html>
