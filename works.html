@@ -105,6 +105,16 @@
   .wkm-txt p{ font-family:var(--jp); font-size:14px; line-height:2.05; color:#e2e0d9; margin:16px 0 0 }
   .wkm-txt .cnt{ font-family:'Inter',sans-serif; font-size:11px; letter-spacing:.14em;
     color:#8e8b83; margin-top:22px }
+  /* 木下スタジオ側に詳しいページがあるものだけ。無いときは出さない
+     🔴 display を書くので [hidden] の打ち消しも必ず書く */
+  .wkm-txt .wkm-go[hidden]{ display:none !important }
+  .wkm-txt .wkm-go{ display:inline-block; margin-top:26px; padding:13px 22px 14px;
+    background:#fff; color:#1b1c1a; text-decoration:none; font-family:var(--jp);
+    font-weight:700; font-size:13.5px; letter-spacing:.02em; border-radius:2px;
+    transition:transform .18s, box-shadow .18s }
+  .wkm-txt .wkm-go:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.3) }
+  .wkm-txt .wkm-go i{ display:block; font-style:normal; font-family:'Inter',sans-serif;
+    font-weight:600; font-size:10.5px; letter-spacing:.1em; color:#6f6d66; margin-top:4px }
   .wkm-x,.wkm-nav{ position:absolute; z-index:2; background:rgba(255,255,255,.1); color:#fff;
     border:0; cursor:pointer; border-radius:50%; display:flex; align-items:center;
     justify-content:center; transition:background .2s }
@@ -234,6 +244,7 @@
       <div class="bar"></div>
       <p id="wkmBody"></p>
       <div class="cnt" id="wkmCnt"></div>
+      <a class="wkm-go" id="wkmGo" target="_blank" rel="noopener" hidden>この仕事をくわしく<i>kinoshita.studio →</i></a>
     </div>
   </div>
   <button class="wkm-x" id="wkmX" aria-label="閉じる">×</button>
@@ -246,32 +257,42 @@ const WORKS = [
   // [ファイル, 題, 分類, 1=自主制作, 何をしたか]
   // ホームページ（業種が分かるものから）
   ['work-yataimura','飲食・エンタメ｜屋台村','web',0,
-   '十数軒が1つの建物に入っている屋台村。フロアの地図、月ごとの催し、店ごとの紹介までを1本の流れにまとめています。和柄と赤で、まず「祭りの場所」であることが先に伝わる構えにしました。'],
+   '十数軒が1つの建物に入っている屋台村。フロアの地図、月ごとの催し、店ごとの紹介までを1本の流れにまとめています。和柄と赤で、まず「祭りの場所」であることが先に伝わる構えにしました。',
+   'https://kinoshita.studio/case-yataimura.html'],
   ['work-industry','工業｜金属加工','web',0,
-   '加工の現場を大きく先に見せて、その上に「信頼と実績」を縦組みで重ねています。何を作る会社かを説明する前に、手が動いている画で伝える構え。'],
+   '加工の現場を大きく先に見せて、その上に「信頼と実績」を縦組みで重ねています。何を作る会社かを説明する前に、手が動いている画で伝える構え。',
+   'https://kinoshita.studio/case-kiyamagokin.html'],
   ['work-welfare','福祉業｜就労継続支援','web',0,
    '「あなたの"やりたい"の伴走がしたい」を画面のいちばん上に。制度の説明から入らず、どちらを向いている事業所かを1行で先に出しています。'],
   ['work-rincars','自動車製造業','web',0,
-   '救急車と重機の特装を手がける会社。車だけを見せるのではなく、作っている人を正面から。モノクロで揃えて、車体と人を同じ硬さで並べています。'],
+   '救急車と重機の特装を手がける会社。車だけを見せるのではなく、作っている人を正面から。モノクロで揃えて、車体と人を同じ硬さで並べています。',
+   'https://kinoshita.studio/case-rincars.html'],
   ['work-reform','リフォーム業','web',0,
    '街の俯瞰を背に、会社の向きを英文1行で。業種の説明より先に、どこを向いているかを置く構えです。'],
   ['work-manjuya','飲食業','web',0,
-   '料理の写真から入らず、夜の外観と木の看板から。どういう構えの店かを先に見せて、縦組みの店名をそのまま画面の軸にしています。'],
+   '料理の写真から入らず、夜の外観と木の看板から。どういう構えの店かを先に見せて、縦組みの店名をそのまま画面の軸にしています。',
+   'https://kinoshita.studio/case-manjuya.html'],
   ['work-restaurant','飲食業','web',0,
-   '肉を大きく1枚。文字は細い欧文で小さくまとめ、皿の色の邪魔をしないようにしています。'],
+   '肉を大きく1枚。文字は細い欧文で小さくまとめ、皿の色の邪魔をしないようにしています。',
+   'https://kinoshita.studio/case-mirise.html'],
   ['work-french','飲食業','web',0,
    '皿が主役。白を多めに取って、料理の輪郭が切れないところに文字を置いています。'],
   ['work-bicycle','自転車業','web',0,
-   '売り場の空気をそのまま画面に。特価やセールの札を隠さず、店頭と同じ賑やかさで並べました。'],
+   '売り場の空気をそのまま画面に。特価やセールの札を隠さず、店頭と同じ賑やかさで並べました。',
+   'https://kinoshita.studio/case-maruichi.html'],
   ['work-photo','写真撮影業','web',0,
-   '写真が主役なので文字は少なく。人物の視線の先が空くように余白を取っています。'],
+   '写真が主役なので文字は少なく。人物の視線の先が空くように余白を取っています。',
+   'https://kinoshita.studio/case-avenir.html'],
   // ロゴ・看板（会社の顔）
   ['jutaku-home-mockups','住宅・不動産｜看板・のぼり','logo',0,
-   '空き家の相談窓口のマーク。看板、のぼり、室内のサインまで、実際に置いた状態で確かめています。'],
+   '空き家の相談窓口のマーク。看板、のぼり、室内のサインまで、実際に置いた状態で確かめています。',
+   'https://kinoshita.studio/case-branding-jutaku-home.html'],
   ['jutaku-home-signs','住宅・不動産｜サイン計画','logo',0,
-   '同じマークを、横組み・縦組み・白地・色地まで並べたところ。どこに置いても線の太さが変わらないようにしています。'],
+   '同じマークを、横組み・縦組み・白地・色地まで並べたところ。どこに置いても線の太さが変わらないようにしています。',
+   'https://kinoshita.studio/case-branding-jutaku-home.html'],
   ['jutaku-home-logo','住宅・不動産｜ロゴ','logo',0,
-   '屋根と窓を線で組んだマーク。なぜその形なのかを1枚にまとめた説明書も合わせて渡しています。'],
+   '屋根と窓を線で組んだマーク。なぜその形なのかを1枚にまとめた説明書も合わせて渡しています。',
+   'https://kinoshita.studio/case-branding-jutaku-home.html'],
   ['advinder-logo','クリニック｜ロゴ','logo',1,
    'クリニック ADVINDER のリブランディング。ロゴから組み直したもの。'],
   ['advinder-logo-poster','クリニック｜展開','logo',1,
@@ -310,15 +331,20 @@ const WORKS = [
   ['flyer-it','PC保守サポートのチラシ','flyer',1,
    '困りごとのチェックリストから入り、大きな「解決」で受ける形。入口を3つに分けています。'],
   ['img-flyer-awapack','製造業｜会社案内','flyer',0,
-   '印刷会社の会社案内。現場の写真を格子に並べ、白を多く取っています。'],
+   '印刷会社の会社案内。現場の写真を格子に並べ、白を多く取っています。',
+   'https://kinoshita.studio/case-flyer-awapack.html'],
   ['img-flyer-poster','ブランドポスター','flyer',0,
-   'スタジオのブランドポスター。「BUILD IDEAS FOR EXPERIENCES」の1行で立てています。'],
+   'スタジオのブランドポスター。「BUILD IDEAS FOR EXPERIENCES」の1行で立てています。',
+   'https://kinoshita.studio/case-flyer-brand-poster.html'],
   ['img-flyer-strawberry','イベント告知','flyer',0,
-   'イベントの告知。日付と場所だけを残して、あとは絵に預けた1枚。'],
+   'イベントの告知。日付と場所だけを残して、あとは絵に預けた1枚。',
+   'https://kinoshita.studio/case-flyer-strawberry.html'],
   ['img-flyer-sound','展示の告知','flyer',0,
-   '展示「SOUND INTERACTION」の告知。額に入れて壁に掛けた状態で確かめています。'],
+   '展示「SOUND INTERACTION」の告知。額に入れて壁に掛けた状態で確かめています。',
+   'https://kinoshita.studio/case-flyer-sound.html'],
   ['img-flyer-kinoshita','Zine／ブランドブック','flyer',0,
-   'スタジオのZine。できることと、考えている順番を1冊にまとめたもの。'],
+   'スタジオのZine。できることと、考えている順番を1冊にまとめたもの。',
+   'https://kinoshita.studio/case-flyer-zine.html'],
   // 社内資料
   ['docs-nagi','鉄工所｜カルチャーデッキ','docs',1,
    '鉄工所が採用で渡す資料。1枚ずつ 1920×1080 の実寸で組んでいます。見出しは明朝、中身はゴシック。色は鉄の青と、焼けた鉄のオレンジだけ。'],
@@ -332,17 +358,23 @@ const WORKS = [
   ['img-poster-advinder-2','クリニック','poster',1,
    '同じクリニックの別の1枚。'],
   ['img-poster-hajimarinoiro','映画','poster',0,
-   '映画「ハジマリノイロ」。題字を画面の中央に横たえ、上下を顔で挟んでいます。'],
+   '映画「ハジマリノイロ」。題字を画面の中央に横たえ、上下を顔で挟んでいます。',
+   'https://kinoshita.studio/flyer-poster-work.html'],
   ['img-poster-mshalo','映画','poster',0,
-   '映画「MS.HALO」。縞の衣装に合わせて、英字も縞で組みました。'],
+   '映画「MS.HALO」。縞の衣装に合わせて、英字も縞で組みました。',
+   'https://kinoshita.studio/flyer-poster-work.html'],
   ['img-poster-amberhour','映画','poster',0,
-   '映画「アンバーアワー」。色の帯を顔の上に走らせ、題字はその下で受けています。'],
+   '映画「アンバーアワー」。色の帯を顔の上に走らせ、題字はその下で受けています。',
+   'https://kinoshita.studio/flyer-poster-work.html'],
   ['img-poster-scratch','映画','poster',0,
-   '映画「スクラッチ」。人物を切り抜いて重ね、題字だけを前に出しました。'],
+   '映画「スクラッチ」。人物を切り抜いて重ね、題字だけを前に出しました。',
+   'https://kinoshita.studio/flyer-poster-work.html'],
   ['img-poster-minamo','音楽','poster',0,
-   '「みなも兄弟」。写真はモノクロで抑え、題字だけを手の字にしています。'],
+   '「みなも兄弟」。写真はモノクロで抑え、題字だけを手の字にしています。',
+   'https://kinoshita.studio/flyer-poster-work.html'],
   ['img-poster-minamo-2','音楽','poster',0,
-   '同じ題字を黒地に置いた版。'],
+   '同じ題字を黒地に置いた版。',
+   'https://kinoshita.studio/flyer-poster-work.html'],
   ['flyer-hojokin','補助金の説明会','poster',1,
    '補助金説明会のチラシ。濃青と極太ゴシック。黒帯の中に人を1人入れて、「誰が来る会か」が一目で分かるようにしています。A4。'],
   ['poster-college','市民カレッジ 受講生募集','poster',1,
@@ -399,16 +431,18 @@ document.getElementById('filter').addEventListener('click',e=>{
   const im=document.getElementById('wkmImg'), ct=document.getElementById('wkmCat'),
         tt=document.getElementById('wkmTtl'), bd=document.getElementById('wkmBody'),
         cn=document.getElementById('wkmCnt');
+  const go=document.getElementById('wkmGo');
   let cur=-1;
   // いま表に出ている札だけを行き来する（絞り込み中は、その中だけ）
   const shown=()=>[...document.querySelectorAll('.wk:not(.is-hide)')].map(w=>+w.dataset.i);
   function open(i){
-    const [f,t,c,,body]=WORKS[i]; cur=i;
+    const [f,t,c,,body,url]=WORKS[i]; cur=i;
     im.src='img/w/'+f+'.webp'; im.alt=t;
     ct.textContent=CAT[c];
     tt.textContent=t; bd.textContent=body||'';
     const list=shown(), at=list.indexOf(i);
     cn.textContent=(at<0?'':(at+1)+' / '+list.length);
+    if(url){ go.href=url; go.hidden=false; } else { go.removeAttribute('href'); go.hidden=true; }
     document.body.classList.add('wkm-on');
   }
   function close(){ document.body.classList.remove('wkm-on'); im.src=''; cur=-1; }
