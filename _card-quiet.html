@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本名刺（鍼灸院 しずか）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* 架空の「鍼灸院 しずか / quiet」の名刺。
+     ⭐ ロゴの芯＝q の長い縦線＝鍼。名刺でもその1本を【紙の端まで通す】。
+     🔴 色は1つだけ（紺）。地は紙の色のまま。鍼灸院なので線は細く、余白を広く取る。
+     縦型 55×91mm。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Inter','Noto Sans JP',sans-serif }
+  .board{ width:1500px; height:1000px; background:#f3f2ef; margin:0 auto; position:relative;
+    overflow:hidden; display:flex; align-items:center; justify-content:center; gap:96px; color:#1F3A6E }
+
+  /* 名刺1枚＝55×91mm を 414×685px で（1mm ≒ 7.53px） */
+  .card{ width:414px; height:685px; background:#fdfdfc; position:relative; overflow:hidden;
+    box-shadow:0 24px 44px rgba(20,28,50,.17), 0 2px 5px rgba(20,28,50,.10) }
+
+  /* ── 表 ── */
+  .face .mk{ position:absolute; left:50%; top:232px; transform:translateX(-54%); width:252px }
+  .face .mk svg{ width:100%; height:auto; display:block }
+  .face .jp{ position:absolute; left:50%; top:430px; transform:translateX(-50%);
+    font-family:'Noto Sans JP'; font-weight:500; font-size:15px; letter-spacing:.44em;
+    color:#1F3A6E; white-space:nowrap; text-indent:.44em }
+  /* 🔴 q の鍼を、紙の下端まで通す */
+  .face .needle{ position:absolute; left:50%; top:430px; bottom:0; width:1.6px;
+    margin-left:-106px; background:#1F3A6E; opacity:.58 }
+  .face .web{ position:absolute; left:34px; top:50px; writing-mode:vertical-rl;
+    font-size:11px; letter-spacing:.28em; font-weight:500; color:#8d93a6 }
+
+  /* ── 裏 ── */
+  .back{ padding:62px 46px 0 }
+  .back .web{ position:absolute; right:34px; top:50px; writing-mode:vertical-rl;
+    font-size:11px; letter-spacing:.28em; font-weight:500; color:#8d93a6 }
+  .back .nm{ font-family:'Noto Sans JP'; font-weight:700; font-size:27px; letter-spacing:.06em;
+    line-height:1.3; color:#17305c }
+  .back .nm em{ font-style:normal; font-size:13px; font-weight:500; letter-spacing:.2em;
+    display:block; margin-top:9px; color:#6f7a93 }
+  .back .rule{ width:58px; height:3px; background:#1F3A6E; margin:18px 0 0 }
+  .back .ttl{ font-family:'Noto Sans JP'; font-size:12.5px; font-weight:500; letter-spacing:.18em;
+    color:#4a5268; margin-top:22px; line-height:1.9 }
+  .back .adr{ font-family:'Noto Sans JP'; font-size:12px; font-weight:400; letter-spacing:.06em;
+    line-height:2.05; color:#3b4356; margin-top:40px }
+  .back .adr b{ font-weight:500 }
+  .back .tel{ font-size:15px; font-weight:600; letter-spacing:.08em; color:#17305c; margin-top:18px }
+  .back .mail{ font-size:12px; font-weight:400; letter-spacing:.04em; color:#3b4356; margin-top:4px }
+  .back .mark{ position:absolute; right:42px; bottom:44px; width:44px; opacity:.72 }
+  .back .mark svg{ width:100%; height:auto; display:block }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#a7a9a4; font-weight:600 }
+  .credit{ position:absolute; left:30px; bottom:16px; font-size:12px; letter-spacing:.12em; color:#b6b8b3 }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:24px">BUSINESS CARD　／　55 × 91 mm</span>
+
+  <!-- 表 -->
+  <div class="card face">
+    <span class="web">SHIZUKA-SHINKYU.JP</span>
+    <div class="needle"></div>
+    <div class="mk">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-13.6 -343.6 593.6 480" width="593.6">
+        <g fill="none" stroke="#1F3A6E" stroke-width="3.4" stroke-linecap="round">
+          <circle cx="60" cy="-60" r="60"/>
+          <path d="M120 -60 V110"/>
+          <path d="M139.2 -120 V-60 A60 60 0 0 0 259.2 -60 V-120"/>
+          <path d="M259.2 -60 V0"/>
+          <path d="M278.4 -120 V0"/>
+          <circle cx="278.4" cy="-151.2" r="5.1" stroke="none" fill="#1F3A6E"/>
+          <path d="M319.2 -60 H439.2 A60 60 0 1 0 415.2 -7.2"/>
+          <path d="M506.4 -330 V0"/>
+          <path d="M446.4 -93.6 H566.4"/>
+        </g>
+      </svg>
+    </div>
+    <div class="jp">鍼 灸 院 し ず か</div>
+  </div>
+
+  <!-- 裏 -->
+  <div class="card back">
+    <span class="web">SHIZUKA-SHINKYU.JP</span>
+    <div class="nm">村井 奈緒<em>M U R A I 　 N A O</em></div>
+    <div class="rule"></div>
+    <div class="ttl">院長／はり師・きゅう師<br>あん摩マッサージ指圧師</div>
+    <div class="adr">
+      〒520-0000<br>
+      滋賀県大津市本堅田〇丁目 00-0<br>
+      <b>JR 堅田駅 西口から徒歩 7 分</b>
+    </div>
+    <div class="tel">077-000-0000</div>
+    <div class="mail">nao@shizuka-shinkyu.jp</div>
+    <div class="mark">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="440 -340 140 350" width="140">
+        <g fill="none" stroke="#1F3A6E" stroke-width="7" stroke-linecap="round">
+          <path d="M506.4 -330 V0"/><path d="M446.4 -93.6 H566.4"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <span class="credit">自主制作 / Kinoshita Studio —— 架空の院です</span>
+</div>
+</body>
+</html>

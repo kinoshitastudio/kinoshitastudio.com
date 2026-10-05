@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本名刺（暮らしの道具店 mono）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* 架空の「暮らしの道具店 mono」の名刺。
+     ⭐ 表はロゴ1つだけ。紙のまん中より少し上に、小さく。それ以外は何も置かない。
+     ⭐ 裏は等幅（モノスペース）で左下にまとめる。道具屋なので、値札や納品書の字に寄せた。
+     🔴 色は墨1色。罫も面も使わない。余白そのものが絵になる型。
+     横型 91×55mm。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Roboto Mono','Noto Sans JP',monospace }
+  .board{ width:1500px; height:1000px; background:#0f0f0e; margin:0 auto; position:relative;
+    overflow:hidden; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; gap:58px; color:#14130f }
+
+  /* 91×55mm を 685×414px で。紙は少しだけざらつかせる */
+  .card{ width:685px; height:414px; position:relative; overflow:hidden; background:#efece5;
+    box-shadow:0 22px 44px rgba(0,0,0,.42), 0 2px 5px rgba(0,0,0,.3) }
+  .card::after{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(0,0,0,.030) 0 1px, transparent 1px),
+      radial-gradient(circle at 70% 60%, rgba(0,0,0,.025) 0 1px, transparent 1px),
+      radial-gradient(circle at 45% 85%, rgba(0,0,0,.030) 0 1px, transparent 1px);
+    background-size:7px 7px, 9px 9px, 11px 11px }
+
+  /* ── 表：ロゴだけ ── */
+  .face .mk{ position:absolute; left:50%; top:44%; transform:translate(-50%,-50%); width:188px }
+  .face .mk svg{ width:100%; height:auto; display:block }
+
+  /* ── 裏：等幅で左下に ── */
+  .back .mk{ position:absolute; right:40px; top:34px; width:74px; opacity:.85 }
+  .back .mk svg{ width:100%; height:auto; display:block }
+  .back .blk{ position:absolute; left:46px; bottom:48px; font-size:12px; line-height:1.72;
+    letter-spacing:.02em; color:#14130f }
+  .back .blk .nm{ font-weight:700; font-size:13.5px; letter-spacing:.04em }
+  .back .blk .ttl{ font-weight:400; font-size:12px; color:#3c382f }
+  .back .blk .gap{ height:17px }
+  .back .blk .jp{ font-family:'Noto Sans JP'; font-size:11px; letter-spacing:.06em; color:#3c382f }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#55534c; font-weight:600 }
+  .credit{ position:absolute; left:30px; bottom:16px; font-size:12px; letter-spacing:.12em; color:#4c4a43 }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:24px">BUSINESS CARD　／　91 × 55 mm</span>
+
+  <!-- 表 -->
+  <div class="card face">
+    <div class="mk">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9 -181 1196 193.6">
+        <g fill="none" stroke="#14130f" stroke-width="9">
+          <path d="M0 0 V-86 A86 86 0 0 1 172 -86 V0"/>
+          <path d="M167.5 0 V-86 A86 86 0 0 1 339.5 -86 V0"/>
+          <path d="M447 -86 A86 86 0 1 1 619 -86"/>
+          <path d="M619 -86 A86 86 0 0 1 558.8 -4.3"/>
+          <path d="M447 -86 A86 86 0 0 0 507.2 -4.3"/>
+          <path d="M726.5 0 V-86 A86 86 0 0 1 898.5 -86 V0"/>
+          <path d="M1006 -86 A86 86 0 1 1 1178 -86"/>
+          <path d="M1178 -86 A86 86 0 0 1 1117.8 -4.3"/>
+          <path d="M1006 -86 A86 86 0 0 0 1066.2 -4.3"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- 裏 -->
+  <div class="card back">
+    <div class="mk">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-9 -181 1196 193.6">
+        <g fill="none" stroke="#14130f" stroke-width="14">
+          <path d="M0 0 V-86 A86 86 0 0 1 172 -86 V0"/>
+          <path d="M167.5 0 V-86 A86 86 0 0 1 339.5 -86 V0"/>
+          <path d="M447 -86 A86 86 0 1 1 619 -86"/>
+          <path d="M619 -86 A86 86 0 0 1 558.8 -4.3"/>
+          <path d="M447 -86 A86 86 0 0 0 507.2 -4.3"/>
+          <path d="M726.5 0 V-86 A86 86 0 0 1 898.5 -86 V0"/>
+          <path d="M1006 -86 A86 86 0 1 1 1178 -86"/>
+          <path d="M1178 -86 A86 86 0 0 1 1117.8 -4.3"/>
+          <path d="M1006 -86 A86 86 0 0 0 1066.2 -4.3"/>
+        </g>
+      </svg>
+    </div>
+    <div class="blk">
+      <div class="nm">NISHI SACHIKO</div>
+      <div class="ttl">SHOP KEEPER</div>
+      <div class="gap"></div>
+      <div class="jp">滋賀県東近江市〇〇 1-2-3</div>
+      <div class="jp">火・水・金・土　11:00 — 18:00</div>
+      <div class="gap"></div>
+      <div>0748-00-0000</div>
+      <div>SACHI@MONO-DOUGU.JP</div>
+      <div>MONO-DOUGU.JP</div>
+    </div>
+  </div>
+
+  <span class="credit">自主制作 / Kinoshita Studio —— 架空の店です</span>
+</div>
+</body>
+</html>

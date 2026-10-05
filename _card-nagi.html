@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本名刺（凪工業）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 架空の「凪工業」の名刺。
+     ⭐ ロゴの芯＝水面の1本。名刺でもその1本が【表と裏で同じ高さ】に来るようにしている。
+     🔴 色は地（鉄のグレー）＋1色だけ。鉄工所なので面は切りっぱなしの直線で。
+     縦型 55×91mm。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Inter','Noto Sans JP',sans-serif }
+  .board{ width:1500px; height:1000px; background:#e4e3df; margin:0 auto; position:relative;
+    overflow:hidden; display:flex; align-items:center; justify-content:center; gap:96px; color:#15181a }
+
+  /* 55×91mm を 414×685px で */
+  .card{ width:414px; height:685px; background:#edecea; position:relative; overflow:hidden;
+    box-shadow:0 24px 44px rgba(16,20,22,.22), 0 2px 5px rgba(16,20,22,.12) }
+
+  /* ── 表：黒の面を上から落として、水面の1本で切る ── */
+  .face .ink{ position:absolute; left:0; right:0; top:0; height:398px; background:#15181a }
+  .face .line{ position:absolute; left:0; right:0; top:398px; height:7px; background:#d8532a }
+  .face .mk{ position:absolute; left:46px; top:150px; width:322px }
+  .face .mk svg{ width:100%; height:auto; display:block }
+  .face .jp{ position:absolute; left:46px; top:300px; font-family:'Noto Sans JP'; font-weight:700;
+    font-size:15px; letter-spacing:.42em; color:#edecea }
+  .face .en{ position:absolute; left:46px; top:432px; font-weight:800; font-size:12px;
+    letter-spacing:.26em; color:#15181a }
+  .face .biz{ position:absolute; left:46px; right:46px; top:470px; font-family:'Noto Sans JP';
+    font-size:11.5px; line-height:2.1; color:#4c5255; letter-spacing:.04em }
+  .face .biz span{ display:inline-block; border:1px solid #a9aeb0; padding:2px 8px; margin:0 4px 6px 0;
+    font-size:10.5px; letter-spacing:.1em; color:#3a4043 }
+
+  /* ── 裏 ── */
+  .back{ padding:58px 46px 0 }
+  .back .ink{ position:absolute; left:0; right:0; bottom:0; height:188px; background:#15181a }
+  .back .line{ position:absolute; left:0; right:0; bottom:188px; height:7px; background:#d8532a }
+  .back .nm{ font-family:'Noto Sans JP'; font-weight:900; font-size:28px; letter-spacing:.02em;
+    line-height:1.3 }
+  .back .nm em{ font-style:normal; display:block; font-size:12px; font-weight:500;
+    letter-spacing:.24em; color:#6d7477; margin-top:9px }
+  .back .ttl{ font-family:'Noto Sans JP'; font-size:12.5px; font-weight:500; letter-spacing:.14em;
+    color:#4c5255; margin-top:20px; line-height:1.9 }
+  .back .adr{ font-family:'Noto Sans JP'; font-size:11.5px; line-height:2; color:#3a4043;
+    margin-top:30px }
+  .back .tel{ font-size:17px; font-weight:700; letter-spacing:.06em; margin-top:16px }
+  .back .mail{ font-size:11.5px; color:#3a4043; margin-top:3px }
+  .back .foot{ position:absolute; left:46px; right:46px; bottom:40px; color:#edecea }
+  .back .foot b{ display:block; font-family:'Noto Sans JP'; font-weight:700; font-size:14px;
+    letter-spacing:.2em }
+  .back .foot i{ font-style:normal; display:block; font-size:10.5px; letter-spacing:.2em;
+    color:#8d9497; margin-top:6px }
+  .back .foot .w{ position:absolute; right:0; bottom:2px; font-size:10.5px; letter-spacing:.14em;
+    color:#8d9497 }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#9ea29f; font-weight:600 }
+  .credit{ position:absolute; left:30px; bottom:16px; font-size:12px; letter-spacing:.12em; color:#aeb2af }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:24px">BUSINESS CARD　／　55 × 91 mm</span>
+
+  <!-- 表 -->
+  <div class="card face">
+    <div class="ink"></div>
+    <div class="line"></div>
+    <div class="mk">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -12 870 324">
+        <g fill="#edecea">
+          <path d="M0 0 h74 v300 h-74 z"/>
+          <path d="M126 0 h74 v300 h-74 z"/>
+          <path d="M0 0 h74 L200 300 h-74 z"/>
+          <path d="M310 0 L410 300 h-74 L310 114.7 L284 300 H210 z"/>
+          <rect x="261.8" y="186" width="96.4" height="54.76"/>
+          <path fill-rule="evenodd" d="M520 0 a150 150 0 1 0 0 300 a150 150 0 1 0 0 -300 z
+                M520 74 a76 76 0 1 1 0 152 a76 76 0 1 1 0 -152 z"/>
+          <rect x="520" y="115.96" width="152" height="68.08" fill="#15181a"/>
+          <rect x="514" y="115.96" width="129" height="68.08"/>
+          <rect x="566" y="115.96" width="74" height="93"/>
+          <path d="M693 0 h74 v300 h-74 z"/>
+        </g>
+        <path fill="#15181a" d="M-30 136.5 C 249 95.94, 547.8 170.82, 860 117.78 L 860 133.38
+              C 547.8 186.42, 249 111.54, -30 152.1 z"/>
+      </svg>
+    </div>
+    <div class="jp">凪 工 業 株 式 会 社</div>
+    <div class="en">N A G I 　 I R O N 　 W O R K S</div>
+    <div class="biz">
+      <span>精密板金</span><span>溶接</span><span>製缶</span><span>治具製作</span><span>短納期</span><br>
+      一品ものから、図面の無いものまで。
+    </div>
+  </div>
+
+  <!-- 裏 -->
+  <div class="card back">
+    <div class="nm">凪 健一<em>N A G I 　 K E N I C H I</em></div>
+    <div class="ttl">製造部／板金・溶接<br>溶接技能者（半自動・TIG）</div>
+    <div class="adr">
+      〒520-0000<br>
+      滋賀県湖南市〇〇 1-2-3<br>
+      工場見学はいつでもどうぞ
+    </div>
+    <div class="tel">0748-00-0000</div>
+    <div class="mail">kenichi@nagi-iron.jp</div>
+    <div class="line"></div>
+    <div class="ink"></div>
+    <div class="foot">
+      <b>凪 工 業 株 式 会 社</b>
+      <i>N A G I 　 I R O N 　 W O R K S</i>
+      <span class="w">NAGI-IRON.JP</span>
+    </div>
+  </div>
+
+  <span class="credit">自主制作 / Kinoshita Studio —— 架空の会社です</span>
+</div>
+</body>
+</html>
