@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本の社内資料6（事業の説明資料）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 会社の事業を外に説明する資料。取引先・金融機関・採用のどれにも使う種類。
+     ⭐ 色は【図形のためだけ】に5色使い、文字は墨1色のまま。色が増えても紙面が散らからない。
+     🔴 1枚に図は1つ。数字は必ず「いつ時点か」を添える。
+     1枚ずつ 1920×1080 の実寸で組み、板の上では縮めて並べているだけ。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP','Inter',sans-serif }
+  .board{ width:1500px; height:1000px; background:#e3e0da; margin:0 auto; position:relative; overflow:hidden }
+
+  .cover{ position:absolute; left:50%; top:54px; transform:translateX(-50%);
+    width:960px; height:540px; overflow:hidden; box-shadow:0 18px 40px rgba(40,34,24,.2) }
+  .cover .s{ transform:scale(.5) }
+  .thumbs{ position:absolute; left:50%; top:628px; transform:translateX(-50%);
+    display:grid; grid-template-columns:repeat(3,316px); gap:12px }
+  .cell{ width:316px; height:178px; overflow:hidden; box-shadow:0 6px 16px rgba(40,34,24,.15) }
+  .cell .s{ transform:scale(.16458) }
+  .s{ width:1920px; height:1080px; transform-origin:top left; position:relative; overflow:hidden;
+    background:#faf7f1; color:#20201c }
+
+  :root{ --ki:#f0b93f; --aka:#e0624e; --ao:#4a7fc1; --midori:#6fa65a; --murasaki:#8e6cae }
+
+  .run{ position:absolute; left:60px; right:60px; top:44px; display:flex; font-size:17px;
+    letter-spacing:.08em; color:#8d8779 }
+  .run b{ margin-left:auto; font-weight:700; color:#20201c; letter-spacing:.1em; font-size:16px }
+  .p{ padding:118px 60px 0 }
+  h2{ font-weight:700; font-size:50px; line-height:1.45; letter-spacing:-.01em }
+  h2 em{ font-style:normal; color:var(--aka) }
+  h2 i{ font-style:normal; color:var(--ao) }
+  .lead{ font-size:19px; line-height:2; color:#4d4a42; margin-top:26px; max-width:1180px }
+
+  /* 表紙のマーク */
+  .mk{ display:flex; align-items:center; gap:0 }
+  .mk i{ display:block; width:92px; height:92px; background:#8e8a80 }
+  .mk i.a{ border-radius:999px 0 0 999px }
+  .mk i.b{ border-radius:0 999px 999px 0; margin-left:6px }
+  .mk i.c{ border-radius:999px 999px 0 0; margin-left:6px }
+  .c-logo{ position:absolute; left:50%; top:46%; transform:translate(-50%,-50%); text-align:center }
+  .c-logo .nm{ font-weight:700; font-size:40px; letter-spacing:.06em; margin-top:22px }
+  .c-sub{ position:absolute; left:0; right:0; bottom:92px; text-align:center; font-size:19px;
+    letter-spacing:.2em; color:#8d8779 }
+
+  /* 図形を散らす */
+  .shapes i{ position:absolute; display:block }
+  .r{ border-radius:999px } .q{ border-radius:8px }
+  .tri{ clip-path:polygon(50% 0, 100% 100%, 0 100%) }
+  .leaf{ border-radius:999px 10px 999px 10px }
+
+  /* 丸の重なり */
+  .venn{ position:relative; height:420px; margin-top:20px }
+  .venn div{ position:absolute; border-radius:50%; display:flex; align-items:center;
+    justify-content:center; text-align:center; font-weight:700; line-height:1.5 }
+  .venn .big{ left:300px; top:10px; width:400px; height:400px; background:rgba(74,127,193,.16);
+    font-size:26px; color:#20201c }
+  .venn .b2{ left:560px; top:10px; width:400px; height:400px; background:rgba(224,98,78,.2);
+    font-size:26px; color:#20201c }
+  .venn .mid{ left:530px; top:170px; width:200px; height:80px; background:#20201c; color:#fff;
+    border-radius:40px; font-size:21px; z-index:2 }
+
+  /* カード */
+  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:38px }
+  .cards > div{ background:#fff; border-radius:12px; padding:28px 28px 32px;
+    border:1px solid #e8e2d8 }
+  .cards .ic{ width:66px; height:66px; border-radius:14px; display:flex; align-items:center;
+    justify-content:center; color:#fff; font-weight:700; font-size:26px }
+  .cards h4{ font-weight:700; font-size:26px; margin-top:20px }
+  .cards p{ font-size:17px; line-height:1.9; color:#4d4a42; margin-top:12px }
+
+  /* 棒グラフ */
+  .bars{ display:flex; align-items:flex-end; gap:12px; height:380px; margin-top:34px;
+    border-bottom:2px solid #20201c; padding-bottom:0 }
+  .bars i{ flex:1; background:var(--ki); display:block; border-radius:4px 4px 0 0 }
+  .bars i:last-child{ background:var(--aka) }
+  .note{ font-size:16px; color:#8d8779; margin-top:14px }
+  .pick{ position:absolute; right:60px; top:150px; text-align:right }
+  .pick b{ display:block; font-family:'Inter'; font-weight:700; font-size:92px; line-height:1;
+    color:var(--aka); letter-spacing:-.03em }
+  .pick span{ display:block; font-size:19px; color:#4d4a42; margin-top:10px }
+
+  /* 3段 */
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:40px }
+  .steps > div{ text-align:center }
+  .steps .n{ width:76px; height:76px; border-radius:50%; margin:0 auto; color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:'Inter';
+    font-weight:700; font-size:32px }
+  .steps h4{ font-weight:700; font-size:26px; margin-top:20px }
+  .steps p{ font-size:17px; line-height:1.9; color:#4d4a42; margin-top:12px }
+
+  .pg{ position:absolute; right:60px; bottom:44px; font-family:'Inter'; font-size:18px; color:#a9a397 }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#a09a90; font-weight:600 }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:22px">社内資料　／　事業の説明資料　／　16 : 9</span>
+
+  <!-- 表紙 -->
+  <div class="cover"><div class="s" style="background:#f3efe8">
+    <div class="c-logo">
+      <div class="mk"><i class="a"></i><i class="b"></i><i class="c"></i></div>
+      <div class="nm">びわこ産業</div>
+    </div>
+    <div class="c-sub">2 0 2 7 年 度　事 業 の ご 説 明</div>
+  </div></div>
+
+  <div class="thumbs">
+
+    <!-- 1 ステートメント＋図形 -->
+    <div class="cell"><div class="s">
+      <div class="shapes">
+        <i class="r" style="right:300px;top:150px;width:170px;height:170px;background:var(--ao);opacity:.9"></i>
+        <i class="q" style="right:180px;top:360px;width:140px;height:140px;background:var(--ki);transform:rotate(14deg)"></i>
+        <i class="tri" style="right:420px;top:420px;width:150px;height:140px;background:var(--aka)"></i>
+        <i class="leaf" style="right:120px;top:170px;width:120px;height:120px;background:var(--midori)"></i>
+        <i class="r" style="right:380px;top:640px;width:96px;height:96px;background:var(--murasaki)"></i>
+        <i class="q" style="right:150px;top:600px;width:110px;height:110px;background:var(--aka);opacity:.75;transform:rotate(-10deg)"></i>
+      </div>
+      <div class="p" style="padding-top:380px">
+        <h2 style="font-size:58px">「おいしい」と「続く」を、<br>同じ机の上で考える</h2>
+      </div>
+      <div class="pg">02</div>
+    </div></div>
+
+    <!-- 2 事業の図 -->
+    <div class="cell"><div class="s">
+      <div class="run">事業について<b>B I W A K O　S A N G Y O</b></div>
+      <div class="p">
+        <h2><i>加工</i>と<em>販売</em>の両輪で、<br>作り手と食べる人をつなぐ</h2>
+        <div class="venn">
+          <div class="big"><span style="margin-right:120px">加工<br><span style="font-size:17px;font-weight:400">県内11軒の農家から</span></span></div>
+          <div class="b2"><span style="margin-left:120px">販売<br><span style="font-size:17px;font-weight:400">直売所と通販</span></span></div>
+          <div class="mid">びわこ産業</div>
+        </div>
+      </div>
+      <div class="pg">05</div>
+    </div></div>
+
+    <!-- 3 商品のカード -->
+    <div class="cell"><div class="s">
+      <div class="run">事業について<b>B I W A K O　S A N G Y O</b></div>
+      <div class="p">
+        <h2>3つの柱で、年を通して動かす</h2>
+        <div class="cards">
+          <div><div class="ic" style="background:var(--ki)">冬</div>
+            <h4>漬物と佃煮</h4><p>湖魚と冬野菜。11月から3月までの主力です。</p></div>
+          <div><div class="ic" style="background:var(--midori)">夏</div>
+            <h4>ジャムと果実</h4><p>いちごと梅。6月に仕込んで、秋まで出します。</p></div>
+          <div><div class="ic" style="background:var(--ao)">通年</div>
+            <h4>受託の加工</h4><p>他社の商品を預かって作ります。工場を止めないための柱。</p></div>
+        </div>
+      </div>
+      <div class="pg">08</div>
+    </div></div>
+
+    <!-- 4 グラフ -->
+    <div class="cell"><div class="s">
+      <div class="run">数字について<b>B I W A K O　S A N G Y O</b></div>
+      <div class="p">
+        <h2>受託の加工が、<em>5年で2.4倍</em>に</h2>
+        <div class="pick"><b>2.4<span style="font-size:40px">倍</span></b><span>2022年度比（2027年3月時点）</span></div>
+        <div class="bars">
+          <i style="height:34%"></i><i style="height:40%"></i><i style="height:46%"></i>
+          <i style="height:44%"></i><i style="height:55%"></i><i style="height:62%"></i>
+          <i style="height:60%"></i><i style="height:71%"></i><i style="height:78%"></i>
+          <i style="height:76%"></i><i style="height:88%"></i><i style="height:100%"></i>
+        </div>
+        <div class="note">2022年度 — 2027年度（各年度の受託件数／2027年3月時点）</div>
+      </div>
+      <div class="pg">13</div>
+    </div></div>
+
+    <!-- 5 3段 -->
+    <div class="cell"><div class="s">
+      <div class="run">これからについて<b>B I W A K O　S A N G Y O</b></div>
+      <div class="p">
+        <h2>これから3年でやること</h2>
+        <div class="steps">
+          <div><div class="n" style="background:var(--ao)">1</div>
+            <h4>工場を止めない</h4><p>受託を増やして、冬と夏の谷を埋めます。</p></div>
+          <div><div class="n" style="background:var(--aka)">2</div>
+            <h4>作り手を増やす</h4><p>県内の農家を11軒から20軒へ。</p></div>
+          <div><div class="n" style="background:var(--midori)">3</div>
+            <h4>自社の棚を持つ</h4><p>直売所を2店。作ったものを自分で売ります。</p></div>
+        </div>
+        <p class="lead">順番が大事です。3を先にやると、作るものが足りなくなります。</p>
+      </div>
+      <div class="pg">18</div>
+    </div></div>
+
+    <!-- 6 会社の概要 -->
+    <div class="cell"><div class="s">
+      <div class="run">会社について<b>B I W A K O　S A N G Y O</b></div>
+      <div class="p">
+        <h2>会社の概要</h2>
+        <div style="display:grid;grid-template-columns:200px 1fr;gap:0 40px;font-size:21px;
+          line-height:2.6;margin-top:34px;max-width:1100px">
+          <div style="color:#8d8779">設立</div><div>1978年4月</div>
+          <div style="color:#8d8779">所在</div><div>滋賀県近江八幡市〇〇 1-2-3</div>
+          <div style="color:#8d8779">従業員</div><div>42名（うちパート 18名／2027年3月時点）</div>
+          <div style="color:#8d8779">事業</div><div>農産物・水産物の加工、受託加工、直売</div>
+          <div style="color:#8d8779">工場</div><div>近江八幡（本社）／高島（第二）</div>
+        </div>
+        <div class="shapes">
+          <i class="r" style="right:140px;bottom:140px;width:150px;height:150px;background:var(--ki);opacity:.85"></i>
+          <i class="leaf" style="right:280px;bottom:230px;width:110px;height:110px;background:var(--midori);opacity:.8"></i>
+        </div>
+      </div>
+      <div class="pg">22</div>
+    </div></div>
+
+  </div>
+</div>
+</body>
+</html>

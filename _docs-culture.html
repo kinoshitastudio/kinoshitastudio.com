@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本の社内資料5（行動指針ブック）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 働く人に配る、行動指針のブック。入った人が最初に読むもの。
+     ⭐ 色は【朱1色】。写真の代わりに、紙を破ったような形で朱を置いている。
+     🔴 社内に配る資料なので、図は必ず「言いたいこと1つ」に絞る。2つ入れると読まれない。
+     1枚ずつ 1920×1080 の実寸で組み、板の上では縮めて並べているだけ。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP','Inter',sans-serif }
+  .board{ width:1500px; height:1000px; background:#e8e5e1; margin:0 auto; position:relative; overflow:hidden }
+
+  .cover{ position:absolute; left:50%; top:54px; transform:translateX(-50%);
+    width:960px; height:540px; overflow:hidden; box-shadow:0 18px 40px rgba(60,20,10,.22) }
+  .cover .s{ transform:scale(.5) }
+  .thumbs{ position:absolute; left:50%; top:628px; transform:translateX(-50%);
+    display:grid; grid-template-columns:repeat(3,316px); gap:12px }
+  .cell{ width:316px; height:178px; overflow:hidden; background:#fff;
+    box-shadow:0 6px 16px rgba(60,20,10,.16) }
+  .cell .s{ transform:scale(.16458) }
+  .s{ width:1920px; height:1080px; transform-origin:top left; position:relative; overflow:hidden;
+    background:#fff; color:#1d1a18 }
+
+  :root{ --aka:#e04418 }
+  .fill{ position:absolute; inset:0; background:var(--aka) }
+  /* 紙を破ったような形 */
+  .torn{ position:absolute; background:var(--aka);
+    clip-path:polygon(4% 10%, 26% 2%, 52% 11%, 74% 3%, 97% 13%, 100% 42%, 94% 72%, 98% 94%,
+      72% 100%, 44% 92%, 20% 99%, 2% 86%, 7% 56%) }
+  .grain{ position:absolute; inset:0; opacity:.2; background-image:
+      radial-gradient(circle at 18% 22%, rgba(255,255,255,.7) 0 1.5px, transparent 1.6px),
+      radial-gradient(circle at 62% 48%, rgba(255,255,255,.5) 0 1.2px, transparent 1.3px),
+      radial-gradient(circle at 36% 78%, rgba(255,255,255,.6) 0 1.4px, transparent 1.5px);
+    background-size:17px 17px, 23px 23px, 29px 29px }
+
+  .run{ position:absolute; left:64px; right:64px; top:46px; display:flex; font-size:18px;
+    letter-spacing:.1em; color:#8a817c }
+  .run b{ margin-left:auto; font-weight:700; color:#1d1a18; letter-spacing:.14em }
+  .p{ padding:132px 64px 0 }
+
+  .c-ttl{ position:absolute; left:92px; top:118px; color:#fff; font-weight:800;
+    font-size:112px; line-height:1.12; letter-spacing:-.01em }
+  .c-up{ position:absolute; left:96px; bottom:104px; color:#ffd9cd; font-size:21px; letter-spacing:.08em }
+  .c-logo{ position:absolute; right:92px; bottom:100px; color:#fff; font-weight:800;
+    font-size:28px; letter-spacing:.1em; display:flex; align-items:center; gap:14px }
+  .c-logo i{ display:block; width:34px; height:34px; background:#fff;
+    clip-path:polygon(0 24%, 62% 0, 100% 30%, 76% 100%, 14% 86%) }
+
+  h2{ font-weight:800; font-size:74px; line-height:1.24; letter-spacing:-.01em }
+  .lead{ font-size:21px; line-height:2.05; color:#4a433f; margin-top:28px; max-width:1180px }
+
+  .toc{ display:grid; grid-template-columns:420px 1fr; gap:80px; margin-top:40px }
+  .toc .bar{ background:var(--aka); height:420px; border-radius:2px; position:relative }
+  .toc .bar span{ position:absolute; left:34px; bottom:34px; color:#fff; font-weight:700;
+    font-size:30px; letter-spacing:.1em }
+  .toc ol{ list-style:none; font-size:28px; line-height:2.9 }
+  .toc ol b{ font-family:'Inter'; color:var(--aka); font-weight:700; margin-right:28px }
+
+  .ch{ position:absolute; left:92px; top:300px; color:#fff }
+  .ch b{ display:block; font-family:'Inter'; font-weight:800; font-size:118px; line-height:1 }
+  .ch h3{ font-weight:800; font-size:62px; margin-top:26px; letter-spacing:-.01em }
+  .ch i{ display:block; font-style:normal; font-size:24px; margin-top:16px; color:#ffd9cd }
+
+  .big{ position:absolute; left:92px; right:92px; top:50%; transform:translateY(-50%); color:#fff }
+  .big span{ display:inline-block; background:#fff; color:var(--aka); font-weight:700;
+    font-size:20px; letter-spacing:.2em; padding:7px 20px; border-radius:20px }
+  .big h3{ font-weight:800; font-size:80px; line-height:1.42; margin-top:30px; letter-spacing:-.01em }
+
+  /* 図解 */
+  .zu{ display:grid; grid-template-columns:1fr 1fr; gap:66px; margin-top:44px; align-items:center }
+  .venn{ position:relative; height:380px }
+  .venn div{ position:absolute; top:40px; width:300px; height:300px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:26px; font-weight:700;
+    text-align:center; line-height:1.5 }
+  .venn .a{ left:40px; background:rgba(224,68,24,.16); color:#1d1a18 }
+  .venn .b{ left:260px; background:rgba(224,68,24,.5); color:#fff }
+  .venn .a span{ margin-right:110px } .venn .b span{ margin-left:110px }
+  .box{ border:2px solid #e3ded9; border-radius:10px; padding:28px 30px; font-size:20px; line-height:1.9 }
+  .box b{ display:block; font-weight:700; font-size:24px; color:var(--aka); margin-bottom:10px }
+  .arw{ display:flex; align-items:center; gap:22px; margin-top:22px }
+  .arw .t{ flex:1; background:#f6f1ec; border-radius:10px; padding:24px 26px; font-size:20px; line-height:1.85 }
+  .arw .t b{ display:block; font-weight:700; font-size:23px; margin-bottom:8px }
+  .arw .g{ color:var(--aka); font-size:34px; font-weight:700 }
+
+  .std{ display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:40px }
+  .std > div{ border-top:5px solid var(--aka); padding-top:26px }
+  .std h4{ font-weight:700; font-size:30px }
+  .std p{ font-size:19px; line-height:1.95; color:#4a433f; margin-top:16px }
+  .std .graph{ height:160px; margin-top:22px; position:relative; background:#f6f1ec; border-radius:8px }
+  .std .graph svg{ position:absolute; inset:0; width:100%; height:100% }
+
+  .pg{ position:absolute; right:64px; bottom:46px; font-family:'Inter'; font-size:19px; color:#a79e98 }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#a39d97; font-weight:600 }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:22px">社内資料　／　行動指針ブック　／　16 : 9</span>
+
+  <!-- 表紙 -->
+  <div class="cover"><div class="s">
+    <div class="fill"></div><div class="grain"></div>
+    <div class="c-ttl">SAKAE<br>CULTURE BOOK</div>
+    <div class="c-up">Update 2027.4　／　Version 2.0</div>
+    <div class="c-logo"><i></i>栄 食 品</div>
+  </div></div>
+
+  <div class="thumbs">
+
+    <!-- 1 Contents -->
+    <div class="cell"><div class="s">
+      <div class="run">行動指針ブック<b>S A K A E　F O O D S</b></div>
+      <div class="p">
+        <div class="toc">
+          <div class="bar"><span>Contents</span></div>
+          <ol>
+            <li><b>01</b>この本はなにか</li>
+            <li><b>02</b>栄食品が大事にしていること</li>
+            <li><b>03</b>迷ったときの決め方</li>
+            <li><b>04</b>はじめの3か月でやること</li>
+          </ol>
+        </div>
+      </div>
+      <div class="pg">02</div>
+    </div></div>
+
+    <!-- 2 章扉 -->
+    <div class="cell"><div class="s">
+      <div style="position:absolute;inset:0;background:#2b2724"></div>
+      <div class="torn" style="left:880px;top:92px;right:88px;bottom:92px;opacity:.95"></div>
+      <div class="grain"></div>
+      <div class="ch">
+        <b>01</b>
+        <h3>この本はなにか</h3>
+        <i>読むものではなく、迷ったときに開くもの</i>
+      </div>
+      <div class="pg" style="color:#ffd9cd">03</div>
+    </div></div>
+
+    <!-- 3 PURPOSE -->
+    <div class="cell"><div class="s">
+      <div style="position:absolute;inset:0;background:#241f1c"></div>
+      <div class="torn" style="left:-60px;top:-40px;width:1100px;height:1160px;opacity:.9"></div>
+      <div class="grain"></div>
+      <div class="big">
+        <span>P U R P O S E</span>
+        <h3>毎日の食卓に、<br>当たり前を増やす</h3>
+      </div>
+      <div class="pg" style="color:#ffd9cd">09</div>
+    </div></div>
+
+    <!-- 4 図解（ベン図） -->
+    <div class="cell"><div class="s">
+      <div class="run">02　栄食品が大事にしていること<b>S A K A E　F O O D S</b></div>
+      <div class="p">
+        <h2>決めたことと、<br>やっていることを合わせる</h2>
+        <div class="zu">
+          <div class="venn">
+            <div class="a"><span>決めたこと</span></div>
+            <div class="b"><span>やっている<br>こと</span></div>
+          </div>
+          <div>
+            <div class="box"><b>重なっているところだけが文化</b>
+              決めただけのものは、紙に書いてあるだけです。やっているだけのものは、
+              人が変わると消えます。</div>
+            <div class="box" style="margin-top:22px"><b>だからこの本は毎年変わります</b>
+              やっていないことが残っていたら、消すか、やるかのどちらかにします。</div>
+          </div>
+        </div>
+      </div>
+      <div class="pg">12</div>
+    </div></div>
+
+    <!-- 5 流れ図 -->
+    <div class="cell"><div class="s">
+      <div class="run">03　迷ったときの決め方<b>S A K A E　F O O D S</b></div>
+      <div class="p">
+        <h2>迷ったら、お客さまの手元から考える</h2>
+        <p class="lead">社内の都合と、お客さまの手元がぶつかったときは、必ず手元を取ります。
+        それで損が出たら、それは仕組みのほうが悪いということです。</p>
+        <div class="arw">
+          <div class="t"><b>① いま困っているのは誰か</b>社内か、お客さまか。まずそこだけ。</div>
+          <div class="g">▶</div>
+          <div class="t"><b>② 手元で何が変わるか</b>届く時間か、値段か、味か。</div>
+          <div class="g">▶</div>
+          <div class="t"><b>③ 決めて、書き残す</b>次に同じことで迷わないために。</div>
+        </div>
+      </div>
+      <div class="pg">21</div>
+    </div></div>
+
+    <!-- 6 基準 -->
+    <div class="cell"><div class="s">
+      <div class="run">03　迷ったときの決め方<b>S A K A E　F O O D S</b></div>
+      <div class="p">
+        <h2>「あたりまえ基準」とは</h2>
+        <div class="std">
+          <div>
+            <h4>うまくいかない</h4>
+            <p>そのときどきで決めるので、人によって答えが変わります。</p>
+            <div class="graph"><svg viewBox="0 0 600 160" preserveAspectRatio="none">
+              <path d="M0 120 C 60 30, 120 150, 180 60 C 240 10, 300 140, 360 50 C 420 120, 480 20, 600 110"
+                    fill="none" stroke="#c9c1bb" stroke-width="7"/></svg></div>
+          </div>
+          <div>
+            <h4>基準があると</h4>
+            <p>決め方が1つなので、誰が答えても同じところに着きます。</p>
+            <div class="graph"><svg viewBox="0 0 600 160" preserveAspectRatio="none">
+              <path d="M0 125 C 140 110, 260 78, 600 36" fill="none" stroke="#e04418" stroke-width="7"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="pg">26</div>
+    </div></div>
+
+  </div>
+</div>
+</body>
+</html>

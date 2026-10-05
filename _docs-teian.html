@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本の社内資料4（事業の提案書）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 事業の提案書。先方に出して、そのまま置いて帰る種類の資料。
+     ⭐ 角を丸めた札を並べて、番号を大きく。黄は【1枚に1箇所だけ】強く使う。
+     🔴 黒い立体は写真でなく、CSSのグラデーションで作っている（素材を持っていなくても成立する型）。
+     1枚ずつ 1920×1080 の実寸で組み、板の上では縮めて並べているだけ。*/
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Noto Sans JP','Inter',sans-serif }
+  .board{ width:1500px; height:1000px; background:#dedddb; margin:0 auto; position:relative; overflow:hidden }
+
+  .cover{ position:absolute; left:50%; top:54px; transform:translateX(-50%);
+    width:960px; height:540px; overflow:hidden; background:#fff;
+    box-shadow:0 18px 40px rgba(20,20,20,.22) }
+  .cover .s{ transform:scale(.5) }
+  .thumbs{ position:absolute; left:50%; top:628px; transform:translateX(-50%);
+    display:grid; grid-template-columns:repeat(3,316px); gap:12px }
+  .cell{ width:316px; height:178px; overflow:hidden; background:#fff;
+    box-shadow:0 6px 16px rgba(20,20,20,.16) }
+  .cell .s{ transform:scale(.16458) }
+  .s{ width:1920px; height:1080px; transform-origin:top left; position:relative; overflow:hidden;
+    background:#fdfdfc; color:#15150f }
+
+  /* 走りもの（上の細い帯） */
+  .run{ position:absolute; left:64px; right:64px; top:52px; display:flex; align-items:baseline;
+    font-size:19px; letter-spacing:.06em; color:#6d6d63 }
+  .run b{ font-weight:700; color:#15150f; letter-spacing:.14em; font-size:20px }
+  .run .m{ margin-left:auto; display:flex; gap:76px }
+  .run .m i{ font-style:normal; line-height:1.5; font-size:16px }
+  .run .m i em{ font-style:normal; display:block; color:#15150f; font-size:16px }
+  .run .y{ margin-left:76px; font-weight:600; color:#15150f }
+
+  .p{ padding:124px 64px 0 }
+  h1{ font-weight:400; font-size:116px; line-height:1.02; letter-spacing:-.035em }
+  h2{ font-weight:400; font-size:92px; line-height:1.05; letter-spacing:-.035em }
+  .say{ font-size:25px; line-height:1.62; font-weight:500; letter-spacing:-.01em }
+  .lead{ font-size:19px; line-height:1.95; color:#55554b; margin-top:22px }
+
+  .pill{ border-radius:30px; padding:34px 38px 38px }
+  .yellow{ background:#eaff00 } .grey{ background:#edece9 } .black{ background:#15150f; color:#fff }
+
+  /* 黒い立体（球・層） */
+  .orb{ border-radius:999px; background:
+      radial-gradient(circle at 34% 24%, #d2d2ca 0%, #8d8d84 16%, #3d3d36 46%, #121210 80%) }
+  /* 🔴 ひだを細かくするとモアレになる。縮めても潰れない間隔にする */
+  .wave{ background:
+      repeating-radial-gradient(ellipse 150% 120% at 6% 50%,
+        #0e0e0b 0 46px, #3c3c35 46px 78px, #a3a39a 78px 104px, #3c3c35 104px 136px) }
+  /* 立体の上に字を乗せるときは、その側だけ締める */
+  .veil-l{ position:absolute; inset:0; background:
+      linear-gradient(90deg, rgba(10,10,8,.88) 0%, rgba(10,10,8,.72) 40%, rgba(10,10,8,.46) 62%,
+        rgba(10,10,8,.30) 80%, rgba(10,10,8,0) 97%) }
+
+  .four{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:62px; height:600px }
+  .four > div{ border-radius:30px; padding:40px 36px; display:flex; flex-direction:column }
+  .four h3{ font-size:30px; font-weight:700; letter-spacing:-.01em }
+  .four p{ font-size:17px; line-height:1.85; color:#55554b; margin-top:18px }
+  .four .black p{ color:#b7b7ae }
+  .four .no{ margin-top:auto; font-family:'Inter'; font-weight:400; font-size:116px; line-height:1;
+    letter-spacing:-.04em; border-bottom:4px solid currentColor; padding-bottom:8px; display:inline-block }
+
+  .ast{ font-family:'Inter'; font-weight:400; color:#eaff00; line-height:.8 }
+  .pg{ position:absolute; right:64px; bottom:48px; font-family:'Inter'; font-size:20px; color:#9a9a92 }
+  .tag{ display:inline-block; border-radius:30px; padding:9px 22px; font-size:17px; font-weight:700 }
+
+  .lbl{ position:absolute; font-size:13px; letter-spacing:.14em; color:#9e9d99; font-weight:600 }
+</style>
+</head>
+<body>
+<div class="board">
+  <span class="lbl" style="left:30px; top:22px">社内資料　／　事業の提案書　／　16 : 9</span>
+
+  <!-- 表紙 -->
+  <div class="cover"><div class="s">
+    <div class="run"><b>柳田設計</b>
+      <div class="m"><i>提出先<em>株式会社 かもめ商事 御中</em></i><i>種別<em>事業提案書</em></i></div>
+      <span class="y">2027</span></div>
+    <div class="p" style="padding-top:150px">
+      <div style="display:grid;grid-template-columns:600px 1fr;gap:56px;align-items:start">
+        <div>
+          <div class="say">現場でためた図面を、<br>仕組みに変えて、<br>次の仕事につなげる</div>
+          <div style="display:flex;gap:56px;margin-top:62px">
+            <div><div style="font-family:'Inter';font-weight:400;font-size:80px;line-height:1;letter-spacing:-.03em">1,840</div>
+              <div style="font-size:17px;color:#55554b;margin-top:10px">ためてきた図面</div></div>
+            <div><div style="font-family:'Inter';font-weight:400;font-size:80px;line-height:1;letter-spacing:-.03em">38<span style="font-size:44px">%</span></div>
+              <div style="font-size:17px;color:#55554b;margin-top:10px">描き直しの割合</div></div>
+          </div>
+        </div>
+        <h1>図面を<br>資産に<br>する。</h1>
+      </div>
+      <div style="position:relative;margin-top:56px;border-radius:30px;overflow:hidden;height:240px;background:#15150f">
+        <div class="wave" style="position:absolute;inset:0"></div>
+        <div class="veil-l"></div>
+        <div style="position:absolute;left:44px;top:40px;color:#fff">
+          <span class="tag" style="background:rgba(255,255,255,.16);color:#fff;font-size:15px">提案の芯</span>
+          <div style="font-size:40px;font-weight:700;margin-top:18px;letter-spacing:-.01em">描いたものを、二度描かない</div>
+        </div>
+        <div style="position:absolute;right:300px;top:46px;color:#eceded;font-size:16px;line-height:1.9;max-width:330px;text-shadow:0 2px 10px rgba(0,0,0,.9)">
+          同じ建具、同じ納まりを毎回ゼロから描いています。<br>そこを止めるところから始めます。</div>
+        <div class="ast" style="position:absolute;right:56px;top:46px;font-size:72px">✱</div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="thumbs">
+
+    <!-- 1 目次（4枚の札） -->
+    <div class="cell"><div class="s">
+      <div class="run"><b>柳田設計</b>
+        <div class="m"><i>提出先<em>株式会社 かもめ商事 御中</em></i><i>種別<em>事業提案書</em></i></div>
+        <span class="y">2027</span></div>
+      <div class="p" style="padding-top:150px">
+        <div class="four">
+          <div class="yellow"><h3>はじめに</h3><p>いまどこで時間が溶けているか。3つの数字で。</p><span class="no">01</span></div>
+          <div class="grey"><h3>会社のこと</h3><p>何を作ってきたか。どこまでやるか。</p><span class="no">02</span></div>
+          <div class="black"><h3>提案</h3><p>図面を貯める箱と、取り出す道。</p><span class="no">03</span></div>
+          <div class="grey"><h3>日程と費用</h3><p>3か月で区切ります。</p><span class="no">04</span></div>
+        </div>
+      </div>
+      <div class="pg">02</div>
+    </div></div>
+
+    <!-- 2 Introducing -->
+    <div class="cell"><div class="s">
+      <div class="run"><b>柳田設計</b><div class="m"><i>提出先<em>株式会社 かもめ商事 御中</em></i><i>種別<em>事業提案書</em></i></div><span class="y">2027</span></div>
+      <div class="p" style="padding-top:150px;display:grid;grid-template-columns:420px 1fr;gap:66px">
+        <div>
+          <div class="orb" style="width:420px;height:280px;border-radius:24px"></div>
+          <div class="orb" style="width:420px;height:280px;border-radius:24px;margin-top:20px"></div>
+        </div>
+        <div>
+          <h2>わたしたちの<br>こと</h2>
+          <div class="say" style="margin-top:44px">図面を描くだけでなく、<br>現場の納まりまで見ます</div>
+          <p class="lead" style="max-width:620px">1974年から、滋賀の工場と倉庫をやってきました。
+          建てたあとに困るところを知っているので、描く前にそこから決めます。</p>
+          <div style="margin-top:34px"><span class="tag grey">事業提案書</span>
+            <span class="tag yellow" style="margin-left:10px">2027</span></div>
+        </div>
+      </div>
+      <div class="pg">05</div>
+    </div></div>
+
+    <!-- 3 Executive Summary -->
+    <div class="cell"><div class="s">
+      <div class="run"><b>柳田設計</b><div class="m"><i>提出先<em>株式会社 かもめ商事 御中</em></i><i>種別<em>事業提案書</em></i></div><span class="y">2027</span></div>
+      <div class="p" style="padding-top:150px;display:grid;grid-template-columns:1fr 1fr;gap:72px">
+        <div>
+          <h2>まとめ</h2>
+          <div style="display:grid;grid-template-columns:300px 1fr;gap:34px;margin-top:56px;align-items:center">
+            <div class="wave" style="height:230px;border-radius:24px"></div>
+            <div>
+              <div class="say">図面を一箇所に<br>集める</div>
+              <div class="say" style="margin-top:34px">取り出す道を<br>1本にする</div>
+            </div>
+          </div>
+          <div class="ast" style="font-size:66px;margin-top:30px">✱</div>
+        </div>
+        <div>
+          <div style="font-size:30px;font-weight:700">やることの要点</div>
+          <p class="lead">いま図面は、担当者の机と、現場の棚と、過去のメールに分かれています。
+          どこにあるか分かる状態にするところまでが、この提案の範囲です。</p>
+          <p class="lead">新しい道具は入れません。いま使っているものの置き場所を決めるだけで、
+          描き直しは半分になると見ています。</p>
+          <p class="lead">3か月で一度止めて、続けるかどうかをそちらで決められる形にします。</p>
+        </div>
+      </div>
+      <div class="pg">09</div>
+    </div></div>
+
+    <!-- 4 Proposed Solution -->
+    <div class="cell"><div class="s">
+      <div class="run"><b>柳田設計</b><div class="m"><i>提出先<em>株式会社 かもめ商事 御中</em></i><i>種別<em>事業提案書</em></i></div><span class="y">2027</span></div>
+      <div class="p" style="padding-top:150px;display:grid;grid-template-columns:560px 1fr;gap:66px">
+        <div>
+          <div class="pill black" style="position:relative;height:200px;overflow:hidden;margin-bottom:16px">
+            <div class="orb" style="position:absolute;right:-40px;top:-60px;width:260px;height:260px"></div>
+            <div style="position:relative;font-size:17px;color:#b7b7ae">［01］</div>
+            <div style="position:relative;font-size:26px;font-weight:700;margin-top:8px">図面を1つの棚へ</div>
+          </div>
+          <div class="pill yellow" style="height:160px;margin-bottom:16px">
+            <div style="font-size:17px;color:#55554b">［02］</div>
+            <div style="font-size:26px;font-weight:700;margin-top:8px">名前の付け方を決める</div>
+          </div>
+          <div class="pill grey" style="height:160px">
+            <div style="font-size:17px;color:#55554b">［03］</div>
+            <div style="font-size:26px;font-weight:700;margin-top:8px">探す人を1人にしない</div>
+          </div>
+        </div>
+        <div>
+          <h2>こうします</h2>
+          <p class="lead" style="margin-top:44px">道具を増やさず、置き場所と呼び方だけを決めます。
+          決めたあとは、現場の人がそのまま使えます。</p>
+          <p class="lead">いちばん時間がかかるのは、過去のぶんを移すところです。
+          そこは当方で引き受けます。</p>
+        </div>
+      </div>
+      <div class="pg">14</div>
+    </div></div>
+
+    <!-- 5 Vision -->
+    <div class="cell"><div class="s">
+      <div class="run"><b>柳田設計</b><div class="m"><i>提出先<em>株式会社 かもめ商事 御中</em></i><i>種別<em>事業提案書</em></i></div><span class="y">2027</span></div>
+      <div class="p" style="padding-top:150px;display:grid;grid-template-columns:1fr 720px;gap:60px">
+        <div>
+          <h2 style="margin-top:160px">数字で<br>示せる形に</h2>
+          <div class="pill black" style="display:inline-block;margin-top:46px;padding:26px 30px">
+            <span class="ast" style="font-size:58px">✱</span></div>
+        </div>
+        <div>
+          <div class="wave" style="height:300px;border-radius:30px"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+            <div class="pill grey" style="height:190px">
+              <div style="font-size:24px;font-weight:700">描き直しを<br>半分に</div>
+              <p style="font-size:16px;line-height:1.8;color:#55554b;margin-top:14px">同じ納まりを二度描かない</p>
+            </div>
+            <div class="pill yellow" style="height:190px">
+              <div style="font-size:24px;font-weight:700">探す時間を<br>1日10分に</div>
+              <p style="font-size:16px;line-height:1.8;color:#55554b;margin-top:14px">棚と呼び方を決めるだけで届きます</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pg">19</div>
+    </div></div>
+
+    <!-- 6 日程と費用 -->
+    <div class="cell"><div class="s">
+      <div class="run"><b>柳田設計</b><div class="m"><i>提出先<em>株式会社 かもめ商事 御中</em></i><i>種別<em>事業提案書</em></i></div><span class="y">2027</span></div>
+      <div class="p" style="padding-top:150px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <div class="pill yellow" style="height:200px">
+            <div style="font-size:17px;color:#55554b">［問題］</div>
+            <div style="font-size:30px;font-weight:700;margin-top:10px">同じ図面を<br>毎回ゼロから描いている</div>
+          </div>
+          <div class="pill grey" style="height:200px;position:relative;overflow:hidden">
+            <div class="orb" style="position:absolute;right:-60px;bottom:-80px;width:280px;height:280px;opacity:.9"></div>
+            <div style="position:relative;font-size:17px;color:#55554b">［問題］</div>
+            <div style="position:relative;font-size:30px;font-weight:700;margin-top:10px">どこにあるかを<br>1人しか知らない</div>
+          </div>
+        </div>
+        <h2 style="margin-top:62px">3か月で区切ります</h2>
+        <div style="display:flex;gap:54px;margin-top:44px;font-size:19px;line-height:1.9;color:#55554b">
+          <div><b style="color:#15150f;font-size:24px">1か月目</b><br>棚と呼び方を決める</div>
+          <div><b style="color:#15150f;font-size:24px">2か月目</b><br>過去のぶんを移す</div>
+          <div><b style="color:#15150f;font-size:24px">3か月目</b><br>現場で使ってみる</div>
+          <div><b style="color:#15150f;font-size:24px">費用</b><br>一式 480,000円（税抜）</div>
+        </div>
+      </div>
+      <div class="pg">22</div>
+    </div></div>
+
+  </div>
+</div>
+</body>
+</html>
