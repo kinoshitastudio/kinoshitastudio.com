@@ -724,3 +724,11 @@ section.dark .slots-why{ color:var(--dark-sub) }
 .tile.pic b.jp{ font-family:var(--jp); letter-spacing:-.04em; font-size:clamp(30px,3.6vw,56px) }
 .tile.pic .tag{ color:#fff }
 .tile.pic .arrow{ background:#fff; color:var(--accent) }
+
+/* ── サービスページの頭の右：イラスト1枚だけのとき（2026-10-05 logo） ── */
+.svc-hero .hero-ill{ display:flex; justify-content:center; align-items:center }
+.svc-hero .hero-ill img{ width:100%; max-width:430px; height:auto; display:block }
+@media (max-width:860px){
+  /* 🔴 スマホでは1列になる。絵が見出しの上に来ると「何の話か」が遅れるので下に置いたまま、幅だけ締める */
+  .svc-hero .hero-ill img{ max-width:300px }
+}
