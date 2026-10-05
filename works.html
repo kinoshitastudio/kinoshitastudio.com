@@ -425,7 +425,7 @@ const CAT={web:'ホームページ',poster:'ポスター',flyer:'チラシ・会
 const grid=document.getElementById('grid');
 grid.innerHTML = WORKS.map(([f,t,c],i)=>
   `<figure class="wk" data-c="${c}" data-i="${i}">
-     <img src="img/w/${f}.webp" alt="${t}" loading="lazy" decoding="async">
+     <img src="img/w/${f}.webp?v=1006a" alt="${t}" loading="lazy" decoding="async">
      <figcaption><span>${CAT[c]}</span><b>${t}</b></figcaption>
    </figure>`).join('');
 
@@ -449,7 +449,7 @@ document.getElementById('filter').addEventListener('click',e=>{
   const shown=()=>[...document.querySelectorAll('.wk:not(.is-hide)')].map(w=>+w.dataset.i);
   function open(i){
     const [f,t,c,,body,url]=WORKS[i]; cur=i;
-    im.src='img/w/'+f+'.webp'; im.alt=t;
+    im.src='img/w/'+f+'.webp?v=1006a'; im.alt=t;
     ct.textContent=CAT[c];
     tt.textContent=t; bd.textContent=body||'';
     const list=shown(), at=list.indexOf(i);
