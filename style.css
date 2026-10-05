@@ -731,6 +731,11 @@ section.dark .slots-why{ color:var(--dark-sub) }
 /* ── サービスページの頭の右：イラスト1枚だけのとき（2026-10-05 logo） ── */
 .svc-hero .hero-ill{ display:flex; justify-content:center; align-items:center }
 .svc-hero .hero-ill img{ width:100%; max-width:430px; height:auto; display:block }
+/* 2枚重ね（about）：1枚目を大きく右上、2枚目を小さく左下に半分かぶせる */
+.svc-hero .hero-ill.pair{ position:relative; display:block; min-height:clamp(320px,34vw,460px) }
+.svc-hero .hero-ill.pair img{ position:absolute; max-width:none }
+.svc-hero .hero-ill.pair img:first-child{ right:0; top:0; width:72% }
+.svc-hero .hero-ill.pair img:last-child{ left:0; bottom:0; width:50%; z-index:1 }
 @media (max-width:860px){
   /* 🔴 スマホでは1列になる。絵が見出しの上に来ると「何の話か」が遅れるので下に置いたまま、幅だけ締める */
   .svc-hero .hero-ill img{ max-width:300px }
