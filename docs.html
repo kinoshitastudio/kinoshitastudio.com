@@ -243,12 +243,21 @@
     var t = el.textContent.trim();
     if(!t) return;
     el.textContent = '';
+    var brk = t.search(/[、。]/); if(brk >= t.length-1) brk = -1;
     for(var i=0; i<t.length; i++){
+      // 最後の「。」は前の字にくっつける＝句点だけが次の行に落ちない
+      if(i === t.length-1 && /[。、！？]/.test(t[i]) && el.lastChild){ el.lastChild.textContent += t[i]; break; }
       var s = document.createElement('span');
       s.textContent = t[i];
       s.style.setProperty('--i', t.length>1 ? (i/(t.length-1)).toFixed(4) : 0);
       el.appendChild(s);
+      // 最初の「、」「。」で改行＝後ろ半分を大きく育てる行にする
+      if(i === brk){ var br = document.createElement('i'); br.className = 'br'; el.appendChild(br); }
     }
+    // 後ろの行の幅（最初の字の何個ぶんか）を数えて、欄に収まる大きさを CSS に渡す
+    var fit = 0;
+    for(var j=(brk<0?0:brk+1); j<t.length; j++){ var r = t.length>1 ? j/(t.length-1) : 0; fit += 1 + r*0.3 + r*r*r*3.8; }
+    el.style.setProperty('--fit', (fit + 1).toFixed(2));
     el.classList.add('split');
   });
   addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });

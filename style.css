@@ -348,7 +348,7 @@ section.dark .sec-sub{ color:var(--dark-sub) }
   grid-template-columns:1fr 1fr; align-items:stretch; gap:0;
 }
 .face-in{
-  display:flex; flex-direction:column; justify-content:center;
+  display:flex; flex-direction:column; justify-content:center; container-type:inline-size;
   padding:clamp(40px,5vw,72px) clamp(24px,3.4vw,48px);
 }
 .face .q{
@@ -359,16 +359,19 @@ section.dark .sec-sub{ color:var(--dark-sub) }
    🔴 白地は【帯ぜんぶで1枚】にする。字ごとに背景を持たせると、
       字の高さがそのまま縁の高さになって、上端がギザギザになる */
 .face .a{
-  --fa:clamp(11px,1.1vw,14px);
+  /* 最初の字の大きさ。後ろの行（--fit＝最初の字の何個ぶんかをJSが数える）が欄の幅に収まるように決める */
+  --fa:clamp(7px, calc((100cqi - 44px) / var(--fit, 46)), 18px);
   margin:0; align-self:flex-start;
   background:#fff; color:var(--accent); padding:.6em .8em;
   display:flex; flex-wrap:wrap; align-items:baseline;
   font-family:var(--jp); font-weight:800; letter-spacing:-.02em;
-  line-height:1.5;
+  line-height:1.2;
 }
+.face .a .br{ flex-basis:100%; height:0 }
 .face .a span{
   background:none;
-  font-size:calc(var(--fa) * (1 + var(--i,0) * 0.8));
+  /* ⭐ 後ろへ行くほど急に大きくする（木下「もっと急激に」）＝ i の3乗で加速。最後の字は約5倍 */
+  font-size:calc(var(--fa) * (1 + var(--i,0) * 0.3 + var(--i,0) * var(--i,0) * var(--i,0) * 3.8));
 }
 /* 字に分ける前（JSが動かないとき）も、白地に青で読める形のまま */
 .face .a:not(.split){ display:inline-block;
