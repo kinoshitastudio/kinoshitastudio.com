@@ -127,3 +127,19 @@
 .bl-index h1{ font-family:var(--jp); font-weight:900; font-size:clamp(30px,5vw,56px); line-height:1.25; letter-spacing:-.04em; margin:6px 0 16px }
 .bl-lead{ color:var(--ink-sub); max-width:40em; line-height:1.95; margin:0 0 40px }
 .bl-grid-index{ gap:34px 22px }
+
+/* 共有ボタン */
+.bl-share{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:44px 0 0; padding-top:20px; border-top:1px solid #e3e3e0 }
+.bl-share b{ font-size:13px; margin-right:6px }
+.bl-share a, .bl-share button{ font:inherit; font-size:13px; font-weight:800; padding:8px 14px; border-radius:999px; text-decoration:none; color:#fff; border:0; cursor:pointer; line-height:1.2 }
+.sh-x{ background:#000 } .sh-fb{ background:#1877f2 } .sh-line{ background:#06c755 } .sh-th{ background:#333 }
+.bl-share .sh-copy{ background:#eceef3; color:var(--ink) }
+
+/* 書いた人 */
+.bl-author{ display:grid; grid-template-columns:96px 1fr; gap:18px; margin:30px 0 0; padding:22px; border-radius:16px; background:#f6f6f4 }
+.bl-author img{ width:96px; height:96px; border-radius:50%; object-fit:cover; background:#ddd }
+.bl-author-k{ font-size:12px; color:var(--ink-sub); margin:0 0 2px }
+.bl-author b{ font-size:16px }
+.bl-author p{ font-size:13.5px; line-height:1.85; margin:6px 0 0 }
+.bl-author-l a{ color:var(--accent); margin-right:6px }
+@media (max-width:520px){ .bl-author{ grid-template-columns:64px 1fr } .bl-author img{ width:64px; height:64px } }
