@@ -45,6 +45,10 @@
   .wk-page dt{ font-weight:800 }
   .wk-page .note{ font-size:12.5px; color:var(--ink-sub); margin-top:28px; line-height:1.8 }
   .wk-page .next{ display:flex; gap:12px; flex-wrap:wrap; margin-top:36px }
+  .wk-page .rel{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px }
+  @media (max-width:760px){ .wk-page .rel{ grid-template-columns:1fr 1fr } }
+  .wk-page .rel a{ color:inherit; text-decoration:none; font-size:13px; font-weight:700 }
+  .wk-page .rel img{ width:100%; aspect-ratio:4/3; object-fit:cover; object-position:top; border-radius:10px; background:#eee; display:block; margin-bottom:6px }
 </style>
   <script defer src="/js/analytics.js"></script>
   <script defer src="/js/motion.js"></script>
