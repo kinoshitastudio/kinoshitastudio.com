@@ -539,13 +539,22 @@ grid.innerHTML = WORKS.map(([f,t,c,,body],i)=>
      <p class="wk-desc">${body||''}</p>
    </figure>`).join('');
 
-document.getElementById('filter').addEventListener('click',e=>{
-  const b=e.target.closest('button'); if(!b) return;
-  document.querySelectorAll('#filter button').forEach(x=>x.classList.toggle('on',x===b));
-  const f=b.dataset.f;
+// 絞り込み。⭐ URL の #poster などでも開ける（応募文などから「ポスターだけ」を直接見せる。2026-10-06）
+function applyFilter(f, push){
+  const btns=[...document.querySelectorAll('#filter button')];
+  const b=btns.find(x=>x.dataset.f===f) || btns.find(x=>x.dataset.f==='all');
+  btns.forEach(x=>x.classList.toggle('on',x===b));
+  f=b.dataset.f;
   document.querySelectorAll('.wk').forEach(w=>
     w.classList.toggle('is-hide', f!=='all' && w.dataset.c!==f));
+  if(push) history.replaceState(null,'', f==='all' ? location.pathname : '#'+f);
+}
+document.getElementById('filter').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  applyFilter(b.dataset.f, true);
 });
+const fromHash=()=>{ const h=location.hash.slice(1); if(h) applyFilter(h,false); };
+fromHash(); addEventListener('hashchange',fromHash);
 
 // ── 札を押したら、その作品の説明を出す ──
 (function(){
