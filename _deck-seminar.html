@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本資料（伝わる研修のつくり方）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 架空の研修資料「伝わる研修のつくり方」。表紙1枚＋中のスライド6枚を、1枚の紙に並べて見せる */
+  :root{ --b:#2353a8; --b2:#e9f0fb; --ink:#16233b; --sub:#5d6b82 }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Zen Kaku Gothic New',sans-serif }
+  .a4{ width:1240px; height:1754px; position:relative; overflow:hidden; background:#eef3fa; margin:0 auto 40px; padding:32px 52px }
+  .brand{ text-align:center; font-family:'Inter'; font-weight:800; font-size:20px; letter-spacing:.2em; color:var(--b); margin-bottom:18px }
+
+  .s{ background:#fff; position:relative; overflow:hidden; box-shadow:0 6px 18px rgba(30,60,120,.12); color:var(--ink) }
+  .s .hd{ position:absolute; left:4.5%; top:6%; font-size:.9em; font-weight:900; color:var(--ink) }
+  .s .hd b{ font-family:'Inter'; color:var(--b); margin-right:.5em }
+  .s .lg{ position:absolute; right:4%; top:6%; font-family:'Inter'; font-weight:800; font-size:.62em; color:var(--b); letter-spacing:.08em }
+  .s .pg{ position:absolute; right:4%; bottom:5%; font-family:'Inter'; font-size:.5em; color:var(--sub) }
+
+  /* 表紙 16:9 */
+  .cover{ width:1136px; height:620px; font-size:30px }
+  .cover::before{ content:''; position:absolute; left:0; top:0; width:120px; height:120px; background:linear-gradient(135deg, var(--b) 50%, transparent 50%) }
+  .cover::after{ content:''; position:absolute; right:0; bottom:0; width:520px; height:300px; background:linear-gradient(160deg, transparent 45%, var(--b) 45%) }
+  .cover .logo{ position:absolute; left:60px; top:54px; font-family:'Inter'; font-weight:900; font-size:30px; color:var(--b); letter-spacing:.04em }
+  .cover .tag{ position:absolute; left:60px; top:140px; background:var(--ink); color:#fff; font-weight:900; font-size:26px; padding:6px 18px; letter-spacing:.06em }
+  .cover h1{ position:absolute; left:60px; top:196px; font-size:80px; font-weight:900; line-height:1.22; letter-spacing:.01em }
+  .cover h1 span{ background:#fff; padding:0 .1em; box-decoration-break:clone; -webkit-box-decoration-break:clone }
+  .cover .when{ position:absolute; left:60px; top:446px; font-weight:900; font-size:32px; border-top:3px solid var(--ink); padding-top:14px; width:560px; white-space:nowrap }
+  .cover .where{ position:absolute; left:60px; top:518px; font-size:22px; font-weight:700 }
+  .cover .hex{ position:absolute; right:110px; top:70px; width:420px; height:470px; clip-path:polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background:#d9e4f4; z-index:1 }
+  .cover .hex img{ position:absolute; left:50%; bottom:-30px; width:92%; transform:translateX(-50%) }
+  .cover .name{ position:absolute; right:70px; top:410px; width:150px; height:168px; clip-path:polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background:var(--b); color:#fff; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; font-weight:900; line-height:1.3 }
+  .cover .name small{ font-size:14px; font-weight:700 } .cover .name b{ font-size:26px }
+
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px 22px; margin-top:20px }
+  .grid .s{ width:557px; height:313px; font-size:17px }
+
+  /* 01 講師紹介 */
+  .p1 .ph{ position:absolute; left:24px; bottom:0; width:220px }
+  .p1 .tx{ position:absolute; left:270px; top:58px; right:28px; font-size:13px; line-height:1.7; color:var(--sub) }
+  .p1 .tx h3{ font-size:32px; color:var(--b); font-weight:900; margin:4px 0 10px; letter-spacing:.06em }
+  .p1 dl{ display:grid; grid-template-columns:70px 1fr; gap:4px 10px; font-size:12px; color:var(--ink); border-top:1px solid #dbe3ef; padding-top:10px }
+  .p1 dt{ font-weight:900; color:var(--b) }
+
+  /* 02 目次（濃紺） */
+  .p2{ background:var(--b) !important; color:#fff }
+  .p2 .hd, .p2 .hd b, .p2 .lg, .p2 .pg{ color:#fff }
+  .p2 ol{ position:absolute; left:120px; top:62px; list-style:none; counter-reset:n }
+  .p2 li{ counter-increment:n; font-size:16px; font-weight:700; line-height:1; margin-bottom:11px; display:flex; align-items:center; gap:14px }
+  .p2 li::before{ content:counter(n, decimal-leading-zero); font-family:'Inter'; font-weight:800; font-size:13px; width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,.18); display:grid; place-items:center }
+
+  /* 03 数字4つ（濃紺） */
+  .p3{ background:#1b3f86 !important; color:#fff }
+  .p3 .hd, .p3 .hd b, .p3 .lg, .p3 .pg{ color:#fff }
+  .p3 .lead{ position:absolute; left:0; right:0; top:62px; text-align:center; font-size:14px; line-height:1.6 }
+  .p3 .nums{ position:absolute; left:28px; right:28px; top:118px; display:grid; grid-template-columns:repeat(4,1fr); gap:12px }
+  .p3 .nums div{ background:#fff; color:var(--ink); padding:16px 10px; text-align:center; height:150px }
+  .p3 .nums b{ display:block; font-family:'Inter'; font-weight:900; font-size:44px; color:var(--b); line-height:1 }
+  .p3 .nums b small{ font-size:18px }
+  .p3 .nums p{ font-size:11.5px; line-height:1.55; margin-top:10px; color:var(--sub) }
+
+  /* 04 棒グラフ */
+  .p4 .chart{ position:absolute; left:40px; top:80px; width:300px; height:190px; border-left:1px solid #c9d4e6; border-bottom:1px solid #c9d4e6; display:flex; align-items:flex-end; gap:14px; padding:0 14px }
+  .p4 .chart i{ flex:1; background:var(--b); display:block }
+  .p4 .chart i:nth-child(1){ background:#9fb6de }
+  .p4 .line{ position:absolute; left:40px; top:80px; width:300px; height:190px }
+  .p4 .ins{ position:absolute; right:26px; top:84px; width:178px; display:grid; gap:10px }
+  .p4 .ins div{ background:var(--b2); border-left:4px solid var(--b); padding:10px 12px; font-size:12px; line-height:1.55 }
+  .p4 .ins b{ display:block; color:var(--b); font-size:13px; margin-bottom:3px }
+
+  /* 05 4つの原則 */
+  .p5 .lead{ position:absolute; left:0; right:0; top:60px; text-align:center; font-size:14px; color:var(--sub) }
+  .p5 .four{ position:absolute; left:26px; right:26px; top:104px; display:grid; grid-template-columns:repeat(4,1fr); gap:10px }
+  .p5 .four div{ text-align:center }
+  .p5 .four .hx{ width:86px; height:96px; margin:0 auto; clip-path:polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); background:var(--b); color:#fff; display:grid; place-items:center; font-family:'Inter'; font-weight:900; font-size:15px; letter-spacing:.04em }
+  .p5 .four h4{ font-size:15px; margin:10px 0 6px; font-weight:900 }
+  .p5 .four p{ font-size:11.5px; line-height:1.55; color:var(--sub); padding:0 4px }
+
+  /* 06 表 */
+  .p6 table{ position:absolute; left:28px; right:28px; top:76px; width:calc(100% - 56px); border-collapse:collapse; font-size:12.5px }
+  .p6 th{ background:var(--b); color:#fff; font-weight:900; padding:8px 10px; text-align:left }
+  .p6 td{ padding:6px 10px; border-bottom:1px solid #dbe3ef }
+  .p6 td:first-child{ width:26px; color:var(--b); font-weight:900 }
+  .p6 tr:nth-child(2) td{ background:var(--b2) }
+</style>
+</head>
+<body>
+<div class="a4">
+  <p class="brand">MIZUUMI LEARNING · 研修資料</p>
+
+  <section class="s cover">
+    <div class="logo">◎ みずうみ研修室</div>
+    <div class="tag">現場で使える 10 の実践ノウハウ</div>
+    <h1><span>伝わる研修の</span><br><span>つくり方</span></h1>
+    <div class="when">2026年11月26日（木）14:00〜16:00</div>
+    <div class="where">びわこ産業会館 3F ＋ オンライン配信</div>
+    <div class="hex"><img src="img/flyer-src/speaker.png" alt=""></div>
+    <div class="name"><small>みずうみ研修室<br>代表</small><b>西田 航</b></div>
+  </section>
+
+  <div class="grid">
+    <section class="s p1"><p class="hd"><b>01</b>講師紹介</p><p class="lg">◎ みずうみ研修室</p>
+      <img class="ph" src="img/flyer-src/speaker.png" alt="">
+      <div class="tx">研修を年に200回。その中で効いたやり方だけをお話しします。
+        <h3>西田 航</h3>
+        <dl><dt>所属</dt><dd>みずうみ研修室 代表</dd><dt>経歴</dt><dd>メーカーの人事を経て独立。15年で研修 2,400 回</dd><dt>得意</dt><dd>新人研修・管理職研修・社内講師の育成</dd></dl></div>
+      <p class="pg">2</p></section>
+
+    <section class="s p2"><p class="hd"><b>02</b>今日の流れ</p><p class="lg">◎ みずうみ研修室</p>
+      <ol><li>30分で聞き手が離れる理由</li><li>集中が続く 4 つの原則</li><li>最初の5分で引き込む話し方</li><li>その場で使える 6 つの問いかけ</li><li>終わり方で、覚え方が変わる</li><li>明日から使えるチェック表</li></ol>
+      <p class="pg">3</p></section>
+
+    <section class="s p3"><p class="hd"><b>03</b>始まって30分、聞き手はこうなります</p><p class="lg">◎ みずうみ研修室</p>
+      <p class="lead">受講後アンケート 1,200 件から、集中がどこで切れるかを数えました。</p>
+      <div class="nums">
+        <div><b>68<small>%</small></b><p>30分を過ぎると「途中から覚えていない」と答えた人</p></div>
+        <div><b>12<small>分</small></b><p>話しっぱなしで集中が続く、だいたいの長さ</p></div>
+        <div><b>3<small>倍</small></b><p>問いかけを入れた回の、質問の数</p></div>
+        <div><b>57<small>%</small></b><p>1か月後も内容を説明できた人（原則を入れた回）</p></div>
+      </div>
+      <p class="pg">4</p></section>
+
+    <section class="s p4"><p class="hd"><b>04</b>時間ごとの集中の変わり方</p><p class="lg">◎ みずうみ研修室</p>
+      <div class="chart"><i style="height:92%"></i><i style="height:74%"></i><i style="height:55%"></i><i style="height:62%"></i><i style="height:78%"></i><i style="height:70%"></i></div>
+      <svg class="line" viewBox="0 0 300 190" fill="none"><polyline points="20,20 66,50 112,86 158,70 204,40 250,54" stroke="#f0a33a" stroke-width="3"/><g fill="#f0a33a"><circle cx="20" cy="20" r="4"/><circle cx="66" cy="50" r="4"/><circle cx="112" cy="86" r="4"/><circle cx="158" cy="70" r="4"/><circle cx="204" cy="40" r="4"/><circle cx="250" cy="54" r="4"/></g></svg>
+      <div class="ins"><div><b>気づき 1</b>20〜30分目に、いちばん深く落ちる。</div><div><b>気づき 2</b>問いかけを入れた直後に、集中が戻る。</div></div>
+      <p class="pg">5</p></section>
+
+    <section class="s p5"><p class="hd"><b>05</b>集中が続く 4 つの原則</p><p class="lg">◎ みずうみ研修室</p>
+      <p class="lead">始めの5分から終わりまで、この順番で組みます。</p>
+      <div class="four">
+        <div><div class="hx">HOOK</div><h4>つかむ</h4><p>最初に「自分の話だ」と思える問いを置く</p></div>
+        <div><div class="hx">STORY</div><h4>語る</h4><p>手順の前に、困った場面を1つ話す</p></div>
+        <div><div class="hx">ACTION</div><h4>動かす</h4><p>12分ごとに手を動かす時間を入れる</p></div>
+        <div><div class="hx">ANCHOR</div><h4>残す</h4><p>最後に一言で言い直して、持ち帰らせる</p></div>
+      </div>
+      <p class="pg">6</p></section>
+
+    <section class="s p6"><p class="hd"><b>06</b>その場で使える問いかけ 6 つ</p><p class="lg">◎ みずうみ研修室</p>
+      <table>
+        <tr><th></th><th>やり方</th><th>こんなときに</th></tr>
+        <tr><td>✓</td><td>隣の人と1分だけ話す</td><td>話しっぱなしが15分を超えたとき</td></tr>
+        <tr><td>2</td><td>手を挙げてもらう</td><td>人数が多くて声が出にくいとき</td></tr>
+        <tr><td>3</td><td>紙に一言だけ書く</td><td>考えてほしいことがあるとき</td></tr>
+        <tr><td>4</td><td>わざと間違いを出す</td><td>集中が落ちてきたとき</td></tr>
+        <tr><td>5</td><td>「あなたならどうする？」</td><td>事例を話したあと</td></tr>
+        <tr><td>6</td><td>最後に一行で言い直す</td><td>終わる前の3分</td></tr>
+      </table>
+      <p class="pg">7</p></section>
+  </div>
+</div>
+</body>
+</html>

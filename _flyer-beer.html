@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本チラシ（びわ湖ビアフェス）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Zen+Maru+Gothic:wght@700;900&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  /* 架空の催し「びわ湖ビアフェス」。黄色の額縁イラストの空いた真ん中に、太い欧文と日付だけを置く */
+  :root{ --ink:#231815; --navy:#2a4b7c; --red:#d9512c; --cream:#fdf1d6 }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Zen Kaku Gothic New',sans-serif }
+  .a4{ width:1240px; height:1754px; position:relative; overflow:hidden; background:#f6c94e; color:var(--ink); margin:0 auto 40px }
+  .ill{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top }
+
+  .c{ position:absolute; left:0; right:0; text-align:center }
+  .lead{ top:330px; font-family:'Zen Maru Gothic'; font-weight:900; font-size:40px; letter-spacing:.14em }
+  .lead i{ font-style:normal; display:inline-block; margin:0 18px; transform:rotate(-20deg) }
+  .lead i:last-child{ transform:rotate(20deg) }
+  .yr{ top:398px; font-family:'Archivo Black'; font-size:62px; letter-spacing:.08em }
+  .t1{ top:466px; font-family:'Archivo Black'; font-size:250px; line-height:1; letter-spacing:-.01em }
+  .t2{ top:712px; font-family:'Archivo Black'; font-size:118px; line-height:1; letter-spacing:.04em }
+  .date{ top:870px; font-family:'Archivo Black'; font-size:96px; line-height:1; color:var(--ink) }
+  .date .a{ color:var(--navy) } .date .b{ color:var(--red) }
+  .date small{ display:inline-block; width:56px; height:56px; border-radius:50%; background:var(--ink); color:var(--cream); font-family:'Zen Kaku Gothic New'; font-weight:900; font-size:32px; line-height:56px; vertical-align:16px; margin-left:4px }
+  .date i{ font-style:normal; margin:0 18px; font-size:80px; vertical-align:6px }
+  .time{ top:996px; font-family:'Archivo Black'; font-size:44px; letter-spacing:.04em }
+  .place{ top:1068px; display:inline-block; left:50%; right:auto; transform:translateX(-50%); padding:10px 34px; border-top:4px solid var(--ink); border-bottom:4px solid var(--ink); font-weight:900; font-size:50px; letter-spacing:.16em; white-space:nowrap }
+  .fee{ position:absolute; left:50%; top:1172px; transform:translateX(-50%); width:180px; height:180px; border-radius:50%; background:var(--ink); color:var(--cream); text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:900; line-height:1.15 }
+  .fee span{ font-size:22px; letter-spacing:.14em } .fee b{ font-family:'Archivo Black'; font-weight:400; font-size:50px }
+  .wheat{ position:absolute; top:1190px; width:70px; height:140px }
+  .foot{ position:absolute; left:0; right:0; bottom:28px; text-align:center; font-size:19px; font-weight:700; color:var(--ink); letter-spacing:.04em }
+</style>
+</head>
+<body>
+<div class="a4">
+  <img class="ill" src="img/flyer-src/beer-frame.jpg" alt="">
+
+  <p class="c lead"><i>＼</i>さあ！湖のそばで乾杯しよう！<i>／</i></p>
+  <p class="c yr">2026</p>
+  <p class="c t1">BEER</p>
+  <p class="c t2">FESTIVAL</p>
+  <p class="c date"><span class="a">7/18</span><small>土</small><i>→</i><span class="b">7/26</span><small>日</small></p>
+  <p class="c time">OPEN 11:00 – CLOSE 21:30</p>
+  <p class="c place">なぎさ公園 湖畔ひろば</p>
+
+  <svg class="wheat" style="left:476px" viewBox="0 0 70 140" fill="#c38a1f"><path d="M58 140 C 40 100, 30 60, 50 0" stroke="#c38a1f" stroke-width="4" fill="none"/>
+    <ellipse cx="44" cy="30" rx="8" ry="15" transform="rotate(-30 44 30)"/><ellipse cx="38" cy="58" rx="8" ry="15" transform="rotate(-40 38 58)"/><ellipse cx="38" cy="86" rx="8" ry="15" transform="rotate(-45 38 86)"/></svg>
+  <div class="fee"><span>入場料</span><b>¥500</b></div>
+  <svg class="wheat" style="left:694px;transform:scaleX(-1)" viewBox="0 0 70 140" fill="#c38a1f"><path d="M58 140 C 40 100, 30 60, 50 0" stroke="#c38a1f" stroke-width="4" fill="none"/>
+    <ellipse cx="44" cy="30" rx="8" ry="15" transform="rotate(-30 44 30)"/><ellipse cx="38" cy="58" rx="8" ry="15" transform="rotate(-40 38 58)"/><ellipse cx="38" cy="86" rx="8" ry="15" transform="rotate(-45 38 86)"/></svg>
+
+  <p class="foot">びわ湖ビアフェス実行委員会　TEL 077-522-4836（平日 10:00〜17:00）／20歳未満の方へのお酒の販売はいたしません</p>
+</div>
+</body>
+</html>
