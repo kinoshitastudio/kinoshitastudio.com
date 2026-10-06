@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本資料（湖南ロジ 採用ピッチ資料）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 架空の会社「湖南ロジ」の採用ピッチ資料。白地に、紺から赤へのグラデーションの帯。数字とグラフで見せる */
+  :root{ --navy:#26357a; --red:#d4283b; --ink:#1d2236; --sub:#6b7085; --g:linear-gradient(90deg,#26357a,#7a2f66 55%,#d4283b) }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Zen Kaku Gothic New',sans-serif }
+  .a4{ width:1240px; height:1754px; position:relative; overflow:hidden; background:#eceef3; margin:0 auto 40px; padding:34px 52px }
+  .s{ background:#fff; position:relative; overflow:hidden; color:var(--ink); box-shadow:0 4px 14px rgba(20,30,70,.1) }
+  .s .bar{ position:absolute; left:0; top:0; width:6px; height:100%; background:linear-gradient(var(--navy),var(--red)) }
+  .s .tab{ position:absolute; left:22px; top:16px; font-size:11px; color:var(--sub); font-weight:700 }
+  .s .tab b{ font-family:'Inter'; color:var(--navy); margin-right:8px }
+  .s .lg{ position:absolute; right:18px; top:14px; font-family:'Inter'; font-weight:900; font-size:12px; color:var(--navy) }
+  .s .lg i{ font-style:normal; color:var(--red) }
+  .s .pg{ position:absolute; right:18px; bottom:12px; font-family:'Inter'; font-size:10px; color:var(--sub) }
+
+  .cover{ width:1136px; height:620px }
+  .cover::before, .cover::after{ content:''; position:absolute; left:0; right:0; height:46px; background:var(--g) }
+  .cover::before{ top:0 } .cover::after{ bottom:0 }
+  .cover .mark{ position:absolute; left:50%; top:210px; transform:translateX(-50%); display:flex; align-items:center; gap:22px }
+  .cover .mark svg{ width:110px; height:96px }
+  .cover .mark b{ font-family:'Inter'; font-weight:900; font-size:84px; letter-spacing:-.02em; color:var(--navy) }
+  .cover .mark b i{ font-style:normal; color:var(--red) }
+  .cover .sub{ position:absolute; left:0; right:0; top:340px; text-align:center; font-family:'Inter'; font-weight:400; font-size:34px; color:#55607e; letter-spacing:.02em }
+  .cover .ver{ position:absolute; left:0; right:0; bottom:10px; text-align:center; color:#fff; font-family:'Inter'; font-size:16px; z-index:1 }
+
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px 22px; margin-top:20px }
+  .grid .s{ width:557px; height:313px }
+
+  .who{ background:linear-gradient(120deg,#b81f33,#d4283b 60%,#e2563f) !important; color:#fff }
+  .who small{ position:absolute; left:34px; top:34px; font-family:'Inter'; font-weight:600; font-size:13px; opacity:.85 }
+  .who h3{ position:absolute; left:34px; top:58px; font-size:30px; font-weight:900; line-height:1.4 }
+  .who p{ position:absolute; left:34px; top:150px; right:34px; font-size:12px; line-height:1.8; opacity:.9 }
+  .who .people{ position:absolute; left:0; right:0; bottom:0; height:92px; display:flex; justify-content:center; align-items:flex-end; gap:6px }
+  .who .people i{ display:block; width:56px; background:rgba(255,255,255,.22); border-radius:28px 28px 0 0; position:relative }
+  .who .people i::before{ content:''; position:absolute; left:50%; top:-30px; transform:translateX(-50%); width:30px; height:30px; border-radius:50%; background:rgba(255,255,255,.3) }
+
+  .ov dl{ position:absolute; left:24px; top:52px; width:230px; display:grid; grid-template-columns:62px 1fr; gap:7px 8px; font-size:11px; line-height:1.5 }
+  .ov dt{ background:var(--navy); color:#fff; text-align:center; font-weight:700; font-size:10px; padding:2px 0; height:18px }
+  .ov .svc{ position:absolute; right:20px; top:52px; width:260px; display:grid; grid-template-columns:1fr 1fr; gap:8px }
+  .ov .svc div{ border:1px solid #dfe2ea; padding:10px; height:112px; font-size:10.5px; line-height:1.5; color:var(--sub) }
+  .ov .svc b{ display:block; font-family:'Inter'; font-weight:900; color:var(--navy); font-size:13px; margin-bottom:4px }
+  .ov .svc b i{ font-style:normal; color:var(--red) }
+  .ov .svc span{ display:block; height:38px; margin-top:6px; background:linear-gradient(135deg,#e8ebf5,#f6e6ea) }
+
+  .mv .col{ position:absolute; top:50px; width:248px; height:240px; border:1px solid #dfe2ea; text-align:center; padding:0 18px }
+  .mv .col h4{ background:var(--navy); color:#fff; font-family:'Inter'; font-weight:800; font-size:14px; margin:0 -18px; padding:6px 0 }
+  .mv .col:nth-of-type(2) h4{ background:var(--red) }
+  .mv .col b{ display:block; font-size:19px; font-weight:900; color:var(--red); line-height:1.45; margin:18px 0 12px }
+  .mv .col:nth-of-type(1) b{ color:var(--navy) }
+  .mv .col p{ font-size:11px; line-height:1.75; color:var(--sub) }
+
+  .gr h4{ position:absolute; left:28px; top:44px; font-size:20px; font-weight:900 }
+  .gr .chart{ position:absolute; left:20px; right:20px; bottom:26px; height:200px }
+  .gr .leg{ position:absolute; left:28px; top:80px; font-size:11px; color:var(--sub); line-height:1.7 }
+  .gr .leg b{ color:var(--navy) }
+
+  .pie h4{ position:absolute; left:22px; top:40px; font-size:13px; font-weight:900 }
+  .pie .d{ position:absolute; top:76px; width:184px; height:184px; border-radius:50% }
+  .pie .d::after{ content:''; position:absolute; inset:46px; border-radius:50%; background:#fff; z-index:0 }
+  .pie .d b{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:2; font-family:'Inter'; font-weight:900; font-size:26px; color:var(--ink); text-align:center; line-height:1.1 }
+  .pie .d b small{ display:block; font-family:'Zen Kaku Gothic New'; font-size:11px; color:var(--sub) }
+
+  .is h4{ position:absolute; left:28px; right:28px; top:44px; font-size:17px; font-weight:900; line-height:1.5; color:var(--navy) }
+  .is h4 em{ font-style:normal; color:var(--red) }
+  .is .bars{ position:absolute; left:28px; right:28px; top:120px; display:grid; gap:10px }
+  .is .bars div{ display:grid; grid-template-columns:90px 1fr 52px; align-items:center; gap:10px; font-size:11.5px; font-weight:700 }
+  .is .bars div > i{ justify-self:start }
+  .is .bars i{ display:block; height:20px; background:var(--g) }
+  .is .bars span{ font-family:'Inter'; font-weight:800; color:var(--navy); text-align:right }
+  .is .note{ position:absolute; left:28px; right:28px; bottom:32px; background:#f6f7fb; padding:10px 14px; font-size:12px; line-height:1.6 }
+  .is .note b{ color:var(--red) }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#26357a"/><stop offset="1" stop-color="#d4283b"/></linearGradient>
+  <g id="logo"><path d="M0 0 L50 44 L0 88 Z" fill="#26357a"/><path d="M110 0 L60 44 L110 88 Z" fill="#d4283b"/><path d="M30 44 L55 22 L80 44 L55 66 Z" fill="#7a2f66"/></g>
+</defs></svg>
+<div class="a4">
+  <section class="s cover">
+    <div class="mark"><svg viewBox="0 0 110 88"><use href="#logo"/></svg><b>Konan<i>Logi</i></b></div>
+    <div class="sub">Recruitment Pitch Deck 2026</div>
+    <div class="ver">Ver.1.0 · Oct. 2026</div>
+  </section>
+
+  <div class="grid">
+    <section class="s who"><small>Who we are</small>
+      <h3>地方の物流を、<br>止まらない仕組みに変える</h3>
+      <p>湖南ロジは、滋賀の運送会社と荷主をつなぐ配車の仕組みをつくっています。ドライバー・エンジニア・営業が、同じ地図を見ながら働くチームです。</p>
+      <div class="people"><i style="height:58px"></i><i style="height:66px"></i><i style="height:52px"></i><i style="height:70px"></i><i style="height:60px"></i><i style="height:54px"></i><i style="height:64px"></i></div>
+    </section>
+
+    <section class="s ov"><span class="bar"></span><p class="tab"><b>Overview</b>会社概要</p><p class="lg">Konan<i>Logi</i></p>
+      <dl><dt>会社名</dt><dd>株式会社 湖南ロジ</dd><dt>所在地</dt><dd>滋賀県草津市野路東</dd><dt>設立</dt><dd>2019年4月</dd><dt>社員数</dt><dd>48名（2026年9月）</dd><dt>事業</dt><dd>配車の仕組み／共同配送／倉庫の運営</dd></dl>
+      <div class="svc"><div><b>Konan<i>Logi</i> 配車</b>空いたトラックと荷物を、その日のうちに結ぶ<span></span></div><div><b>共同配送</b>近い届け先をまとめて、1台で回る<span></span></div><div><b>倉庫</b>栗東の倉庫で、預かりから出荷まで<span></span></div><div><b>Driver</b>ドライバーの働き方を整える<span></span></div></div>
+      <p class="pg">2</p></section>
+
+    <section class="s mv"><span class="bar"></span><p class="tab"><b>Overview</b>ミッション・ビジョン</p><p class="lg">Konan<i>Logi</i></p>
+      <div class="col" style="left:24px"><h4>Mission</h4><b>空いた荷台を、<br>ひとつ残らず使う</b><p>地方のトラックは、帰り道の半分が空のまま走っています。その空きを、荷物で埋めます。</p></div>
+      <div class="col" style="right:24px"><h4>Vision</h4><b>2030年、県内の<br>配送の1割を担う</b><p>運送会社を置きかえるのではなく、運送会社がもっと稼げる道具になります。</p></div>
+      <p class="pg">3</p></section>
+
+    <section class="s gr"><span class="bar"></span><p class="tab"><b>Overview</b>事業の伸び</p><p class="lg">Konan<i>Logi</i></p>
+      <h4>事業も、チームも伸びています</h4>
+      <p class="leg"><b>■ 取扱件数</b>　月 4.2 万件（2026年9月）<br><b>■ 社員数</b>　48名</p>
+      <svg class="chart" viewBox="0 0 517 200" preserveAspectRatio="none">
+        <path d="M0 196 C 120 190, 200 180, 280 150 S 420 60, 517 8 L517 200 L0 200 Z" fill="url(#gg)" opacity=".85"/>
+        <g fill="#26357a" font-family="Inter" font-size="10"><text x="10" y="186">2019</text><text x="140" y="186">2021</text><text x="270" y="186" fill="#fff">2023</text><text x="400" y="186" fill="#fff">2025</text></g>
+      </svg>
+      <p class="pg">4</p></section>
+
+    <section class="s pie"><span class="bar"></span><p class="tab"><b>Team</b>チームについて</p><p class="lg">Konan<i>Logi</i></p>
+      <h4>職種の割合</h4><h4 style="left:300px">年齢の割合</h4>
+      <div class="d" style="left:50px;background:conic-gradient(#d4283b 0 38%,#e86a78 38% 62%,#f2a8b1 62% 82%,#f9d6db 82% 100%)"><b>48<small>名</small></b></div>
+      <div class="d" style="left:320px;background:conic-gradient(#26357a 0 30%,#4b5fa8 30% 64%,#8c9bd0 64% 88%,#c8d0ea 88% 100%)"><b>34.6<small>平均年齢</small></b></div>
+      <p class="pg">5</p></section>
+
+    <section class="s is"><span class="bar"></span><p class="tab"><b>Business</b>解きたい問題</p><p class="lg">Konan<i>Logi</i></p>
+      <h4>トラックの<em>帰り道の半分</em>は、<br>荷物を積まずに走っている</h4>
+      <div class="bars"><div><b>行き</b><i style="width:92%"></i><span>92%</span></div><div><b>帰り</b><i style="width:46%"></i><span>46%</span></div><div><b>県内の平均</b><i style="width:61%"></i><span>61%</span></div></div>
+      <p class="note">帰りの空きを <b>1割</b> 埋めるだけで、運送会社の利益は <b>約2割</b> 増えます。</p>
+      <p class="pg">6</p></section>
+  </div>
+</div>
+</body>
+</html>

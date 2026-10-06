@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本資料（おうみ水産 会社説明資料）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 架空の会社「おうみ水産」のカルチャー資料。薄い灰の地に、湖の波の線を色で束ねる。案内役はビワマスの絵 */
+  :root{ --bg:#efeeec; --ink:#2b2e38; --sub:#7a7d86; --navy:#4a5c9a; --c1:#e2563f; --c2:#f2b33d; --c3:#5b8fd6; --c4:#2f8f7a }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Zen Kaku Gothic New',sans-serif }
+  .a4{ width:1240px; height:1754px; position:relative; overflow:hidden; background:#e4e3e0; margin:0 auto 40px; padding:34px 52px }
+  .s{ background:var(--bg); position:relative; overflow:hidden; color:var(--ink); box-shadow:0 4px 14px rgba(0,0,0,.08) }
+  .s .side{ position:absolute; left:4%; top:12%; writing-mode:vertical-rl; font-weight:900; font-size:.95em; letter-spacing:.14em }
+  .s .ft{ position:absolute; left:4%; bottom:5%; font-family:'Inter'; font-weight:800; font-size:.55em; color:var(--navy); letter-spacing:.06em }
+  .s .pg{ position:absolute; right:4%; bottom:5%; font-family:'Inter'; font-size:.5em; color:var(--sub) }
+  .s .cp{ position:absolute; left:0; right:0; bottom:5%; text-align:center; font-family:'Inter'; font-size:.45em; color:var(--sub) }
+
+  .cover{ width:1136px; height:620px; font-size:30px }
+  .cover .top{ position:absolute; left:60px; top:44px; font-weight:900; font-size:20px; letter-spacing:.06em }
+  .cover .frame{ position:absolute; left:60px; right:60px; top:76px; bottom:96px; border:1.5px solid #c9c7c2; border-right:0; border-bottom:0 }
+  .cover .vt{ position:absolute; right:56px; top:52px; writing-mode:vertical-rl; font-family:'Inter'; font-weight:800; font-size:30px; line-height:1.1; letter-spacing:.06em; color:var(--ink) }
+  .cover h1{ position:absolute; left:60px; bottom:96px; font-weight:900; font-size:78px; letter-spacing:.01em; line-height:1 }
+  .cover .cr{ position:absolute; left:60px; bottom:60px; font-family:'Inter'; font-size:14px; color:var(--sub) }
+  .cover .lines{ position:absolute; left:0; top:0; width:100%; height:100% }
+  .cover .fish{ position:absolute; left:80px; top:150px; width:360px }
+
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px 22px; margin-top:20px }
+  .grid .s{ width:557px; height:313px; font-size:17px }
+
+  .p1 h2{ position:absolute; left:80px; top:130px; font-size:34px; font-weight:900 }
+  .p1 h2 small{ display:block; font-family:'Inter'; font-size:12px; color:var(--sub); font-weight:500; margin-top:6px }
+  .p1 .fish{ position:absolute; right:110px; top:120px; width:170px }
+  .p1 .vt{ position:absolute; right:30px; top:30px; writing-mode:vertical-rl; font-family:'Inter'; font-weight:800; font-size:13px; line-height:1.1 }
+
+  .h{ position:absolute; left:90px; top:46px; right:30px }
+  .h small{ display:block; font-family:'Inter'; font-weight:700; font-size:11px; color:var(--navy); letter-spacing:.12em; margin-bottom:6px }
+  .h b{ font-size:24px; font-weight:900; line-height:1.3 }
+  .h b u{ text-decoration:none; background:linear-gradient(transparent 62%, #f6d27a 62%) }
+  .tx{ position:absolute; left:90px; right:34px; top:148px; font-size:13px; line-height:1.85; color:var(--ink) }
+  .box{ position:absolute; left:90px; right:34px; top:206px; background:#fff; padding:12px 16px; font-size:12px; line-height:1.75; color:var(--sub) }
+  .box b{ color:var(--ink) }
+
+  .flow{ position:absolute; left:80px; right:24px; top:120px; display:flex; align-items:flex-start; gap:6px }
+  .flow div{ flex:1; text-align:center; font-size:11.5px; line-height:1.5; color:var(--sub) }
+  .flow i{ display:block; width:62px; height:62px; border-radius:50%; background:#dfe3ee; margin:0 auto 10px; position:relative }
+  .flow i::after{ content:''; position:absolute; inset:20px; border-radius:6px; background:var(--navy); opacity:.75 }
+  .flow em{ font-style:normal; color:var(--navy); font-size:18px; margin-top:22px }
+  .flow b{ display:block; color:var(--ink); font-size:12.5px }
+  .ttl{ position:absolute; left:0; right:0; top:58px; text-align:center; font-size:20px; font-weight:900 }
+
+  .p4{ background:#2c3557 !important; color:#fff }
+  .p4 .side, .p4 .ft{ color:#fff }
+  .p4 .tiles{ position:absolute; left:80px; right:0; top:0; bottom:0; display:grid; grid-template-columns:repeat(6,1fr); grid-template-rows:repeat(4,1fr); gap:3px }
+  .p4 .tiles i{ display:block }
+  .p4 .card{ position:absolute; left:230px; top:78px; width:230px; height:156px; background:#fff; color:var(--ink); padding:16px; text-align:center }
+  .p4 .card b{ display:block; font-family:'Inter'; font-weight:800; font-size:28px; color:var(--navy); letter-spacing:.04em; margin-top:6px }
+  .p4 .card small{ font-size:12px; color:var(--sub); line-height:1.6; display:block; margin-top:6px }
+
+  .p5 .rings{ position:absolute; left:130px; top:30px; width:340px; height:250px }
+  .p5 .rings span{ position:absolute; border-radius:50%; background:#e2e1dd }
+  .p5 .c{ position:absolute; top:100px; width:130px; height:130px; border-radius:50%; display:grid; place-items:center; text-align:center; color:#fff; font-weight:900; font-size:14px; line-height:1.4 }
+  .p5 .t{ position:absolute; left:0; right:0; top:46px; text-align:center; font-family:'Inter'; font-weight:800; font-size:18px }
+
+  .p6 .row{ position:absolute; left:90px; right:30px; top:110px; display:grid; grid-template-columns:1fr 32px 1fr; gap:6px; align-items:center }
+  .p6 .row div{ background:#fff; padding:12px; font-size:12px; line-height:1.6; border-top:3px solid var(--navy) }
+  .p6 .row div b{ display:block; font-size:13.5px }
+  .p6 .row em{ font-style:normal; text-align:center; color:var(--navy); font-size:20px }
+  .p6 .goal{ position:absolute; left:160px; right:100px; top:220px; background:#dfe6f4; text-align:center; font-weight:900; font-size:15px; padding:12px }
+
+  .p7 .tri{ position:absolute; left:100px; top:62px; width:220px; height:220px }
+  .p7 ul{ position:absolute; left:340px; right:24px; top:70px; list-style:none; display:grid; gap:14px; font-size:11.5px; line-height:1.5; color:var(--sub) }
+  .p7 li b{ display:block; color:var(--ink); font-size:12.5px }
+
+  .p8 .steps{ position:absolute; left:90px; top:56px; display:grid; gap:12px }
+  .p8 .steps div{ display:flex; align-items:center; gap:12px; font-size:13px; font-weight:700 }
+  .p8 .steps i{ font-style:normal; width:34px; height:34px; border-radius:50%; background:var(--navy); color:#fff; display:grid; place-items:center; font-family:'Inter'; font-size:12px }
+  .p8 .steps i.o{ background:#fff; color:var(--navy); border:2px solid var(--navy) }
+  .p8 .side-note{ position:absolute; right:30px; top:56px; width:190px; background:#fff; padding:14px; font-size:11.5px; line-height:1.75; color:var(--sub) }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <!-- ビワマス（オリジナル）。紺の体に白い腹、本を抱えている -->
+  <g id="fish">
+    <path d="M30 120 C 60 50, 190 40, 270 90 L 340 50 L 330 120 L 340 190 L 270 150 C 190 200, 60 190, 30 120 Z" fill="#4a5c9a"/>
+    <path d="M60 135 C 110 175, 200 175, 262 146 C 200 160, 120 160, 60 135 Z" fill="#fff"/>
+    <circle cx="82" cy="104" r="15" fill="#fff"/><circle cx="86" cy="104" r="7" fill="#2b2e38"/>
+    <path d="M150 74 q 20 -24 44 -8" stroke="#3a4a80" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <g fill="#e2563f"><circle cx="160" cy="112" r="5"/><circle cx="190" cy="104" r="5"/><circle cx="214" cy="118" r="5"/></g>
+    <g transform="translate(120 128) rotate(-12)"><rect width="66" height="50" rx="4" fill="#3b3b3b"/><rect x="6" y="5" width="25" height="40" fill="#f3efe6"/><rect x="35" y="5" width="25" height="40" fill="#f3efe6"/></g>
+  </g>
+</defs></svg>
+<div class="a4">
+  <section class="s cover">
+    <svg class="lines" viewBox="0 0 1136 620" fill="none" stroke-width="10" stroke-linecap="round">
+      <path d="M560 -10 C 650 120, 700 200, 760 230 S 1000 420, 1150 640" stroke="#5b8fd6"/>
+      <path d="M640 -10 C 690 130, 720 200, 760 230 S 900 480, 960 640" stroke="#f2b33d"/>
+      <path d="M760 -10 C 760 120, 760 200, 760 230 S 820 500, 820 640" stroke="#e2563f"/>
+      <path d="M880 -10 C 830 130, 800 200, 760 230 S 1060 360, 1150 420" stroke="#2f8f7a"/>
+      <circle cx="760" cy="230" r="26" stroke="#4a5c9a" stroke-width="10"/>
+    </svg>
+    <div class="top">株式会社おうみ水産 会社説明資料</div>
+    <div class="frame"></div>
+    <div class="vt">2026 OUMI<br>CULTURE DECK</div>
+    <svg class="fish" viewBox="0 0 360 220"><use href="#fish"/></svg>
+    <h1>おうみ水産とは何か</h1>
+    <div class="cr">Copyright OUMI SUISAN inc. All rights reserved.</div>
+  </section>
+
+  <div class="grid">
+
+    <section class="s"><p class="side">存在意義</p>
+      <div class="h"><small>PURPOSE</small><b>湖の恵みと、<u>食卓のあいだ</u>をつなぐ</b></div>
+      <p class="tx">琵琶湖の魚は、獲れる量が少なく、知られていません。<br>獲る人・さばく人・食べる人のあいだを、1本の道にします。</p>
+      <div class="box"><b>わたしたちの約束</b>　獲った日のうちに届ける／捨てる部位をつくらない／漁師さんの名前を出す</div>
+      <p class="ft">◎ OUMI</p><p class="pg">2</p></section>
+
+    <section class="s"><p class="side">湖から食卓まで</p>
+      <p class="ttl">魚が、どうやって食卓に届くか</p>
+      <div class="flow">
+        <div><i></i><b>漁師さん</b>朝4時に<br>網を上げる</div><em>→</em>
+        <div><i></i><b>港でさばく</b>2時間以内に<br>下処理</div><em>→</em>
+        <div><i></i><b>加工する</b>干物・佃煮・<br>燻製に</div><em>→</em>
+        <div><i></i><b>食卓へ</b>県内の店と<br>通販で</div>
+      </div>
+      <p class="ft">◎ OUMI</p><p class="pg">3</p></section>
+
+    <section class="s p4"><p class="side">湖の魚を知ってもらう</p>
+      <div class="tiles">
+        <i style="background:#3f4b74"></i><i style="background:#5b8fd6"></i><i style="background:#2f8f7a"></i><i style="background:#3f4b74"></i><i style="background:#e2563f"></i><i style="background:#566190"></i>
+        <i style="background:#f2b33d"></i><i style="background:#3f4b74"></i><i style="background:#566190"></i><i style="background:#2f8f7a"></i><i style="background:#3f4b74"></i><i style="background:#5b8fd6"></i>
+        <i style="background:#566190"></i><i style="background:#e2563f"></i><i style="background:#3f4b74"></i><i style="background:#5b8fd6"></i><i style="background:#f2b33d"></i><i style="background:#3f4b74"></i>
+        <i style="background:#3f4b74"></i><i style="background:#566190"></i><i style="background:#f2b33d"></i><i style="background:#3f4b74"></i><i style="background:#2f8f7a"></i><i style="background:#566190"></i>
+      </div>
+      <div class="card"><small>毎週金曜に配信</small><b>湖の台所</b><small>魚のさばき方と食べ方を、<br>漁師さんと一緒に話す番組</small></div>
+      <p class="ft">◎ OUMI</p></section>
+
+
+    <section class="s p6"><p class="side">なぜ必要か</p>
+      <div class="h" style="top:40px"><b style="font-size:22px">なぜ、いま湖の魚なのか</b></div>
+      <div class="row"><div><b>漁師さんが減っている</b>この20年で3分の1に。平均年齢は70歳をこえた</div><em>×</em><div><b>食べたことがない</b>県内でも、湖の魚を家で食べる人は1割</div></div>
+      <div class="goal">獲る人と、食べる人を、同時に増やす</div>
+      <p class="ft">◎ OUMI</p><p class="pg">4</p></section>
+
+    <section class="s p7"><p class="side">事業とチーム</p>
+      <svg class="tri" viewBox="0 0 220 220"><path d="M110 10 L210 210 H10 Z" fill="#4a5c9a"/><path d="M110 10 L160 110 H60 Z" fill="#7f8fc4"/><path d="M60 110 H160 L185 160 H35 Z" fill="#5d6fae"/>
+        <g fill="#fff" font-family="Zen Kaku Gothic New" font-weight="900" font-size="12" text-anchor="middle"><text x="110" y="85">食堂</text><text x="110" y="142">加工</text><text x="110" y="192">漁と仕入れ</text></g></svg>
+      <ul><li><b>漁と仕入れ（12人）</b>漁師さん18軒と、獲る量と日を一緒に決める</li><li><b>加工（9人）</b>港の工場で、干物・佃煮・燻製をつくる</li><li><b>食堂（6人）</b>大津と長浜の2店で、湖の魚を出す</li></ul>
+      <p class="ft">◎ OUMI</p><p class="pg">5</p></section>
+
+    <section class="s p8"><p class="side">選考の流れ</p>
+      <div class="steps"><div><i class="o">0</i>カジュアル面談（港の見学つき）</div><div><i>01</i>一次面接（現場のリーダー）</div><div><i>02</i>漁か加工の1日体験</div><div><i>03</i>最終面接（代表）</div><div><i class="o">✓</i>内定・入社日のご相談</div></div>
+      <div class="side-note">体験の日は、朝4時の漁から一緒に出ます。<br>合わないと思ったら、その日に言ってください。こちらも正直にお伝えします。</div>
+      <p class="ft">◎ OUMI</p><p class="pg">6</p></section>
+  </div>
+</div>
+</body>
+</html>
