@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>見本チラシ（おおつパン市）</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Alfa+Slab+One&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* 架空のイベント「おおつパン市」。白地に、上下からチョコレート色が垂れる。パンは切り抜きで大きく1つ */
+  :root{ --choco:#4a2c1d; --ink:#1a120d; --cream:#fbf7f1; --gold:#c8934a }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:#555; padding:40px; font-family:'Zen Kaku Gothic New',sans-serif }
+  .a4{ width:1240px; height:1754px; position:relative; overflow:hidden; background:var(--cream); color:var(--ink); margin:0 auto 40px }
+
+  .drip{ position:absolute; left:0; width:1240px; fill:var(--choco) }
+  .drip.top{ top:0; height:340px }
+  .drip.bot{ bottom:0; height:230px; transform:scaleY(-1) }
+
+  /* 上の弧の一言 */
+  .arc{ position:absolute; left:0; top:-28px; width:1240px; height:220px }
+  .arc text{ font-family:'Zen Kaku Gothic New'; font-weight:900; font-size:40px; letter-spacing:.18em; fill:#fff }
+  .logo-mini{ position:absolute; right:56px; top:40px; color:#fff; font-family:'Alfa Slab One'; font-size:22px; line-height:1.05; text-align:right; letter-spacing:.04em }
+
+  .croissant{ position:absolute; left:50%; top:205px; width:880px; transform:translateX(-50%) rotate(-3deg); filter:drop-shadow(0 26px 30px rgba(60,30,10,.28)) }
+
+  /* 左右の丸い札 */
+  .badge{ position:absolute; width:118px; height:190px; border:3px solid var(--gold); border-radius:60px; display:flex; align-items:center; justify-content:center;
+          writing-mode:vertical-rl; font-weight:900; font-size:27px; letter-spacing:.14em; color:var(--gold); background:var(--cream) }
+  .badge.l{ left:70px; top:470px; transform:rotate(-8deg) }
+  .badge.r{ right:70px; top:430px; transform:rotate(7deg) }
+
+  .title{ position:absolute; left:0; right:0; top:735px; text-align:center; font-family:'Dela Gothic One'; font-size:186px; line-height:1; letter-spacing:.02em; color:var(--ink) }
+  .sub{ position:absolute; left:0; right:0; top:945px; display:flex; align-items:center; justify-content:center; gap:26px; font-family:'Alfa Slab One'; font-size:38px; letter-spacing:.08em; color:var(--ink) }
+  .sub i{ display:block; width:150px; height:12px; background:var(--choco); border-radius:6px; position:relative }
+  .sub i::after{ content:''; position:absolute; left:46px; top:8px; width:14px; height:22px; background:var(--choco); border-radius:0 0 7px 7px }
+  .at{ position:absolute; left:0; right:0; top:1008px; text-align:center; font-weight:900; font-size:44px; letter-spacing:.06em }
+  .at small{ font-family:'Alfa Slab One'; font-size:30px; margin-right:14px; vertical-align:4px }
+
+  .days{ position:absolute; left:86px; right:86px; top:1092px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; border-top:4px solid var(--ink) }
+  .days > div{ padding:18px 0 0 }
+  .days > div + div{ border-left:2px solid rgba(0,0,0,.18); padding-left:30px }
+  .d{ font-family:'Alfa Slab One'; font-size:74px; line-height:1; letter-spacing:-.01em }
+  .d small{ font-size:36px; margin-left:6px }
+  .t{ margin-top:12px; font-size:21px; font-weight:700; line-height:1.7 }
+  .t b{ display:inline-block; background:var(--ink); color:#fff; font-size:15px; padding:1px 8px; margin-right:8px; vertical-align:2px; letter-spacing:.1em }
+
+  .boule{ position:absolute; left:46px; top:1296px; width:250px; transform:rotate(-12deg); filter:drop-shadow(0 18px 22px rgba(60,30,10,.25)) }
+  .shops{ position:absolute; left:340px; right:70px; top:1300px; display:grid; grid-template-columns:1fr 1fr; gap:4px 34px; font-size:20px; font-weight:700; line-height:1.55 }
+  .shops h3{ grid-column:1 / -1; font-size:22px; font-weight:900; letter-spacing:.2em; margin-bottom:6px }
+  .shops h3 span{ font-family:'Alfa Slab One'; font-size:18px; letter-spacing:.12em; margin-left:10px; color:var(--gold) }
+  .shops p::before{ content:'● '; color:var(--gold); font-size:13px; vertical-align:3px }
+
+  .baguette{ position:absolute; right:-30px; bottom:30px; width:470px; transform:rotate(-7deg); filter:drop-shadow(0 18px 20px rgba(0,0,0,.35)); z-index:2 }
+  .foot{ position:absolute; left:64px; bottom:18px; color:#fff; font-size:19px; font-weight:700; line-height:1.75; z-index:3 }
+  .foot b{ font-size:22px; letter-spacing:.04em; margin-right:18px }
+  .free{ position:absolute; left:64px; bottom:96px; color:#fff; font-weight:900; font-size:26px; letter-spacing:.12em; z-index:3 }
+</style>
+</head>
+<body>
+<div class="a4">
+  <svg class="drip top" viewBox="0 0 1240 340" preserveAspectRatio="none"><path d="M0,0 H1240 V170 L1238,170 C1220,170 1220,178 1220,300 A30,30 0 0 1 1160,300 C1160,178 1160,170 1142,170 L1120,170 C1102,170 1102,178 1102,248 A22,22 0 0 1 1058,248 C1058,178 1058,170 1040,170 L976,170 C958,170 958,178 958,282 A28,28 0 0 1 902,282 C902,178 902,170 884,170 L838,170 C820,170 820,178 820,235 A20,20 0 0 1 780,235 C780,178 780,170 762,170 L692,170 C674,170 674,178 674,326 A34,34 0 0 1 606,326 C606,178 606,170 588,170 L514,170 C496,170 496,178 496,264 A26,26 0 0 1 444,264 C444,178 444,170 426,170 L366,170 C348,170 348,178 348,222 A18,18 0 0 1 312,222 C312,178 312,170 294,170 L238,170 C220,170 220,178 220,290 A30,30 0 0 1 160,290 C160,178 160,170 142,170 L110,170 C92,170 92,178 92,238 A22,22 0 0 1 48,238 C48,178 48,170 30,170 L0,170 Z"/></svg>
+  <svg class="arc" viewBox="0 0 1240 220"><defs><path id="arcp" d="M240,200 Q620,40 1000,200"/></defs>
+    <text><textPath href="#arcp" startOffset="50%" text-anchor="middle">パン屋さんが、湖のそばに集まる！</textPath></text></svg>
+  <div class="logo-mini">OTSU<br>BREAD<br>MARKET</div>
+
+  <img class="croissant" src="img/flyer-src/croissant.png" alt="">
+
+  <div class="badge l">今年も開催</div>
+  <div class="badge r">全１８店</div>
+
+  <div class="title">おおつパン市</div>
+  <div class="sub"><i></i>BIWAKO BREAD MARKET<i></i></div>
+  <div class="at"><small>AT</small>湖岸ひろば（浜大津）</div>
+
+  <div class="days">
+    <div><div class="d">11.21<small>SAT</small></div><p class="t"><b>前夜祭</b>16:00 – 20:00</p></div>
+    <div><div class="d">11.22<small>SUN</small></div><p class="t"><b>朝の部</b>8:00 – 12:00<br><b>昼の部</b>13:00 – 17:00</p></div>
+    <div><div class="d">11.23<small>MON</small></div><p class="t"><b>朝の部</b>8:00 – 12:00<br><b>昼の部</b>13:00 – 16:00</p></div>
+  </div>
+
+  <img class="boule" src="img/flyer-src/boule.png" alt="">
+  <div class="shops">
+    <h3>出店するパン屋さん<span>BAKERIES</span></h3>
+    <p>石窯パン こむぎ舎</p><p>ベーカリー 湖の朝</p>
+    <p>クロワッサン専門店 層</p><p>天然酵母 ひだまり堂</p>
+    <p>カンパーニュ工房 粉と水</p><p>あんぱん 浜の灯</p>
+    <p>ブーランジェリー ミトン</p><p>食パン専門 しろくま</p>
+    <p>ドーナツ ふくわ</p><p>ほか９店（日替わり）</p>
+  </div>
+
+  <svg class="drip bot" viewBox="0 0 1240 300" preserveAspectRatio="none"><path d="M0,0 H1240 V150 L1102,150 C1084,150 1084,158 1084,221 A24,24 0 0 1 1036,221 C1036,158 1036,150 1018,150 L926,150 C908,150 908,158 908,252 A28,28 0 0 1 852,252 C852,158 852,150 834,150 L740,150 C722,150 722,158 722,218 A22,22 0 0 1 678,218 C678,158 678,150 660,150 L568,150 C550,150 550,158 550,270 A30,30 0 0 1 490,270 C490,158 490,150 472,150 L338,150 C320,150 320,158 320,200 A20,20 0 0 1 280,200 C280,158 280,150 262,150 L164,150 C146,150 146,158 146,234 A26,26 0 0 1 94,234 C94,158 94,150 76,150 L0,150 Z"/></svg>
+  <img class="baguette" src="img/flyer-src/baguette.png" alt="">
+  <div class="foot"><b>入場無料・雨天決行</b><br>おおつパン市 実行委員会　TEL 077-526-3180（平日 10:00〜17:00）</div>
+</div>
+</body>
+</html>
