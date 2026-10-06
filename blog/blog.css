@@ -1,0 +1,129 @@
+/* ── それナル？ブログ（記事・一覧・図解の部品）──
+   図解は記事の HTML に class を付けるだけで図になる（書き方＝iCloud/道具/それナル/blog_src/_書き方.md） */
+.bl{ padding:40px 0 90px }
+.bl .crumb{ font-size:12px; color:var(--ink-sub); margin-bottom:20px }
+.bl .crumb a{ color:inherit }
+.bl-cat{ display:inline-block; font-weight:800; font-size:12px; letter-spacing:.04em; padding:5px 12px; border-radius:999px;
+  background:var(--c,#111); color:#fff; line-height:1.2 }
+
+/* 記事 */
+.bl-post{ max-width:780px }
+.bl-post h1{ font-family:var(--jp); font-weight:900; font-size:clamp(26px,4.2vw,42px); line-height:1.35; letter-spacing:-.03em; margin:14px 0 12px }
+.bl-meta{ font-size:12.5px; color:var(--ink-sub); margin:0 0 22px }
+.bl-eye{ width:100%; height:auto; display:block; border-radius:14px; margin:0 0 26px; background:#eee }
+.bl-toc{ background:#f4f5f8; border-radius:14px; padding:20px 24px; margin:0 0 34px }
+.bl-toc b{ display:block; font-size:14px; margin-bottom:8px }
+.bl-toc ol{ margin:0; padding-left:1.4em; font-size:14.5px; line-height:2 }
+.bl-toc a{ color:var(--ink); text-decoration:none; border-bottom:1px solid rgba(0,0,0,.15) }
+.bl-toc a:hover{ color:var(--accent) }
+
+.bl-body{ font-size:16px; line-height:2.05; color:var(--ink) }
+.bl-body .lead{ font-size:17px; font-weight:500; line-height:2; margin:0 0 30px }
+.bl-body h2{ font-family:var(--jp); font-weight:900; font-size:clamp(21px,3vw,27px); line-height:1.45; letter-spacing:-.02em;
+  margin:58px 0 18px; padding-top:18px; border-top:3px solid var(--ink); scroll-margin-top:110px }
+.bl-body h3{ font-weight:800; font-size:18.5px; line-height:1.55; margin:34px 0 10px; padding-left:12px; border-left:4px solid var(--accent) }
+.bl-body p{ margin:0 0 20px }
+.bl-body ul, .bl-body ol{ margin:0 0 22px; padding-left:1.4em }
+.bl-body li{ margin:4px 0 }
+.bl-body a{ color:var(--accent) }
+.bl-body strong, .bl-body b{ font-weight:800 }
+
+/* 図解の共通 */
+.fig{ margin:30px 0 34px; padding:24px; border-radius:16px; background:#f6f6f4; line-height:1.6 }
+.fig-cap{ margin:16px 0 0 !important; font-size:12.5px; color:var(--ink-sub); text-align:center }
+.fig h4{ font-size:15px; font-weight:900; margin:0 0 10px }
+
+/* 流れ */
+.fig-steps ol{ list-style:none; margin:0; padding:0; display:flex; gap:10px; counter-reset:s }
+.fig-steps li{ flex:1; position:relative; background:#fff; border-radius:12px; padding:16px 12px 14px; text-align:center; counter-increment:s; margin:0 }
+.fig-steps li::before{ content:counter(s); display:grid; place-items:center; width:30px; height:30px; margin:0 auto 8px; border-radius:50%;
+  background:var(--accent); color:#fff; font-family:'Inter'; font-weight:800; font-size:14px }
+.fig-steps li:not(:last-child)::after{ content:''; position:absolute; right:-9px; top:50%; border:6px solid transparent; border-left:8px solid var(--accent); transform:translateY(-50%); z-index:1 }
+.fig-steps b{ display:block; font-size:15px; font-weight:900 }
+.fig-steps span{ display:block; font-size:12.5px; color:var(--ink-sub); margin-top:4px }
+@media (max-width:640px){
+  .fig-steps ol{ flex-direction:column }
+  .fig-steps li{ display:grid; grid-template-columns:34px 1fr; text-align:left; align-items:center; column-gap:10px; padding:12px 14px }
+  .fig-steps li::before{ margin:0; grid-row:1 / span 2 }
+  .fig-steps li:not(:last-child)::after{ right:auto; left:28px; top:auto; bottom:-12px; border:6px solid transparent; border-top:8px solid var(--accent); transform:none }
+}
+
+/* くらべる */
+.fig-compare{ display:grid; grid-template-columns:1fr 1fr; gap:14px }
+.fig-compare .fig-cap{ grid-column:1 / -1 }
+.fig-compare .col{ background:#fff; border-radius:12px; padding:18px 18px 8px; border-top:5px solid #b9bcc6 }
+.fig-compare .col.good{ border-top-color:var(--accent) }
+.fig-compare .col.bad h4::before{ content:'×  '; color:#c03a3a }
+.fig-compare .col.good h4::before{ content:'○  '; color:var(--accent) }
+.fig-compare ul{ margin:0 0 10px; padding-left:1.2em; font-size:14.5px }
+@media (max-width:640px){ .fig-compare{ grid-template-columns:1fr } }
+
+/* 棒グラフ */
+.fig-bars{ display:grid; gap:12px }
+.fig-bars .bar{ display:grid; grid-template-columns:minmax(110px,30%) 1fr auto; align-items:center; gap:12px; font-size:14px }
+.fig-bars .bar span{ font-weight:700 }
+.fig-bars .bar::after{ content:''; grid-column:2; grid-row:1; height:20px; border-radius:6px; width:calc(var(--v) * 1%);
+  background:linear-gradient(90deg, var(--accent), #6b84ff) }
+.fig-bars .bar b{ grid-column:3; font-family:'Inter'; font-weight:800; font-size:13px; color:var(--accent); white-space:nowrap }
+
+/* 要点カード */
+.fig-points{ display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:12px }
+.fig-points > div{ background:#fff; border-radius:12px; padding:18px }
+.fig-points > div > b{ display:block; font-family:'Inter'; font-weight:900; font-size:22px; color:var(--accent); margin-bottom:6px }
+.fig-points p{ margin:0 !important; font-size:13.5px; color:var(--ink-sub); line-height:1.7 }
+
+/* チェックリスト */
+.fig-check ul{ list-style:none; margin:0; padding:0; display:grid; gap:8px }
+.fig-check li{ background:#fff; border-radius:10px; padding:12px 14px 12px 44px; position:relative; font-size:14.5px; margin:0 }
+.fig-check li::before{ content:''; position:absolute; left:14px; top:13px; width:18px; height:18px; border-radius:5px; background:var(--accent) }
+.fig-check li::after{ content:''; position:absolute; left:19px; top:16px; width:5px; height:9px; border:solid #fff; border-width:0 2.5px 2.5px 0; transform:rotate(45deg) }
+
+/* 表 */
+.fig-table{ width:100%; border-collapse:collapse; margin:30px 0 34px; font-size:14.5px; line-height:1.6 }
+.fig-table caption{ caption-side:bottom; font-size:12.5px; color:var(--ink-sub); padding-top:10px }
+.fig-table th, .fig-table td{ border-bottom:1px solid #e3e3e0; padding:12px 10px; text-align:left; vertical-align:top }
+.fig-table tr:first-child th{ background:var(--ink); color:#fff; font-weight:800 }
+.fig-table th{ font-weight:800; white-space:nowrap }
+@media (max-width:640px){ .fig-table{ font-size:13px } .fig-table th{ white-space:normal } }
+
+/* 補足の箱 */
+.bl-body .note{ display:block; max-width:none; color:var(--ink); background:#eef1ff; border-radius:12px; padding:16px 18px; margin:26px 0; font-size:14.5px; line-height:1.85 }
+.bl-body .note b{ display:block; color:var(--accent); margin-bottom:4px }
+
+/* 作品画像 */
+.bl-body figure.work{ margin:30px 0 34px }
+.bl-body figure.work img{ width:100%; height:auto; max-height:560px; object-fit:cover; object-position:top; display:block; border-radius:12px; background:#eee }
+.bl-body figure.work figcaption{ font-size:12.5px; color:var(--ink-sub); margin-top:8px; line-height:1.6 }
+
+/* よくある質問 */
+.bl-body .faq{ margin-top:30px }
+.bl-body .faq details{ border-top:1px solid #e3e3e0; padding:14px 0 }
+.bl-body .faq details:last-child{ border-bottom:1px solid #e3e3e0 }
+.bl-body .faq summary{ font-weight:800; cursor:pointer; list-style:none; padding-left:30px; position:relative; line-height:1.6 }
+.bl-body .faq summary::before{ content:'Q'; position:absolute; left:0; font-family:'Inter'; font-weight:900; color:var(--accent) }
+.bl-body .faq p{ margin:10px 0 0 30px; font-size:15px }
+
+/* 相談の箱 */
+.bl-cta{ margin:56px 0 0; padding:30px; border-radius:18px; background:var(--ink); color:#fff }
+.bl-cta-k{ font-size:12px; letter-spacing:.08em; opacity:.7; margin:0 0 6px }
+.bl-cta h2{ font-family:var(--jp); font-weight:900; font-size:clamp(20px,3vw,26px); line-height:1.45; margin:0 0 10px; color:#fff }
+.bl-cta p{ font-size:14.5px; line-height:1.85; opacity:.85; margin:0 0 18px }
+.bl-cta-btns{ display:flex; gap:10px; flex-wrap:wrap }
+.bl-cta .btn-ghost{ color:#fff }
+
+/* 関連・一覧のカード */
+.bl-rel{ margin-top:56px }
+.bl-rel h2{ font-family:var(--jp); font-weight:900; font-size:22px; margin:0 0 16px }
+.bl-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
+@media (max-width:860px){ .bl-grid{ grid-template-columns:1fr 1fr } }
+@media (max-width:520px){ .bl-grid{ grid-template-columns:1fr } }
+.bl-card{ display:block; color:var(--ink); text-decoration:none }
+.bl-card img{ width:100%; aspect-ratio:1200/630; object-fit:cover; display:block; border-radius:12px; background:#eee; margin-bottom:10px; transition:opacity .2s }
+.bl-card:hover img{ opacity:.85 }
+.bl-card b{ display:block; font-size:15px; font-weight:800; line-height:1.55; margin-top:8px }
+.bl-card p{ font-size:13px; color:var(--ink-sub); line-height:1.7; margin:6px 0 0 }
+
+/* 一覧 */
+.bl-index h1{ font-family:var(--jp); font-weight:900; font-size:clamp(30px,5vw,56px); line-height:1.25; letter-spacing:-.04em; margin:6px 0 16px }
+.bl-lead{ color:var(--ink-sub); max-width:40em; line-height:1.95; margin:0 0 40px }
+.bl-grid-index{ gap:34px 22px }
