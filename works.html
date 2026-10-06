@@ -81,6 +81,9 @@
   .wk-badge.c-web{ background:var(--accent); color:#fff }
   .wk-badge.c-logo{ background:#0f8a5f; color:#fff }
   .wk-badge.c-flyer{ background:#f08a24; color:#fff }
+  .wk-badge.c-sign{ background:#a8551e; color:#fff }
+  .wk-badge.c-card{ background:#2786a8; color:#fff }
+  .wk-badge.c-book{ background:#8a6d00; color:#fff }
   .wk-badge.c-poster{ background:#e0364b; color:#fff }
   .wk-badge.c-docs{ background:#6a4bd6; color:#fff }
   .wk-badge.c-type{ background:#111; color:#fff }
@@ -452,11 +455,18 @@ const WORKS = [
    '自主制作。黒の上に緑を1色だけ乗せたもの。'],
   ];
 const CAT={web:'ホームページ',poster:'ポスター',flyer:'チラシ・会社案内',docs:'社内資料',logo:'ロゴ・看板',type:'文字をつくる'};
+// バッジだけは細かく分ける（絞り込みは今のまま）。ロゴ／看板／名刺、チラシ／会社案内
+function badge(c,t){
+  let k=c, n=CAT[c];
+  if(c==='logo'){ if(/名刺/.test(t)){k='card';n='名刺'} else if(/看板|サイン|のぼり/.test(t)){k='sign';n='看板'} else {n='ロゴ'} }
+  if(c==='flyer'){ if(/会社案内|ブランドブック|Zine/.test(t)){k='book';n='会社案内'} else {n='チラシ'} }
+  return `<span class="wk-badge c-${k}">${n}</span>`;
+}
 const grid=document.getElementById('grid');
 grid.innerHTML = WORKS.map(([f,t,c],i)=>
   `<figure class="wk" data-c="${c}" data-i="${i}">
      <img src="img/w/${f}.webp?v=1006a" alt="${t}" loading="lazy" decoding="async">
-     <span class="wk-badge c-${c}">${CAT[c]}</span>
+     ${badge(c,t)}
      <figcaption><span>${CAT[c]}</span><b>${t}</b></figcaption>
    </figure>`).join('');
 
