@@ -143,3 +143,18 @@
 .bl-author p{ font-size:13.5px; line-height:1.85; margin:6px 0 0 }
 .bl-author-l a{ color:var(--accent); margin-right:6px }
 @media (max-width:520px){ .bl-author{ grid-template-columns:64px 1fr } .bl-author img{ width:64px; height:64px } }
+
+/* 一覧：種類へ飛ぶ目次・種類ごとの区切り・通し番号（木下 10-07「区切りがわかりにくい」） */
+.bl-jump{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:8px; margin:0 0 56px }
+.bl-jump a{ display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:12px; background:#f4f5f8; color:var(--ink); text-decoration:none; font-weight:800; font-size:14px; border-left:5px solid var(--c) }
+.bl-jump a:hover{ background:#eceef3 }
+.bl-jump i{ font-style:normal; font-family:'Inter'; font-weight:900; color:var(--c); font-size:13px }
+.bl-jump small{ margin-left:auto; font-weight:700; color:var(--ink-sub); font-size:12px }
+.bl-sec{ padding:0 0 64px; scroll-margin-top:110px }
+.bl-sec-h{ position:relative; display:flex; align-items:baseline; gap:14px; padding:22px 0 18px; margin:0 0 26px; border-top:3px solid var(--ink) }
+.bl-sec-n{ font-family:'Inter'; font-weight:900; font-size:clamp(34px,5vw,56px); line-height:1; letter-spacing:-.04em }
+.bl-sec-h h2{ font-family:var(--jp); font-weight:900; font-size:clamp(22px,3vw,30px); margin:0; letter-spacing:-.02em }
+.bl-sec-c{ margin-left:auto; font-size:13px; font-weight:700; color:var(--ink-sub) }
+.bl-sec-bar{ position:absolute; left:0; top:-3px; width:120px; height:3px; background:var(--c) }
+.bl-card{ position:relative }
+.bl-no{ position:absolute; right:10px; top:10px; z-index:1; font-family:'Inter'; font-weight:900; font-size:12px; letter-spacing:.04em; background:#fff; color:var(--ink); padding:5px 9px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,.12) }
